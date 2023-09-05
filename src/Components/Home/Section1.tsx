@@ -2,10 +2,10 @@ import React from 'react'
 import {
       Stack,  Button,  Typography,Card,Box
   } from "@mui/material";
-
+import './section1.css'
 export default function Section1() {
   return (
-    <div>
+    <div className='img'>
        
     <Box px={1} width={'850x'} sx={{float:'right'}} marginTop={'8%'} >
     
