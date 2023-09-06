@@ -8,8 +8,14 @@ import { Image } from "react-bootstrap";
 import TopBar from "./TopBar";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import SignupPage from "../Signup/SignupPage";
 export default function NavBar() {
   const [anchorEl, setAnchorEl] = useState(null);
+  const[openModal,setOpenModal]=useState(false);
+  const Openhandle = () => setOpenModal(true);
+  const Closehandle = () => setOpenModal(false);
+
+
   const open = Boolean(anchorEl);
   const handleClick = (event:any) => {
     setAnchorEl(event.currentTarget);
@@ -19,10 +25,16 @@ export default function NavBar() {
   };
   return (
     <div>
+      {openModal?
+      (<>
+      <SignupPage open={openModal}
+                  close={Closehandle}
+      ></SignupPage>
+      </>):(<></>)}
       <AppBar>
         <TopBar></TopBar>
         <Toolbar sx={{ backgroundColor: "white" }}>
-          <Typography sx={{ flexGrow: 1 }}>
+          <Typography  sx={{ flexGrow: 1 }}>
             <IconButton>
               <Image
                 src="src\assets\images\logo.jpg"
@@ -92,7 +104,9 @@ export default function NavBar() {
             </Link>
           </Stack>
           <Stack direction={'row'} spacing={1}>
-          <IconButton sx={{color:'black',backgroundColor:'goldenrod',border:'1px solid goldenrod'}}>
+          <IconButton 
+          onClick={Openhandle}
+          sx={{color:'black',backgroundColor:'goldenrod',border:'1px solid goldenrod'}}>
             <AiOutlineUser ></AiOutlineUser>
           </IconButton>
           <IconButton sx={{color:'black',border:'2px solid black',}}>
