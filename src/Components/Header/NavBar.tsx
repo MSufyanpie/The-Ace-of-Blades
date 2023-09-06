@@ -11,7 +11,7 @@ import { useState } from "react";
 export default function NavBar() {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
-  const handleClick = (event) => {
+  const handleClick = (event:any) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
@@ -92,10 +92,10 @@ export default function NavBar() {
             </Link>
           </Stack>
           <Stack direction={'row'} spacing={1}>
-          <IconButton sx={{color:'white',backgroundColor:'goldenrod'}}>
+          <IconButton sx={{color:'black',backgroundColor:'goldenrod',border:'1px solid goldenrod'}}>
             <AiOutlineUser ></AiOutlineUser>
           </IconButton>
-          <IconButton sx={{color:'black',border:'1px solid black',}}>
+          <IconButton sx={{color:'black',border:'2px solid black',}}>
             <ShoppingCart></ShoppingCart>
           </IconButton>
           </Stack>
