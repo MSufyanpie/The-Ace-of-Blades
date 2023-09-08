@@ -11,12 +11,12 @@ sx={{backgroundColor:'black'}}
 >
     <Typography flexGrow={1}></Typography>
    <Typography flexGrow={1}  
-   variant='h6'
+   variant='body2'
    color={'white'}
    >
     FREE DELIVERY FOR ALL ORDERS OVER RS 1000</Typography>
     <Box >
-    <Typography color={'white'}>
+    <Typography variant='body2' color={'white'}>
        
             <Facebook></Facebook>
             <Instagram></Instagram>

@@ -1,9 +1,29 @@
 import { Box, Modal, TextField, Typography,Stack, Badge, Button, IconButton } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
 import { BiSolidUserCircle } from "react-icons/bi"
 import { Image } from 'react-bootstrap'
+import { Link, useNavigate } from 'react-router-dom'
+import { signInWithEmailAndPassword } from 'firebase/auth'
+import { auth } from '../../Config/Firebase'
 
 export default function SignupPage(props:any) {
+  const navigate=useNavigate()
+    const[data,setUserData]:any=useState({
+        
+        Email:"",
+        Password:""
+   }) 
+   
+   const[errormsg,setErrormsg]:any=useState("");
+   const HandleSubmit=()=>{
+    signInWithEmailAndPassword(auth,data.Email,data.Password).then(async(res)=>{
+            navigate('/AOBCollection')
+            props.close
+    }).catch((err)=>{
+      setErrormsg(err.message)
+    })
+
+   }
   return (
     <Modal
     open={props.open}
@@ -21,12 +41,25 @@ export default function SignupPage(props:any) {
           <BiSolidUserCircle></BiSolidUserCircle>
         </Typography>
         <Stack spacing={3} direction={'column'} px={25}>
-        <TextField variant='standard' color='secondary' size='small' label='Enter Your First Name' />
-        <TextField  variant='standard' color='secondary'size='small' label='Enter Your Last Name' />
-        <TextField  variant='standard' color='secondary'size='small'  label='Enter you Email' />
-        <TextField  variant='standard' color='secondary' size='small' type='number'  label='Enter your Phone No' />
-        <TextField  variant='standard' color='secondary'  size='small' type='password' label='Enter Your Password' />
-             <Button variant='contained' color='info'>Sign Up</Button><br/>
+        
+        
+        <TextField  
+         onChange={(event)=>
+          setUserData((prev:any)=>({...prev,Email:event.target.value}))}
+        variant='standard' color='secondary'size='small'  label='Enter you Email' />
+    
+        <TextField  
+        onChange={(event)=>
+          setUserData((prev:any)=>({...prev,Password:event.target.value}))}
+        variant='standard' color='secondary'  size='small' type='password' label='Enter Your Password' />
+             
+             <Typography color={'red'}>{errormsg}</Typography>
+             <Button 
+             type='submit' onClick={HandleSubmit}
+             variant='contained' color='info'>Login</Button><br/>
+             <Typography>Don't Have Any Account?</Typography>
+
+             <Link to={'./SignUp'} style={{textDecoration:'none'}}><Typography>Create an Account</Typography></Link>
         </Stack>
         </Box>
         <Image

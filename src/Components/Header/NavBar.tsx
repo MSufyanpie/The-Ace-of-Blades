@@ -9,13 +9,27 @@ import TopBar from "./TopBar";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import SignupPage from "../Signup/SignupPage";
+import { onAuthStateChanged,signOut } from "firebase/auth";
+import { auth } from "../../Config/Firebase";
 export default function NavBar() {
   const [anchorEl, setAnchorEl] = useState(null);
   const[openModal,setOpenModal]=useState(false);
   const Openhandle = () => setOpenModal(true);
   const Closehandle = () => setOpenModal(false);
-
-
+  const [isLoggedIn,SetLoggedIn]=useState(false)
+ onAuthStateChanged(auth,async(user)=>{
+  if(user){
+SetLoggedIn(true)
+  }
+ })
+ const LogOut=async()=>{
+  try {
+      await signOut(auth)
+  } catch (error) {
+      console.log(error)
+  }
+ SetLoggedIn(false)
+}
   const open = Boolean(anchorEl);
   const handleClick = (event:any) => {
     setAnchorEl(event.currentTarget);
@@ -49,7 +63,7 @@ export default function NavBar() {
               <Button sx={{color:'black',fontWeight:'bold'}}>Home</Button>
             </Link>
 
-            <Link to={"/"} style={{ textDecoration: "none" }}>
+            <Link to={"/AOBCollection"} style={{ textDecoration: "none" }}>
               <Button
                 id="collection-btn"
                 onClick={handleClick}
@@ -68,17 +82,13 @@ export default function NavBar() {
               >ON SALE</Button>
             </Link>
 
-            <Link to={"/"} style={{ textDecoration: "none" }}>
+            <Link to={"/Articles"} style={{ textDecoration: "none" }}>
               <Button
               sx={{color:'black',fontWeight:'bold'}}
               >ARTICLES</Button>
             </Link>
 
-            <Link to={"/"} style={{ textDecoration: "none" }}>
-              <Button
-              sx={{color:'black',fontWeight:'bold'}}
-              >Projects</Button>
-            </Link>
+            
 
             <Link to={"/"} style={{ textDecoration: "none" }}>
               <Button
@@ -104,11 +114,18 @@ export default function NavBar() {
             </Link>
           </Stack>
           <Stack direction={'row'} spacing={1}>
+
+          {isLoggedIn?(<>
+          <Button onClick={LogOut}>Logout</Button>
+          </>):
+          (
           <IconButton 
           onClick={Openhandle}
           sx={{color:'black',backgroundColor:'goldenrod',border:'1px solid goldenrod'}}>
             <AiOutlineUser ></AiOutlineUser>
-          </IconButton>
+          </IconButton>)}
+
+
           <IconButton sx={{color:'black',border:'2px solid black',}}>
             <ShoppingCart></ShoppingCart>
           </IconButton>

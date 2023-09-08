@@ -7,11 +7,14 @@ import Section5 from './Section5'
 import Section7 from './Section7'
 import Section6 from './Section6'
 import Section8 from './Section8'
+import NavBar from '../Header/NavBar'
+import Footer from '../Footer/Footer'
 
 
 export default function Home() {
   return (
     <div >
+        <NavBar></NavBar>
         <Section1></Section1>
         <Section2 ></Section2>
         <Section3></Section3>
@@ -20,6 +23,7 @@ export default function Home() {
         <Section6></Section6>
         <Section7></Section7>
         <Section8></Section8>
+        <Footer></Footer>
     </div>
   )
 }

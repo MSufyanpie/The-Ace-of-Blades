@@ -1,22 +1,33 @@
 
 import './App.css'
-import TopBar from './Components/Header/TopBar'
-import NavBar from './Components/Header/NavBar'
-import {BrowserRouter as Router} from 'react-router-dom'
+
+import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
 import Home from './Components/Home/Home'
-import Footer from './Components/Footer/Footer'
+
+import Collection from './Components/AOB Collection/Collection'
+import SignUp from './Components/Signup/SignUp'
+import Authentication from './Components/Signup/Authentication'
+import CollectionUploadForm from './Components/AOB Collection/CollectionUploadForm'
+import ArticleUploadForm from './Components/Articles/UploadForm'
+import Articles from './Components/Articles/Articles'
+
 
 function App() {
   
 
   return (
     <>
-     {/* <TopBar></TopBar>  */}
-     <div className='img'>
+     
+     <div>
      <Router>
-     <NavBar></NavBar>
-     <Home></Home>
-     <Footer></Footer>
+      <Routes>
+       <Route path='/' element={<Home/>} ></Route>
+       <Route path='/AOBCollection' element={<Collection/>} ></Route>
+       <Route path='/SignUp' element={<Authentication/>} ></Route>
+       <Route path='/upload-Products' element={<CollectionUploadForm/>}></Route>
+       <Route path='/upload-articles' element={<ArticleUploadForm/>} ></Route>
+       <Route path='/Articles' element={<Articles/>} ></Route>
+     </Routes>
      </Router>
      </div>  
     </>
