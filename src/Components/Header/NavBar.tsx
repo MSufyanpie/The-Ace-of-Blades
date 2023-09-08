@@ -11,10 +11,14 @@ import { useState } from "react";
 import SignupPage from "../Signup/SignupPage";
 import { onAuthStateChanged,signOut } from "firebase/auth";
 import { auth } from "../../Config/Firebase";
+import { BiPlusCircle } from "react-icons/bi";
 export default function NavBar() {
   const [anchorEl, setAnchorEl] = useState(null);
   const[openModal,setOpenModal]=useState(false);
-  const Openhandle = () => setOpenModal(true);
+  const[openUploader,setOpenUploader]=useState(false)
+  const Openhandle = () => setOpenModal(true)
+  setOpenUploader(true)
+  ;
   const Closehandle = () => setOpenModal(false);
   const [isLoggedIn,SetLoggedIn]=useState(false)
  onAuthStateChanged(auth,async(user)=>{
@@ -76,7 +80,7 @@ SetLoggedIn(true)
               </Button>
             </Link>
 
-            <Link to={"/"} style={{ textDecoration: "none" }}>
+            <Link to={"/OnSale"} style={{ textDecoration: "none" }}>
               <Button
               sx={{color:'black',fontWeight:'bold'}}
               >ON SALE</Button>
@@ -116,7 +120,11 @@ SetLoggedIn(true)
           <Stack direction={'row'} spacing={1}>
 
           {isLoggedIn?(<>
+          <IconButton onClick={Openhandle}>
+            <BiPlusCircle/>
+          </IconButton>
           <Button onClick={LogOut}>Logout</Button>
+          
           </>):
           (
           <IconButton 
