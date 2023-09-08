@@ -1,15 +1,20 @@
 
-import { Button, Stack, TextField } from '@mui/material'
-import React, { useState } from 'react'
+import { Box, Button, Card, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent, Stack, TextField } from '@mui/material'
+import React, { ChangeEvent, useState } from 'react'
 import { storage,db } from '../../Config/Firebase'
 import { getDownloadURL, ref,uploadBytes } from 'firebase/storage'
 import { addDoc, collection } from 'firebase/firestore'
 export default function CollectionUploadForm() {
     const[productTitle,setProductTitle]:any=useState("")
     const[productPrice,setProductPrice]:any=useState("")
+    const[salePrice,setSalePrice]=useState('')
     const CollectionRef=collection(db,"AOB Collection")
     const [imgUrl,setImgUrl]=useState('')
-        
+    const[category,setCategory]=useState('')
+    
+    const handleCategory=(event:SelectChangeEvent)=>{
+       setCategory(event.target.value)
+    }
        
         
    
@@ -30,7 +35,9 @@ export default function CollectionUploadForm() {
         await addDoc(CollectionRef,{
             title:productTitle,
             price:productPrice,
-            imageUrl:DownloadUrl
+            salePrice:salePrice,
+            imageUrl:DownloadUrl,
+            category:category
            })
         alert("Product Added")
 
@@ -40,7 +47,7 @@ export default function CollectionUploadForm() {
     }
 
   return (
-    <div>
+    <div >
         <form>
             <Stack direction={'column'} spacing={1}>
             <TextField
@@ -51,6 +58,30 @@ export default function CollectionUploadForm() {
              onChange={(event)=>{
                 setProductPrice(event.target.value)}}
             label='Enter Product Price'/>
+             <TextField
+             defaultValue={'0'}
+             onChange={(event)=>{
+                setSalePrice(event.target.value)}}
+            label='Enter  Sale Price'/>
+<FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+      <InputLabel id="demo-select-small-label">Category</InputLabel>
+      <Select
+        labelId="demo-select-small-label"
+        id="demo-select-small"
+        value={category}
+        label="Category"
+        onChange={handleCategory}
+      >
+        <MenuItem value="">
+          <em>None</em>
+        </MenuItem>
+        <MenuItem value={1}>Folding Knives</MenuItem>
+        <MenuItem value={2}> Key Rings</MenuItem>
+        <MenuItem value={3}> Knife Care Products</MenuItem>
+        <MenuItem value={4}>Kitchen and Chef Knives</MenuItem>
+      </Select>
+    </FormControl>
+          
             <label htmlFor="">Upload Product Image</label>
             <input
              onChange={(event)=>{

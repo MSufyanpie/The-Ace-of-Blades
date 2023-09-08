@@ -1,6 +1,6 @@
 import { collection,getDocs } from 'firebase/firestore'
 import React, { useEffect, useState } from 'react'
-import { Box, Card, CardContent, CardMedia, Stack, Typography } from '@mui/material'
+import { Box, Card, CardContent, CardMedia, Grid, Stack, Typography } from '@mui/material'
 
 import { db } from '../../Config/Firebase'
 
@@ -31,9 +31,10 @@ export default function ArticleDeisgn() {
   },[articlesList])
   return (
     <Box px={10} marginTop={'3%'}>
-    <Stack direction={'row'} spacing={2}>
+    <Grid container direction={'row'} spacing={2}>
 {articlesList.map((data,index)=>{
     return( 
+      <Grid item xs={12} sm={6} md={4} >
         <Card>
         <CardMedia 
         image={data.imageUrl}
@@ -48,9 +49,10 @@ export default function ArticleDeisgn() {
             </Typography>
         </CardContent>
     </Card>
+    </Grid>
   )
 })}
-</Stack>
+</Grid>
 
 </Box >
   )
