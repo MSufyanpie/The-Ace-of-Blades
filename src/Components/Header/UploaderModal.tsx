@@ -12,7 +12,7 @@ export default function UploaderModal(props:any) {
     onClose={props.close}
     >
         
-    <Box width={'30%'} sx={{backgroundColor:'#c4b999',borderRadius:'10px'}} marginTop={'10%'} marginLeft={'30%'}>
+    <Box width={500} m={'auto'} sx={{backgroundColor:'#c4b999',borderRadius:'10px'}} marginTop={'10%'} >
     <Stack spacing={5}><br/>
     <Link to={'./upload-Products'}>
     <Typography textAlign={'center'}>
@@ -23,8 +23,12 @@ export default function UploaderModal(props:any) {
         <Typography textAlign={'center'}>
     <Button variant='contained' color='error'>Upload Articles</Button></Typography>
         
+    </Link>
+    <Link to={'./ImageUploader'}>
+        <Typography textAlign={'center'}>
+    <Button variant='contained' color='success'>Upload Images in Gallery</Button></Typography>
+        
     </Link><br/>
-
     </Stack>
 
     </Box>

@@ -29,7 +29,7 @@ export default function Category2() {
         getProductsList()
        
         
-      },[products])
+      },[])
       const filtered=products.filter(data=>data.category===2)
       
   return (

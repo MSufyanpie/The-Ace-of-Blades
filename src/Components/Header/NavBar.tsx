@@ -1,5 +1,5 @@
 import {
-  AppBar,  Toolbar,  Stack,  Button,  Typography,  IconButton,  Menu,MenuItem,
+  AppBar,  Toolbar,  Stack,  Button,  Typography,  IconButton,  Menu,MenuItem, useTheme, useMediaQuery, Grid,
 } from "@mui/material";
 import {ShoppingCart,KeyboardArrowDownSharp} from '@mui/icons-material'
 import { AiOutlineUser } from "react-icons/ai"
@@ -13,15 +13,18 @@ import { onAuthStateChanged,signOut } from "firebase/auth";
 import { auth } from "../../Config/Firebase";
 import { BiPlusCircle } from "react-icons/bi";
 import UploaderModal from "./UploaderModal";
+import DrawerComponent from "./Drawer";
 export default function NavBar() {
   const [anchorEl, setAnchorEl] = useState(null);
   const[openModal,setOpenModal]=useState(false);
   const[openUploader,setOpenUploader]=useState(false)
   const Openhandle = () => setOpenModal(true);
-  const openUploaderModal=()=>setOpenUploader(true)
+  // const openUploaderModal=()=>setOpenUploader(true)
   const CloseModal = () => setOpenUploader(false);
   const Closehandle = () => setOpenModal(false);
   const [isLoggedIn,SetLoggedIn]=useState(false)
+  const theme=useTheme()
+  const isMobile=useMediaQuery(theme.breakpoints.down('md'))
  onAuthStateChanged(auth,async(user)=>{
   if(user){
 SetLoggedIn(true)
@@ -58,9 +61,11 @@ SetLoggedIn(true)
 
       </UploaderModal>
       </>):(<></>)}
-      <AppBar>
+      <AppBar >
         <TopBar></TopBar>
         <Toolbar sx={{ backgroundColor: "white" }}>
+          
+           
           <Typography  sx={{ flexGrow: 1 }}>
             <IconButton>
               <Image
@@ -70,7 +75,10 @@ SetLoggedIn(true)
               ></Image>
             </IconButton>
           </Typography>
+          
 
+        {isMobile?(<><DrawerComponent/></>):(<>
+          
           <Stack spacing={2} direction={"row"} flexGrow={1}>
             <Link to={"/"} style={{ textDecoration: "none" }}>
               <Button sx={{color:'black',fontWeight:'bold'}}>Home</Button>
@@ -120,16 +128,18 @@ SetLoggedIn(true)
               >CHECKOUT</Button>
             </Link>
 
-            <Link to={"/"} style={{ textDecoration: "none" }}>
+            <Link to={"/ContactUs"} style={{ textDecoration: "none" }}>
               <Button
               sx={{color:'black',fontWeight:'bold'}}
               >CONTACT US</Button>
             </Link>
           </Stack>
+          
+          
           <Stack direction={'row'} spacing={1}>
 
           {isLoggedIn?(<>
-          <IconButton onClick={openUploaderModal}>
+          <IconButton onClick={()=>{setOpenUploader(true)}}>
             <BiPlusCircle/>
           </IconButton>
           <Button onClick={LogOut}>Logout</Button>
@@ -141,12 +151,13 @@ SetLoggedIn(true)
           sx={{color:'black',backgroundColor:'goldenrod',border:'1px solid goldenrod'}}>
             <AiOutlineUser ></AiOutlineUser>
           </IconButton>)}
-
-
+          
+          
           <IconButton sx={{color:'black',border:'2px solid black',}}>
             <ShoppingCart></ShoppingCart>
           </IconButton>
           </Stack>
+         
           <Menu
             id="collection"
             anchorEl={anchorEl}
@@ -161,6 +172,9 @@ SetLoggedIn(true)
             <MenuItem onClick={handleClose}>Knife Care</MenuItem>
             <MenuItem onClick={handleClose}>Straight Razors</MenuItem>
           </Menu>
+         
+          
+          </> )}
         </Toolbar>
       </AppBar><br/>
     </div>

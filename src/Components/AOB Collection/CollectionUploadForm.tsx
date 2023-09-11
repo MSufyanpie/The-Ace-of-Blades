@@ -1,9 +1,11 @@
 
-import { Box, Button, Card, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent, Stack, TextField } from '@mui/material'
+import { Box, Button, Card, CardHeader, FormControl, Grid, InputLabel, MenuItem, Select, SelectChangeEvent, Stack, TextField, Typography } from '@mui/material'
 import React, { ChangeEvent, useState } from 'react'
 import { storage,db } from '../../Config/Firebase'
 import { getDownloadURL, ref,uploadBytes } from 'firebase/storage'
 import { addDoc, collection } from 'firebase/firestore'
+import NavBar from '../Header/NavBar'
+
 export default function CollectionUploadForm() {
     const[productTitle,setProductTitle]:any=useState("")
     const[productPrice,setProductPrice]:any=useState("")
@@ -48,9 +50,25 @@ export default function CollectionUploadForm() {
 
   return (
     <div >
-        <form>
-            <Stack direction={'column'} spacing={1}>
+      <NavBar/>
+      <Box width={500} m={'auto'} marginTop={'10%'}>
+      <Grid
+       container 
+       
+      >
+        <Grid item  >
+          <Card sx={{border:'5px solid white'}}  >
+              <Box sx={{backgroundColor:'#7ca2cc'}} >
+              <Typography color={'white'} gutterBottom textAlign={'center'} variant='h4' >
+                UPLOAD PRODUCTS
+              </Typography>
+             
+              </Box><br/>
+            
+        
+            <Stack direction={'column'} spacing={3} px={10}>
             <TextField
+            multiline
             onChange={(event)=>{
                 setProductTitle(event.target.value)}}
             label='Enter Product Title'/>
@@ -84,15 +102,19 @@ export default function CollectionUploadForm() {
           
             <label htmlFor="">Upload Product Image</label>
             <input
-             onChange={(event)=>{
+             onChange={(event:ChangeEvent)=>{
                 setProductImage(event.target.files[0])
              }}
             type="file" accept='image/*' />
-            <Button onClick={HandleUpload}>Upload to FireBase</Button>
+            <Button variant='contained' color='info' onClick={HandleUpload}>Upload to FireBase</Button>
             
 </Stack>
 
-</form>
+
+</Card>
+</Grid>
+</Grid>
+</Box>
     </div>
   )
 }

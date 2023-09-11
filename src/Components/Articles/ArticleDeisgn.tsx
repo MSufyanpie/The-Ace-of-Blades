@@ -28,7 +28,7 @@ export default function ArticleDeisgn() {
     getArticlesList()
     
     
-  },[articlesList])
+  },[])
   return (
     <Box px={10} marginTop={'8%'}>
     <Grid container direction={'row'} spacing={2}>

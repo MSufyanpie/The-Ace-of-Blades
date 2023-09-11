@@ -30,7 +30,7 @@ export default function OnSale() {
         getProductsList()
        
         
-      },[products])
+      },[])
       const filtered=products.filter(data=>data.salePrice!==0)
       
       

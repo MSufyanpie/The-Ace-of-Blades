@@ -1,12 +1,15 @@
 import { Facebook,Instagram,WhatsApp } from '@mui/icons-material'
 import { Box, Stack, Typography } from '@mui/material'
 import React from 'react'
+import './TopBar.css'
 
 export default function TopBar() {
   return (
 
 
-<Stack direction={'row'}
+<Stack 
+className='topbar'
+direction={'row'}
 sx={{backgroundColor:'black'}}
 >
     <Typography flexGrow={1}></Typography>
