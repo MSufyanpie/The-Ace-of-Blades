@@ -1,4 +1,4 @@
-import { Button, Stack, TextField } from '@mui/material'
+import { Button, Stack, TextField, Typography } from '@mui/material'
 import React, { useState } from 'react'
 import { storage,db } from '../../Config/Firebase'
 import { getDownloadURL, ref,uploadBytes } from 'firebase/storage'
@@ -42,10 +42,12 @@ export default function ArticleUploadForm() {
     <div>
         <form>
             <Stack direction={'column'} spacing={1}>
+                <Typography textAlign={'center'}>
             <TextField
+            multiline
             onChange={(event)=>{
                 setArticleTitle(event.target.value)}}
-            label='Enter Article Title'/>
+            label='Enter Article Title'/></Typography>
             <TextField
              onChange={(event)=>{
                 setArticleDescription(event.target.value)}}
@@ -56,7 +58,9 @@ export default function ArticleUploadForm() {
                 setArticleImage(event.target.files[0])
              }}
             type="file" accept='image/*' />
-            <Button onClick={HandleUpload}>Upload to FireBase</Button>
+            <Typography textAlign={'center'}>
+            <Button variant='contained' onClick={HandleUpload}>Upload to FireBase</Button></Typography>
+            
             
 </Stack>
 

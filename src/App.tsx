@@ -15,6 +15,7 @@ import Category2 from './Components/AOB Collection/Categories/Category2'
 import Category3 from './Components/AOB Collection/Categories/Category3'
 import Category4 from './Components/AOB Collection/Categories/Category4'
 import OnSale from './Components/OnSale Products/OnSale'
+import Gallery from './Components/Gallery/Gallery'
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
        <Route path='/KeyRings' element={<Category2/>}></Route>
        <Route path='/KnifeCareProducts' element={<Category3/>}/>
        <Route path='/KitchenandChefKnives' element={<Category4/>}/>
+       <Route path='/Gallery' element={<Gallery/>}/>
      </Routes>
      </Router>
      </div>  

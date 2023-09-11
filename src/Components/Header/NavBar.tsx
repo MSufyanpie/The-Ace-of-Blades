@@ -12,13 +12,14 @@ import SignupPage from "../Signup/SignupPage";
 import { onAuthStateChanged,signOut } from "firebase/auth";
 import { auth } from "../../Config/Firebase";
 import { BiPlusCircle } from "react-icons/bi";
+import UploaderModal from "./UploaderModal";
 export default function NavBar() {
   const [anchorEl, setAnchorEl] = useState(null);
   const[openModal,setOpenModal]=useState(false);
   const[openUploader,setOpenUploader]=useState(false)
-  const Openhandle = () => setOpenModal(true)
-  setOpenUploader(true)
-  ;
+  const Openhandle = () => setOpenModal(true);
+  const openUploaderModal=()=>setOpenUploader(true)
+  const CloseModal = () => setOpenUploader(false);
   const Closehandle = () => setOpenModal(false);
   const [isLoggedIn,SetLoggedIn]=useState(false)
  onAuthStateChanged(auth,async(user)=>{
@@ -48,6 +49,14 @@ SetLoggedIn(true)
       <SignupPage open={openModal}
                   close={Closehandle}
       ></SignupPage>
+      </>):(<></>)}
+
+      {openUploader?(<>
+      <UploaderModal open={openUploader}
+      close={CloseModal}
+      >
+
+      </UploaderModal>
       </>):(<></>)}
       <AppBar>
         <TopBar></TopBar>
@@ -94,7 +103,7 @@ SetLoggedIn(true)
 
             
 
-            <Link to={"/"} style={{ textDecoration: "none" }}>
+            <Link to={"/Gallery"} style={{ textDecoration: "none" }}>
               <Button
               sx={{color:'black',fontWeight:'bold'}}
               >GALLERY</Button>
@@ -120,7 +129,7 @@ SetLoggedIn(true)
           <Stack direction={'row'} spacing={1}>
 
           {isLoggedIn?(<>
-          <IconButton onClick={Openhandle}>
+          <IconButton onClick={openUploaderModal}>
             <BiPlusCircle/>
           </IconButton>
           <Button onClick={LogOut}>Logout</Button>
