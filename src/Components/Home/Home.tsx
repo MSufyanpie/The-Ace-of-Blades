@@ -23,7 +23,7 @@ export default function Home() {
         <Section6></Section6>
         <Section7></Section7>
         <Section8></Section8>
-        {/* <Footer></Footer> */}
+        <Footer></Footer>
     </div>
   )
 }

@@ -1,10 +1,12 @@
 import React from 'react'
-import {  Typography,Box,Stack,} from "@mui/material";
+import {  Typography,Box,Stack, useTheme, useMediaQuery} from "@mui/material";
 import {Image} from 'react-bootstrap'
 export default function Section5() {
+  const theme=useTheme()
+  const isMobile=useMediaQuery(theme.breakpoints.down('md'))
   return (
-    <Stack direction={'row'} marginTop={'5%'} px={5} spacing={5} >
-        <Box width={'700px'} marginTop={'10%'}>
+    <Stack direction={{xs:'column', md:'row'}} marginTop={'5%'} px={5} spacing={5} >
+        <Box width={isMobile?'100%':'700px'} marginTop={'10%'}>
             <Typography fontFamily={'Oswald'} fontWeight={'bold'}  variant='h3'  gutterBottom>
                 THE HISTORY
             </Typography>
@@ -17,8 +19,8 @@ export default function Section5() {
         </Box>
         <Box>
         <Image
-        height={'500px'}
-        width={'530px'}
+        height={isMobile?'100%':'500px'}
+        width={isMobile?'100%':'530px'}
         src='src\assets\home images\section5-img.jpeg'></Image>
         </Box>
 

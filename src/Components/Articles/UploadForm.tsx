@@ -42,7 +42,7 @@ export default function ArticleUploadForm() {
   return (
     <div>
         <NavBar/>
-        <Box width={500} m={'auto'} marginTop={'10%'} >
+        <Box width={500} m={'auto'} marginTop={'10%'} boxShadow={10} >
         <Card>
         <Box sx={{backgroundColor:'blueviolet'}}>
                     <Typography color={'white'} textAlign={'center'} gutterBottom variant='h4'>
@@ -57,6 +57,7 @@ export default function ArticleUploadForm() {
                 setArticleTitle(event.target.value)}}
             label='Enter Article Title'/>
             <TextField
+            multiline
              onChange={(event)=>{
                 setArticleDescription(event.target.value)}}
             label='Enter Article Description'/>

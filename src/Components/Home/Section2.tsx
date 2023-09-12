@@ -4,7 +4,7 @@ export default function Section2() {
   return (
     <Box sx={{backgroundColor:'#ede8e8'}}><br/><br/>
 
-        <Box width={'1000px' } px={20} marginTop={'3%'} >
+        <Box  width={{xs:'100%',md:500}} m={'auto'} marginTop={'3%'} >
         <Typography  gutterBottom variant='h4' textAlign={'center'} fontWeight={'bold'} >
             DAMASCUS KNIVES
         </Typography>

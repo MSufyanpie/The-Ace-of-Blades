@@ -2,7 +2,7 @@ import {
   AppBar,  Toolbar,  Stack,  Button,  Typography,  IconButton,   useTheme, useMediaQuery,} from "@mui/material";
 import {ShoppingCart,KeyboardArrowDownSharp} from '@mui/icons-material'
 import { AiOutlineUser } from "react-icons/ai"
-import React from "react";
+import React, { useEffect } from "react";
 import { Image } from "react-bootstrap";
 import TopBar from "./TopBar";
 import { Link } from "react-router-dom";
@@ -13,6 +13,7 @@ import { auth } from "../../Config/Firebase";
 import { BiPlusCircle } from "react-icons/bi";
 import UploaderModal from "./UploaderModal";
 import DrawerComponent from "./Drawer";
+import CollectionModal from "../AOB Collection/Categories/CollectionModal";
 export default function NavBar() {
   
   const[openModal,setOpenModal]=useState(false);
@@ -21,14 +22,29 @@ export default function NavBar() {
   const OpenUploaderModal=()=>setOpenUploader(true)
   const CloseModal = () => setOpenUploader(false);
   const Closehandle = () => setOpenModal(false);
+  const[collectionModal,setCollectionModal]=useState(false)
+  const openCollection=()=> setCollectionModal(true) 
+  
+  
+  
+  const closeCollection=()=> setCollectionModal(false)
+  
+  
   const [isLoggedIn,SetLoggedIn]=useState(false)
   const theme=useTheme()
   const isMobile=useMediaQuery(theme.breakpoints.down('md'))
- onAuthStateChanged(auth,async(user)=>{
-  if(user){
-SetLoggedIn(true)
-  }
- })
+
+  useEffect(()=>{
+   const loginState= onAuthStateChanged(auth, (user)=>{
+      if(user){
+    SetLoggedIn(true)
+      }else{
+    SetLoggedIn(false)
+      }
+     })
+
+     return()=> loginState();
+  },[])
  const LogOut=async()=>{
   try {
       await signOut(auth)
@@ -37,18 +53,15 @@ SetLoggedIn(true)
   }
  SetLoggedIn(false)
 }
-
-
-  
   return (
     <div>
      
       
-      <AppBar >
+      <AppBar  >
         <TopBar/>
-        <Toolbar sx={{ backgroundColor: "white" }}>
+        <Toolbar sx={{ backgroundColor: "white",}}  >
           
-          <Typography  sx={{ flexGrow: 1 }}>
+          <Typography  >
             <IconButton>
               <Image  src="src\assets\images\logo.jpg"
                 height={"90px"}
@@ -64,7 +77,10 @@ SetLoggedIn(true)
             </Link>
 
             <Link to={"/AOBCollection"} style={{ textDecoration: "none" }}>
-              <Button sx={{color:'black',fontWeight:'bold'}}>
+              <Button sx={{color:'black',fontWeight:'bold'}} 
+              onMouseOver={openCollection}
+              onMouseLeave={closeCollection}
+              >
                 AOB COLLECTION <KeyboardArrowDownSharp/> </Button>
             </Link>
 
@@ -95,7 +111,7 @@ SetLoggedIn(true)
 
           <Stack direction={'row'} spacing={1}>
 
-          {true?(<>
+          {isLoggedIn?(<>
           <IconButton onClick={OpenUploaderModal}>
             <BiPlusCircle/>
           </IconButton>
@@ -116,17 +132,21 @@ SetLoggedIn(true)
           </> )}
         </Toolbar>
       </AppBar><br/> 
-      {openUploader && 
+      
         <UploaderModal
         open={openUploader}
        
         onClose={CloseModal}>
       </UploaderModal>
-      }
+      
       
       <SignupPage open={openModal}
                   close={Closehandle}
       ></SignupPage> 
+      <CollectionModal
+      open={collectionModal}
+      close={closeCollection}
+      />
     </div>
   );
 }

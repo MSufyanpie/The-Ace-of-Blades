@@ -14,7 +14,7 @@ export default function UploaderModal({open,onClose}:any) {
     onClose={onClose}
     >
         
-    <Box  sx={{backgroundColor:'#c4b999',borderRadius:'10px'}} >
+    <Box width={500} m={'auto'}  sx={{backgroundColor:'#dedbd3',borderRadius:'10px'}} marginTop={'10%'} >
     <Stack spacing={5}><br/>
     <Link to={'./upload-Products'}>
     <Typography textAlign={'center'}>

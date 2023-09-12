@@ -49,7 +49,7 @@ export default function Section8() {
         RECENT PRODUCTS
       </Typography>
       <Box  sx={{backgroundColor:'white'}}>
-      <Stack  spacing={4} direction={'row'} px={10} >
+      <Stack  spacing={4} direction={{xs:'column',md:'row'}} px={10} >
     {saleProducts.map((data:knife,index:number)=>{
       return(
         <Section8Design

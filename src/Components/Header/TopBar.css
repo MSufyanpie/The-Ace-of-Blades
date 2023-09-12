@@ -1,6 +1,7 @@
-@media (max-width:700px){
-    .topbar{
+ @media (min-width:1000px) {
+    
+    .topBar{
         display: none;
+        
     }
 }
-

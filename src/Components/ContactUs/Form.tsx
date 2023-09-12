@@ -1,10 +1,14 @@
-import { Box, Button, Card, Checkbox, FormControl, FormControlLabel, FormGroup, FormLabel, Grid, Stack, TextField, Typography } from '@mui/material'
+import { Box, Button, Card, Checkbox, FormControl, FormControlLabel, FormGroup, FormLabel, 
+   Grid, Stack, TextField, Typography,useMediaQuery, useTheme }
+ from '@mui/material'
 import React from 'react'
 
 export default function Form() {
+   const theme=useTheme()
+   const isMobile=useMediaQuery(theme.breakpoints.down('md'))
   return (
     <div>
-        <Box width={700} m={'auto'} bgcolor={'white'} sx={{boxShadow:15}}>
+        <Box  width={isMobile?'100%':700} m={'auto'} bgcolor={'white'} sx={{boxShadow:15}}>
             <Card>
                 <br/>
                 <Typography gutterBottom variant='h4' textAlign={'center'} fontFamily={'Oswald'} fontWeight={'bold'}>
@@ -29,7 +33,7 @@ export default function Form() {
                  <TextField size='small' /><br/>
                  </Stack>
 
-                <Stack direction={'row'} spacing={20} px={6}>
+                <Stack direction={{xs:'column',md:'row'}} spacing={isMobile?7:20} px={6}>
                  <Box>
                 
                     

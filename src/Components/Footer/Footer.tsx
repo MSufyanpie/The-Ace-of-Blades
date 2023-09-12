@@ -1,14 +1,17 @@
-import { Box,  Stack, Typography } from '@mui/material'
+import { Box,  Stack, Typography, useMediaQuery, useTheme } from '@mui/material'
 
 import React from 'react'
 import { Link } from 'react-router-dom'
 
 export default function Footer() {
+  const theme=useTheme()
+  const isMobile=useMediaQuery(theme.breakpoints.down('md'))
+
   return (
     
-<Box    sx={{backgroundColor:'#171515'}}  px={30}>
+<Box width={isMobile?'100%':'64%'}    sx={{backgroundColor:'#171515'}}  px={isMobile?0:30}>
 <br/><br/>
-<Stack px={15} spacing={5} direction={'row'}>
+<Stack px={isMobile?15:15} spacing={isMobile?3:5} direction={{xs:'column',md:'row'}}>
 <Typography variant='body1' textAlign={'center'} >
     <Link to={'./'} style={{textDecoration:'none',color:'grey'}}> Home
         </Link></Typography>

@@ -50,18 +50,18 @@ export default function CollectionUploadForm() {
 
   return (
     <div >
-      {/* <NavBar/> */}
-      <Box width={500} m={'auto'} marginTop={'10%'}>
+      <NavBar/>
+      <Box  width={{xs:'100%',md:420}} m={'auto'} marginTop={'10%'} boxShadow={10}>
       <Grid
        container 
        
       >
         <Grid item  >
           <Card sx={{border:'5px solid white'}}  >
-              <Box sx={{backgroundColor:'#7ca2cc'}} >
-              <Typography color={'white'} gutterBottom textAlign={'center'} variant='h4' >
+              <Box sx={{backgroundColor:'#7ca2cc'}} ><br/>
+              <Typography color={'white'} gutterBottom textAlign={'center'} variant='h3' fontFamily={'Oswald'} fontWeight={'bold'}>
                 UPLOAD PRODUCTS
-              </Typography>
+              </Typography><br/>
              
               </Box><br/>
             

@@ -1,11 +1,14 @@
 import React from 'react'
-import {  Typography,Box,Stack,IconButton, Divider} from "@mui/material";
-import {AiFillStar,AiFillLock,AiFillCar} from 'react-icons/ai'
+import {  Typography,Box,Stack,useTheme, useMediaQuery} from "@mui/material";
+import {AiFillLock,} from 'react-icons/ai'
 import {GiSurferVan} from 'react-icons/gi'
 import {MdStars} from 'react-icons/md'
+
 export default function Section7() {
+    const theme=useTheme()
+const isMobile=useMediaQuery(theme.breakpoints.down('md'))
   return (
-    <Box  sx={{backgroundColor:'black'}}>
+    <Box width={isMobile?'100%':'100%'} sx={{backgroundColor:'black'}}>
     <Typography 
     
     gutterBottom textAlign={'center'} fontFamily={'Oswald'} fontWeight={'bold'} variant='h2' color={'white'}>
@@ -15,8 +18,8 @@ export default function Section7() {
         OUR ONLINE EXPERIENCE MADE EASY
     </Typography>
 
-    <Stack direction={'row'} spacing={4} marginTop={'5%'} px={8} >
-        <Box px={3} width={'350px'} borderRight={3} borderColor={'white'}>
+    <Stack direction={{xs:'column',md:'row'}} spacing={4} marginTop={'5%'} px={8} >
+        <Box px={isMobile?'0':3} width={isMobile?'100%':'350px'} borderRight={3} borderColor={'white'}>
             <Typography variant='h2' gutterBottom textAlign={'center'} color={'white'}>
             
              <MdStars/>  
@@ -30,7 +33,7 @@ export default function Section7() {
                
         </Box>
         
-        <Box px={4} width={'350px'} borderRight={3} borderColor={'white'}>
+        <Box px={isMobile?'0':3} width={isMobile?'100%':'350px'} borderRight={3} borderColor={'white'}>
             <Typography variant='h2' gutterBottom textAlign={'center'}  color={'white'}
             
             >
@@ -45,7 +48,7 @@ export default function Section7() {
             GET YOUR DAMASCUS COLLECTION STARTED NOW! SIMPLY ADD TO CART AND PROCEED TO OUR VERIFIED AND SECURE PAYMENT GATEWAYS, PAYFAST/ OZOW.</Typography>
         </Box>
 
-        <Box width={'350px'}>
+        <Box px={isMobile?'0':0} width={isMobile?'100%':'350px'}>
             <Typography variant='h2' gutterBottom textAlign={'center'} color={'white'}>
             
              <GiSurferVan/>  
