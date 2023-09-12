@@ -2,17 +2,19 @@ import { Box, Button, Modal, Stack, Typography } from '@mui/material'
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default function UploaderModal(props:any) {
+export default function UploaderModal({open,onClose}:any) {
+
+  console.log("model state:",open)
   return (
     
     <Modal 
-    open={props.open}
+    open={open}
     aria-labelledby="modal-modal-title"
     aria-describedby="modal-modal-description"
-    onClose={props.close}
+    onClose={onClose}
     >
         
-    <Box width={500} m={'auto'} sx={{backgroundColor:'#c4b999',borderRadius:'10px'}} marginTop={'10%'} >
+    <Box  sx={{backgroundColor:'#c4b999',borderRadius:'10px'}} >
     <Stack spacing={5}><br/>
     <Link to={'./upload-Products'}>
     <Typography textAlign={'center'}>

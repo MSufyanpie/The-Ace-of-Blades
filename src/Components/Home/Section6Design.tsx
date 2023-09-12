@@ -1,36 +1,54 @@
 import React from 'react'
-import {Image} from 'react-bootstrap'
-import {  Typography,Box,Stack,Card, CardMedia, CardContent, Button} from "@mui/material";
-import { Link } from "react-router-dom";
+
+import {  Typography,Card, CardMedia, CardContent, Button, Grid} from "@mui/material";
 interface saleProducts{
-    id:number,
-    image:any,
+    imageUrl:string,
     title:string,
-    actualPrice:string,
-    discountPrice:string
+    price:string,
+    salePrice:string
 }
-export default function Section6Design({id,image,title,actualPrice,discountPrice}:saleProducts) {
+export default function Section6Design({imageUrl,title,price,salePrice}:saleProducts) {
   return (
-    
-    
-    <Box>
-    <Link to={'/'} style={{textDecoration:'none'}}>
-    <Card>
-     <CardMedia 
-     sx={{height:'240px'}}
-     image={image}/>
-     <CardContent>
-        <Typography>{title}</Typography>
-     </CardContent>
+    <Grid item xs={12} sm={6} md={4}>
+    <Card variant="outlined">
+      <CardMedia
+        image={imageUrl}
+        sx={{ height: "300px" }}
+      />
+      <CardContent sx={{ backgroundColor: "#f2f7f3" }}>
+        <Typography
+          fontFamily={"Oswald"}
+          textAlign={"center"}
+          variant="h6"
+          fontWeight={"bold"}
+          gutterBottom
+        >
+          {title}
+        </Typography>
+        <Typography
+          gutterBottom
+          fontFamily={"Oswald"}
+          textAlign={"center"}
+          variant="h6"
+          color={"grey"}
+          fontWeight={"bold"}
+        >
+          <s>{price}</s> {salePrice}
+        </Typography>
+        <Typography textAlign={"center"}>
+          <Button
+            variant="outlined"
+            sx={{
+              border: "1px solid grey",
+              color: "white",
+              backgroundColor: "black",
+            }}
+          >
+            Add to Cart
+          </Button>
+        </Typography>
+      </CardContent>
     </Card>
-    </Link>
-    <Typography gutterBottom textAlign={'center'}>
-        <s>{actualPrice}</s>{discountPrice}
-    </Typography>
-    <Typography textAlign={'center'}>
-    <Button variant='contained' size='small' 
-    sx={{backgroundColor:'black',color:'white',borderRadius:'10px'}}>Add to Cart</Button></Typography>
-    </Box>
-    
+  </Grid>
   )
 }

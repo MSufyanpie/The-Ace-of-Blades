@@ -6,7 +6,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '../../Config/Firebase'
 
-export default function SignupPage(props:any) {
+export default function SignupPage({open,close}:any) {
   const navigate=useNavigate()
     const[data,setUserData]:any=useState({
         
@@ -18,7 +18,7 @@ export default function SignupPage(props:any) {
    const HandleSubmit=()=>{
     signInWithEmailAndPassword(auth,data.Email,data.Password).then(async(res)=>{
             navigate('/AOBCollection')
-            props.close
+            close
     }).catch((err)=>{
       setErrormsg(err.message)
     })
@@ -26,10 +26,10 @@ export default function SignupPage(props:any) {
    }
   return (
     <Modal
-    open={props.open}
+    open={open}
     aria-labelledby="modal-modal-title"
     aria-describedby="modal-modal-description"
-    onClose={props.close}
+    onClose={close}
     >
         <Box  width={'60%'} sx={{backgroundColor:'white',borderRadius:'10px'}} marginTop={'10%'} marginLeft={'15%'}>
        

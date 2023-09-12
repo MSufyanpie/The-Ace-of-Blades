@@ -50,7 +50,7 @@ export default function CollectionUploadForm() {
 
   return (
     <div >
-      <NavBar/>
+      {/* <NavBar/> */}
       <Box width={500} m={'auto'} marginTop={'10%'}>
       <Grid
        container 

@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import {  db } from '../../../Config/Firebase'
 import {  Badge, Button, Card, CardContent, CardMedia, Grid, Stack, Typography } from '@mui/material'
 import NavBar from '../../Header/NavBar'
-import { DiscountRounded } from '@mui/icons-material'
+
 
 
 
@@ -30,7 +30,7 @@ export default function Category1() {
             
           }
         getProductsList()
-       
+       console.log(products)
         
       },[])
       const filtered=products.filter(data=>data.category===1)
