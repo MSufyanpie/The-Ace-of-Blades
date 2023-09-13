@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react'
 import {  db } from '../../../Config/Firebase'
 import {  Badge, Button, Card, CardContent, CardMedia, Grid, Stack, Typography } from '@mui/material'
 import NavBar from '../../Header/NavBar'
+import { useDispatch } from 'react-redux'
+import { addToCart } from '../../RTK Store/Slices/ProductsSlice'
 
 
 
@@ -11,6 +13,7 @@ import NavBar from '../../Header/NavBar'
 export default function Category1() {
     const[products,setProducts]=useState([{}])
     const ProductsRef=collection(db,"AOB Collection")
+    const dispatch=useDispatch()
     
     useEffect(()=>{
         const getProductsList= async()=>{
@@ -24,16 +27,23 @@ export default function Category1() {
             console.log(actualData)
             setProducts(actualData)
             
+            
           } catch (error) {
             console.error(error)
           }
-            
+          
+          
           }
+
         getProductsList()
        console.log(products)
         
       },[])
       const filtered=products.filter(data=>data.category===1)
+      const handleAddToCart=(products)=>{
+        console.log("adding to cart",products)
+          dispatch(addToCart(products))
+      }
       
   return (
     <div>
@@ -59,7 +69,8 @@ export default function Category1() {
                         :(<> <Typography gutterBottom fontFamily={'Oswald'} textAlign={'center'}  variant='h6' color={'grey'} fontWeight={'bold'}>{data.price}</Typography></>)}
                        
                         <Typography  textAlign={'center'}>
-                <Button variant='outlined' sx={{border:'1px solid grey',color:'white',backgroundColor:'black'}}>Add to Cart</Button></Typography>
+                <Button variant='outlined' sx={{border:'1px solid grey',color:'white',backgroundColor:'black'}} onClick={()=>handleAddToCart(data)}>
+                  Add to Cart</Button></Typography>
                     </CardContent>
                 </Card>
                 </Grid>

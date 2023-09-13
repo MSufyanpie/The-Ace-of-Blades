@@ -18,6 +18,7 @@ import OnSale from './Components/OnSale Products/OnSale'
 import Gallery from './Components/Gallery/Gallery'
 import ImageUploader from './Components/Gallery/ImageUploader'
 import Contact from './Components/ContactUs/Contact'
+import CartProducts from './Components/Cart/CartProducts'
 
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
        <Route path='/Gallery' element={<Gallery/>}/>
        <Route path='/ImageUploader' element={<ImageUploader/>}/>
        <Route path='/ContactUs' element={<Contact/>}/>
+       <Route path='/Cart' element={<CartProducts/>}/>
      </Routes>
      </Router>
      </div>  

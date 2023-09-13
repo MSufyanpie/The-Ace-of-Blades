@@ -70,7 +70,7 @@ export default function DrawerComponent() {
     </ListItem>
     <ListItem>
         <ListItemText>
-        <Link to={"/Contact-Us"} style={{ textDecoration: "none" }}>
+        <Link to={"/ContactUs"} style={{ textDecoration: "none" }}>
               <Button
               sx={{color:'black',fontWeight:'bold'}}
               >CONTACT US</Button></Link>

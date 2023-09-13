@@ -27,7 +27,9 @@ export default function Section1() {
             Knife Care
         </Button>
     </Stack>
+
     </Box>
+
    
     </Box>
     </Box>

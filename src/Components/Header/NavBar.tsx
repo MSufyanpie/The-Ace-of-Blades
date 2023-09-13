@@ -24,12 +24,7 @@ export default function NavBar() {
   const Closehandle = () => setOpenModal(false);
   const[collectionModal,setCollectionModal]=useState(false)
   const openCollection=()=> setCollectionModal(true) 
-  
-  
-  
   const closeCollection=()=> setCollectionModal(false)
-  
-  
   const [isLoggedIn,SetLoggedIn]=useState(false)
   const theme=useTheme()
   const isMobile=useMediaQuery(theme.breakpoints.down('md'))
@@ -96,7 +91,7 @@ export default function NavBar() {
               <Button sx={{color:'black',fontWeight:'bold'}}>GALLERY</Button>
             </Link>
 
-            <Link to={"/"} style={{ textDecoration: "none" }}>
+            <Link to={"/Cart"} style={{ textDecoration: "none" }}>
               <Button sx={{color:'black',fontWeight:'bold'}}>CART</Button>
             </Link>
 

@@ -75,7 +75,7 @@ export default function CategoriesPage() {
     },
   ];
   
-      console.log(len1)
+      
 
   return (
     <div style={{marginTop:'10%'}}>

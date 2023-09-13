@@ -1,8 +1,7 @@
 import React from 'react'
 import './Contact.css'
 import { Box, Grid, IconButton, Typography, useMediaQuery, useTheme } from '@mui/material'
-import { Email, Facebook, WhatsApp } from '@mui/icons-material'
-import {AiFillFacebook, AiOutlineFacebook, AiOutlineInstagram, AiOutlineMail, AiOutlineWhatsApp} from 'react-icons/ai'
+import { AiOutlineFacebook, AiOutlineInstagram, AiOutlineMail, AiOutlineWhatsApp} from 'react-icons/ai'
 import Form from './Form'
 import Footer from '../Footer/Footer'
 
