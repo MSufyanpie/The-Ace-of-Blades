@@ -6,4 +6,4 @@ const store=configureStore({
         cart:CartSlice
     },
 })
-export {store};
+export default store;

@@ -43,6 +43,8 @@ export default function Category1() {
       const handleAddToCart=(products)=>{
         console.log("adding to cart",products)
           dispatch(addToCart(products))
+
+          
       }
       
   return (
@@ -63,10 +65,10 @@ export default function Category1() {
                     <CardContent sx={{backgroundColor:'#f2f7f3'}}>
                         <Typography  fontFamily={'Oswald'} textAlign={'center'} variant='h6' fontWeight={'bold'} gutterBottom>{data.title}</Typography>
                         {data.salePrice && data.salePrice!=='0'?
-                        (<><Typography gutterBottom fontFamily={'Oswald'} textAlign={'center'}  variant='h6' color={'grey'} fontWeight={'bold'}><s>{data.price}</s>   {data.salePrice}  </Typography>
+                        (<><Typography gutterBottom fontFamily={'Oswald'} textAlign={'center'}  variant='h6' color={'grey'} fontWeight={'bold'}><s>R{data.price}</s>   R{data.salePrice}  </Typography>
                        
                         </>)
-                        :(<> <Typography gutterBottom fontFamily={'Oswald'} textAlign={'center'}  variant='h6' color={'grey'} fontWeight={'bold'}>{data.price}</Typography></>)}
+                        :(<> <Typography gutterBottom fontFamily={'Oswald'} textAlign={'center'}  variant='h6' color={'grey'} fontWeight={'bold'}>R{data.price}</Typography></>)}
                        
                         <Typography  textAlign={'center'}>
                 <Button variant='outlined' sx={{border:'1px solid grey',color:'white',backgroundColor:'black'}} onClick={()=>handleAddToCart(data)}>

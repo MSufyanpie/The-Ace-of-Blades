@@ -19,6 +19,7 @@ import Gallery from './Components/Gallery/Gallery'
 import ImageUploader from './Components/Gallery/ImageUploader'
 import Contact from './Components/ContactUs/Contact'
 import CartProducts from './Components/Cart/CartProducts'
+import Cart from './Components/Cart/Cart'
 
 
 function App() {
@@ -44,7 +45,7 @@ function App() {
        <Route path='/Gallery' element={<Gallery/>}/>
        <Route path='/ImageUploader' element={<ImageUploader/>}/>
        <Route path='/ContactUs' element={<Contact/>}/>
-       <Route path='/Cart' element={<CartProducts/>}/>
+       <Route path='/Cart' element={<Cart/>}/>
      </Routes>
      </Router>
      </div>  

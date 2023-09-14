@@ -1,5 +1,5 @@
 import {
-  AppBar,  Toolbar,  Stack,  Button,  Typography,  IconButton,   useTheme, useMediaQuery,} from "@mui/material";
+  AppBar,  Toolbar,  Stack,  Button,  Typography,  IconButton,   useTheme, useMediaQuery, Badge,} from "@mui/material";
 import {ShoppingCart,KeyboardArrowDownSharp} from '@mui/icons-material'
 import { AiOutlineUser } from "react-icons/ai"
 import React, { useEffect } from "react";
@@ -14,8 +14,11 @@ import { BiPlusCircle } from "react-icons/bi";
 import UploaderModal from "./UploaderModal";
 import DrawerComponent from "./Drawer";
 import CollectionModal from "../AOB Collection/Categories/CollectionModal";
+import { useSelector } from "react-redux";
 export default function NavBar() {
-  
+  const cartProducts=useSelector((state:any)=>{
+    return state.cart
+})
   const[openModal,setOpenModal]=useState(false);
   const[openUploader,setOpenUploader]=useState(false)
   const Openhandle = () => setOpenModal(true);
@@ -110,7 +113,7 @@ export default function NavBar() {
           <IconButton onClick={OpenUploaderModal}>
             <BiPlusCircle/>
           </IconButton>
-          <Button onClick={LogOut}>Logout</Button>
+          <Button sx={{fontWeight:'bold'}} color="error" onClick={LogOut}>Logout</Button>
           
           </>):
           (
@@ -119,10 +122,14 @@ export default function NavBar() {
             <AiOutlineUser ></AiOutlineUser>
           </IconButton>)}
           
-          
-          <IconButton sx={{color:'black',border:'2px solid black',}}>
+          <Link to={'http://localhost:5173/Cart'}>
+        <IconButton sx={{color:'black',border:'2px solid purple',}}>
+        <Badge color='secondary'badgeContent={cartProducts.length}> 
+        
             <ShoppingCart></ShoppingCart>
-          </IconButton>
+            </Badge>
+          </IconButton></Link>
+          
           </Stack> 
           </> )}
         </Toolbar>
@@ -138,10 +145,10 @@ export default function NavBar() {
       <SignupPage open={openModal}
                   close={Closehandle}
       ></SignupPage> 
-      <CollectionModal
+      {/* <CollectionModal
       open={collectionModal}
       close={closeCollection}
-      />
+      /> */}
     </div>
   );
 }
