@@ -98,7 +98,7 @@ export default function NavBar() {
               <Button sx={{color:'black',fontWeight:'bold'}}>CART</Button>
             </Link>
 
-            <Link to={""} style={{ textDecoration: "none" }}>
+            <Link to={"/Checkout"} style={{ textDecoration: "none" }}>
               <Button  sx={{color:'black',fontWeight:'bold'}}>CHECKOUT</Button>
             </Link> 
 

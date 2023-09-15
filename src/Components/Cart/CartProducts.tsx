@@ -31,24 +31,29 @@ const isMobile=useMediaQuery(theme.breakpoints.down('md'))
     
   return (
     
-    <div>
+    <Stack >
         
-        <NavBar/>
+        
         {cartProducts.length!==0?(<>
+            <Stack px={{xs:3,md:5}} direction={{xs:'column',md:'row'}}>
             <Box 
-               px={2}
-                width={isMobile?'100%':'79%'} m={'auto'}  marginTop={isMobile?'32%':'10%'}>
-        <Card sx={{boxShadow:5}}  >
+               px={{xs:0,md:2}}
+                width={isMobile?'100%':'60%'}   marginTop={isMobile?'20%':'2%'}>
+        <Card variant='outlined'  >
         <TableContainer >
         <Table >
+        
             <TableHead sx={{backgroundColor:'#f2f5f7'}}>
                 <TableRow>
+                    
                     <TableCell></TableCell>
+
                     <TableCell  sx={{fontWeight:'bold'}}>Product</TableCell>
                     <TableCell align='center' sx={{fontWeight:'bold'}}>Price</TableCell>
                     <TableCell align='center' sx={{fontWeight:'bold'}}>Quantity</TableCell>
                     <TableCell align='center' sx={{fontWeight:'bold'}}>Sub-Total</TableCell>
                     <TableCell/>
+                    
                 </TableRow>
             </TableHead>
             {cartProducts?.map((data:any,index:any)=>{
@@ -60,7 +65,7 @@ const isMobile=useMediaQuery(theme.breakpoints.down('md'))
                     <TableCell align='center'>
                         
                         <Button size='small'><BiMinus/></Button>
-                        <TextField sx={{width:'20%'}} size='small' defaultValue={1}/>
+                        <TextField sx={{width:{xs:'60%',md:'20%'}}} size='small' defaultValue={1}/>
                         <Button size='small'><BiPlus/></Button>
                     </TableCell>
                     {data.salePrice?
@@ -72,8 +77,10 @@ const isMobile=useMediaQuery(theme.breakpoints.down('md'))
                     
                     
                 </TableRow>
+                
             )
         })}
+        
         </Table>
         </TableContainer>
         <Typography marginTop={'2%'} textAlign={'center'}><Button color='error' variant='contained'
@@ -81,9 +88,9 @@ const isMobile=useMediaQuery(theme.breakpoints.down('md'))
         </Card><br/>
         </Box>
         <CartTotal/><br/>
-        </>):(
+        </Stack></>):(
         <>
-        <Box boxShadow={1} borderTop={3}  width={700} m={'auto'} sx={{backgroundColor:'#f2f5f7'}} marginTop={'10%'}>
+        <Box boxShadow={1} borderTop={3}  width={700} m={'auto'} sx={{backgroundColor:'#f2f5f7'}} marginTop={'3%'}>
             <Stack direction={'row'} spacing={2} paddingTop={'3%'} px={10}>
 
         <ShoppingCart sx={{marginTop:'5%'}}></ShoppingCart><Typography textAlign={'center'}  variant='h6'>Your Cart is currently empty</Typography></Stack><br/>
@@ -91,15 +98,15 @@ const isMobile=useMediaQuery(theme.breakpoints.down('md'))
         <Typography gutterBottom marginTop={'3%'}  textAlign={'center'} color={'black'}>
             <Link style={{textDecoration:'none'}} to={'http://localhost:5173/AOBCollection'}>
             <Button
-            
+            size='large'
             variant='contained' sx={{backgroundColor:'black',fontWeight:'bold'}}>Return to Shop</Button>
             </Link>
-        </Typography><br></br>
+        </Typography><br/><br/>
         </>)}
 
 
        
-    </div>
+    </Stack>
   )
 }
 
