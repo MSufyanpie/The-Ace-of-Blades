@@ -11,6 +11,7 @@ import { removeAllfromCart, removeFromCart } from '../RTK Store/Slices/ProductsS
 import { Link, useNavigate } from 'react-router-dom'
 import CartTotal from './CartTotal'
 import Footer from '../Footer/Footer'
+import EmptyCart from '../Checkout/EmptyCart'
 
 
 export default function CartProducts() {
@@ -90,7 +91,7 @@ const isMobile=useMediaQuery(theme.breakpoints.down('md'))
         <CartTotal/><br/>
         </Stack></>):(
         <>
-        <Box boxShadow={1} borderTop={3}  width={700} m={'auto'} sx={{backgroundColor:'#f2f5f7'}} marginTop={'3%'}>
+        {/* <Box boxShadow={1} borderTop={3}  width={700} m={'auto'} sx={{backgroundColor:'#f2f5f7'}} marginTop={'3%'}>
             <Stack direction={'row'} spacing={2} paddingTop={'3%'} px={10}>
 
         <ShoppingCart sx={{marginTop:'5%'}}></ShoppingCart><Typography textAlign={'center'}  variant='h6'>Your Cart is currently empty</Typography></Stack><br/>
@@ -101,7 +102,8 @@ const isMobile=useMediaQuery(theme.breakpoints.down('md'))
             size='large'
             variant='contained' sx={{backgroundColor:'black',fontWeight:'bold'}}>Return to Shop</Button>
             </Link>
-        </Typography><br/><br/>
+        </Typography><br/><br/> */}
+        <EmptyCart/>
         </>)}
 
 

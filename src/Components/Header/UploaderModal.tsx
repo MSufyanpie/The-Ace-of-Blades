@@ -16,17 +16,17 @@ export default function UploaderModal({open,onClose}:any) {
         
     <Box width={500} m={'auto'}  sx={{backgroundColor:'#dedbd3',borderRadius:'10px'}} marginTop={'10%'} >
     <Stack spacing={5}><br/>
-    <Link to={'./upload-Products'}>
+    <Link to={'http://localhost:5173/upload-Products'}>
     <Typography textAlign={'center'}>
         <Button variant='contained'>Upload Products</Button></Typography>
         
     </Link>
-    <Link to={'./upload-articles'}>
+    <Link to={'http://localhost:5173/upload-articles'}>
         <Typography textAlign={'center'}>
     <Button variant='contained' color='error'>Upload Articles</Button></Typography>
         
     </Link>
-    <Link to={'./ImageUploader'}>
+    <Link to={'http://localhost:5173/ImageUploader'}>
         <Typography textAlign={'center'}>
     <Button variant='contained' color='success'>Upload Images in Gallery</Button></Typography>
         

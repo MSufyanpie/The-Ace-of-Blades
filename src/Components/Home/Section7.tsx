@@ -3,7 +3,7 @@ import {  Typography,Box,Stack,useTheme, useMediaQuery} from "@mui/material";
 import {AiFillLock,} from 'react-icons/ai'
 import {GiSurferVan} from 'react-icons/gi'
 import {MdStars} from 'react-icons/md'
-
+import './Section7.css'
 export default function Section7() {
     const theme=useTheme()
 const isMobile=useMediaQuery(theme.breakpoints.down('md'))
@@ -20,7 +20,7 @@ const isMobile=useMediaQuery(theme.breakpoints.down('md'))
 
     <Stack direction={{xs:'column',md:'row'}} spacing={4} marginTop={'5%'} px={8} >
         <Box px={isMobile?'0':3} width={isMobile?'100%':'350px'} borderRight={3} borderColor={'white'}>
-            <Typography variant='h2' gutterBottom textAlign={'center'} color={'white'}>
+            <Typography className='icon1' variant='h2' gutterBottom textAlign={'center'} color={'white'}>
             
              <MdStars/>  
            

@@ -2,6 +2,7 @@ import { Box, Button, Card, Checkbox, FormControl, FormControlLabel, RadioGroup,
 import React from 'react'
 import { FormGroup } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 export default function CartTotal() {
     const productsCart=useSelector((state:any)=>{
@@ -64,7 +65,9 @@ export default function CartTotal() {
         
         </TableContainer><br/>
         <Typography textAlign={'center'} >
+            <Link to={'http://localhost:5173/Checkout'} style={{textDecoration:'none'}}>
             <Button size='large' variant='contained' sx={{backgroundColor:'black',fontWeight:'bold'}}> Procced to Checkout</Button>
+            </Link>
         </Typography><br/>
         
      </Box>
