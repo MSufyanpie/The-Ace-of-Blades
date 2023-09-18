@@ -1,6 +1,6 @@
-import React from 'react'
+
 import {
-      Stack,  Button,  Typography,Card,Box, useMediaQuery, useTheme
+      Stack,  Button,  Typography,Box, useMediaQuery, useTheme
   } from "@mui/material";
 import './section1.css'
 export default function Section1() {

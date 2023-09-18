@@ -1,15 +1,11 @@
 import { collection, getDocs } from "firebase/firestore";
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { db } from "../../Config/Firebase";
 import {
-  Button,
-  Card,
-  CardContent,
-  CardMedia,
   Grid,
   Typography,
 } from "@mui/material";
-import NavBar from "../Header/NavBar";
+
 import Section6Design from "./Section6Design";
 interface knife {
   imageUrl: any;
@@ -19,7 +15,6 @@ interface knife {
 }
 export default function Section6() {
   const [products, setProducts] = useState([{}]);
-  const [onSale, setOnSale] = useState([{}]);
   const ProductsRef = collection(db, "AOB Collection");
 
   useEffect(() => {

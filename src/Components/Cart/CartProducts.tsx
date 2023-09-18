@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+
 import { useDispatch, useSelector } from 'react-redux'
 import { Box, Button, Card, IconButton, Stack, Table, TableCell, TableContainer, TableHead, TableRow, TextField, Typography, useMediaQuery, useTheme } from '@mui/material'
 import { Image } from 'react-bootstrap'
@@ -35,8 +35,8 @@ export default function CartProducts() {
     const handleDelete=(index:any)=>{
             dispatch(removeFromCart(index))
     }
-    const handleDeleteAll=()=>{
-        dispatch(removeAllfromCart())
+    const handleDeleteAll=(index:any)=>{
+        dispatch(removeAllfromCart(index))
     }
     const theme=useTheme()
 const isMobile=useMediaQuery(theme.breakpoints.down('md'))
@@ -90,7 +90,7 @@ const isMobile=useMediaQuery(theme.breakpoints.down('md'))
         </Table>
         </TableContainer>
         <Typography marginTop={'2%'} textAlign={'center'}><Button color='error' variant='contained'
-        onClick={()=>handleDeleteAll()}>Clear Cart</Button></Typography><br/>
+        onClick={()=>handleDeleteAll(cartProducts)}>Clear Cart</Button></Typography><br/>
         </Card><br/>
         </Box>
         <CartTotal/><br/>

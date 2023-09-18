@@ -1,12 +1,12 @@
 
-import { Box, Button, Card, CardHeader, FormControl, Grid, InputLabel, MenuItem, Select, SelectChangeEvent, Stack, TextField, Typography } from '@mui/material'
-import React, { ChangeEvent, useState } from 'react'
+import { Box, Button, Card,  FormControl, Grid, InputLabel, MenuItem, Select, SelectChangeEvent, Stack, TextField, Typography } from '@mui/material'
+import  { ChangeEvent, useState } from 'react'
 import { storage,db } from '../../Config/Firebase'
 import { getDownloadURL, ref,uploadBytes } from 'firebase/storage'
 import { addDoc, collection } from 'firebase/firestore'
 import NavBar from '../Header/NavBar'
-import { useDispatch } from 'react-redux'
-import { uploadProducts } from '../RTK Store/Slices/ProductsSlice'
+
+
 export default function CollectionUploadForm() {
     const[productTitle,setProductTitle]:any=useState("")
     const[productPrice,setProductPrice]:any=useState("")
@@ -14,7 +14,7 @@ export default function CollectionUploadForm() {
     const CollectionRef=collection(db,"AOB Collection")
     const [imgUrl,setImgUrl]=useState('')
     const[category,setCategory]=useState('')
-    const dispatch=useDispatch()
+    
     const handleCategory=(event:SelectChangeEvent)=>{
        setCategory(event.target.value)
     }

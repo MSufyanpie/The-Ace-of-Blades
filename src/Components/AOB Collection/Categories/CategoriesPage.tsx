@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import folding from "../../../assets/Categories/Folding Knife.jpeg";
 import ring from "../../../assets/Categories/Key Ring.jpeg";
 import kitchenKnife from "../../../assets/Categories/Kitchen Knife.jpeg";
 import KnifeCare from "../../../assets/Categories/Knife Care.png";
-import { Grid, Stack } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Grid, } from "@mui/material";
 import CategoriesPageDesign from "../CategoriesPageDesign";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../../Config/Firebase";

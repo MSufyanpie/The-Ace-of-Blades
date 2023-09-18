@@ -21,6 +21,8 @@ import Contact from './Components/ContactUs/Contact'
 import CartProducts from './Components/Cart/CartProducts'
 import Cart from './Components/Cart/Cart'
 import Checkout from './Components/Checkout/Checkout'
+import { PrivacyPolicy } from './Components/Privacy Policy/PrivacyPolicy'
+import ShippingandReturns from './Components/Shipping and Returns/ShippingandReturns'
 
 
 function App() {
@@ -48,6 +50,8 @@ function App() {
        <Route path='/ContactUs' element={<Contact/>}/>
        <Route path='/Cart' element={<Cart/>}/>
        <Route path='/Checkout' element={<Checkout/>}></Route>
+       <Route path='/PrivacyPolicy' element={<PrivacyPolicy/>}/>
+       <Route path='/ShippingsandReturns' element={<ShippingandReturns/>}/>
      </Routes>
      </Router>
      </div>  

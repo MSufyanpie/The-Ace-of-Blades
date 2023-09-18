@@ -13,15 +13,15 @@ export default function Footer() {
 <br/><br/>
 <Stack px={isMobile?15:15} spacing={isMobile?3:5} direction={{xs:'column',md:'row'}}>
 <Typography variant='body1' textAlign={'center'} >
-    <Link to={'./'} style={{textDecoration:'none',color:'grey'}}> Home
+    <Link to={'http://localhost:5173/'} style={{textDecoration:'none',color:'grey'}}> Home
         </Link></Typography>
         
     <Typography variant='body1' textAlign={'center'} >
-    <Link to={'./'} style={{textDecoration:'none',color:'grey'}}> Privacy Policy
+    <Link to={'http://localhost:5173/PrivacyPolicy'} style={{textDecoration:'none',color:'grey'}}> Privacy Policy
         </Link></Typography>
         
     <Typography variant='body1' textAlign={'center'} >
-    <Link to={'./'} style={{textDecoration:'none',color:'grey'}}> Shipping and Returns
+    <Link to={'http://localhost:5173/ShippingsandReturns'} style={{textDecoration:'none',color:'grey'}}> Shipping and Returns
         </Link></Typography>
 
     <Typography gutterBottom variant='body1' textAlign={'center'} >

@@ -1,6 +1,5 @@
-import React from 'react'
-import {Image} from 'react-bootstrap'
-import {  Typography,Box,Stack,Card, CardMedia, CardContent, Button} from "@mui/material";
+
+import {  Typography,Box,Card, CardMedia, CardContent, Button} from "@mui/material";
 import { Link } from "react-router-dom";
 interface saleProducts{
     id:number,
@@ -28,8 +27,16 @@ export default function Section8Design({id,image,title,price}:saleProducts) {
         {price}
     </Typography>
     <Typography textAlign={'center'}>
-    <Button variant='contained' size='large' 
-    sx={{backgroundColor:'white',color:'black',border:'1px solid grey'}}>Add to Cart</Button></Typography>
+    <Button variant='text' size='large' 
+    sx={{backgroundColor:'white',
+    color:'black',
+    border:'1px solid grey',
+    ":hover":{
+      border:'none',
+      backgroundColor:'white'
+    }
+    }}>
+      Add to Cart</Button></Typography>
     </Box>
     
   )

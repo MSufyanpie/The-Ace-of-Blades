@@ -1,7 +1,7 @@
 import { collection, getDocs } from 'firebase/firestore'
-import React, { useEffect, useState } from 'react'
+import  { useEffect, useState } from 'react'
 import {  db } from '../../../Config/Firebase'
-import { Button, Card, CardContent, CardMedia, Grid, Stack, Typography } from '@mui/material'
+import { Button, Card, CardContent, CardMedia, Grid,  Typography } from '@mui/material'
 import NavBar from '../../Header/NavBar'
 import { useDispatch } from 'react-redux'
 import { addToCart } from '../../RTK Store/Slices/ProductsSlice'
@@ -32,8 +32,9 @@ export default function Category2() {
        
         
       },[])
-      const filtered=products.filter(data=>data.category===2)
-      const handleAddToCart=(products)=>{
+      //@ts-ignore
+      const filtered:any=products.filter(data=>data.category===2)
+      const handleAddToCart=(products:any)=>{
         console.log("adding to cart",products)
           dispatch(addToCart(products))
 
@@ -45,9 +46,9 @@ export default function Category2() {
         <Grid
         container
         direction={'row'} spacing={2} marginTop={'10%'} px={4}>
-        {filtered.map((data,index)=>{
+        {filtered.map((data:any,index:number)=>{
             return(
-                <Grid item xs={12} sm={6} md={4}>
+                <Grid key={index} item xs={12} sm={6} md={4}>
                 <Card variant='outlined' >
                     <CardMedia 
                     image={data.imageUrl}

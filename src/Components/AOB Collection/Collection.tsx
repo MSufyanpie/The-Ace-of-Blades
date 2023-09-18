@@ -1,4 +1,4 @@
-import React from 'react'
+
 import NavBar from '../Header/NavBar'
 
 import CategoriesPage from './Categories/CategoriesPage'

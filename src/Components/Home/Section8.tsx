@@ -1,9 +1,9 @@
-import React from 'react'
+
 import prod1 from '../../assets/home images/recent1.jpeg'
 import prod2 from '../../assets/home images/recent2.jpeg'
 import prod3 from '../../assets/home images/recent3.jpeg'
 
-import Section6Design from './Section6Design'
+
 import { Stack, Typography,Box } from '@mui/material'
 import Section8Design from './Section8Design'
 interface knife{

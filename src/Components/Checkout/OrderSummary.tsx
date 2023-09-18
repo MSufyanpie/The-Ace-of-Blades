@@ -1,5 +1,4 @@
-import { Box, Card, CardContent, CardHeader, Stack, Typography } from '@mui/material'
-import React from 'react'
+import { Box, Card, CardContent,  Stack, Typography } from '@mui/material'
 import { Image,  } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 
@@ -38,14 +37,16 @@ export default function OrderSummary() {
             </Box>
             </Stack>
             <CardContent >
-                {cartProducts.map((data,index)=>{
+                {cartProducts.map((data:any,index:number)=>{
                     return(
                         <>
-                        <Stack direction={'row'} spacing={13} >
+                        <Stack 
+                        key={index}
+                        direction={'row'} spacing={13} >
                             <Stack direction={'row'} spacing={3}>
                             <Image height={'50px'} width={'50px'} src={data.imageUrl}></Image>
                             <Typography fontWeight={'bold'}>{data.title}    x({data.quantity})</Typography></Stack>
-                            <Box sx={{float:'right'}}>{data.quantity*data.salePrice?(<><Typography fontWeight={'bold'}>R{data.salePrice}</Typography></>)
+                            <Box sx={{float:'right'}}>{data.salePrice?(<><Typography fontWeight={'bold'}>R{data.quantity*data.salePrice}</Typography></>)
                             :(<><Typography fontWeight={'bold'}>R{data.quantity*data.price}</Typography></>)}</Box>
                         </Stack><hr/><br/>
                         </>

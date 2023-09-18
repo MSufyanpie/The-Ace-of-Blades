@@ -1,5 +1,5 @@
-import React from 'react'
-import {  Typography,Box,Stack,IconButton,Button, Grid, useTheme, useMediaQuery} from "@mui/material";
+
+import {  Typography,Box,Stack,IconButton,Button,  useTheme, useMediaQuery} from "@mui/material";
 import {AiOutlineFire,} from 'react-icons/ai'
 import {FaRegHandshake,FaFingerprint} from 'react-icons/fa'
 import {Image} from 'react-bootstrap'

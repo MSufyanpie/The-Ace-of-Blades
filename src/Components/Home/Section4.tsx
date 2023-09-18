@@ -1,5 +1,5 @@
-import React from 'react'
-import {  Typography,Box,Stack,IconButton,Button, useTheme, useMediaQuery} from "@mui/material";
+
+import {  Typography,Box,Stack, useTheme, useMediaQuery} from "@mui/material";
 import {Image} from 'react-bootstrap'
 export default function Section4() {
   const theme=useTheme()

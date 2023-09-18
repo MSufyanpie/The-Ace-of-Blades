@@ -33,15 +33,20 @@ export default function Section6Design({imageUrl,title,price,salePrice}:saleProd
           color={"grey"}
           fontWeight={"bold"}
         >
-          <s>{price}</s> {salePrice}
+          <s>R{price}</s> R{salePrice}
         </Typography>
         <Typography textAlign={"center"}>
           <Button
             variant="outlined"
+            
             sx={{
               border: "1px solid grey",
               color: "white",
               backgroundColor: "black",
+              borderRadius:'25px',
+              ":hover":{
+                backgroundColor:'#454440'
+              }
             }}
           >
             Add to Cart
