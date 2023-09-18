@@ -1,5 +1,5 @@
 import { collection, getDocs } from 'firebase/firestore'
-import React, { useEffect, useState } from 'react'
+import  { useEffect, useState } from 'react'
 import {  db } from '../../Config/Firebase'
 import { Button, Card, CardContent, CardMedia, Grid,  Typography } from '@mui/material'
 import NavBar from '../Header/NavBar'
@@ -7,7 +7,7 @@ import NavBar from '../Header/NavBar'
 
 export default function OnSale() {
     const[products,setProducts]=useState([{}])
-    const[onSale,setOnSale]=useState([{}])
+    
     const ProductsRef=collection(db,"AOB Collection")
     
     useEffect(()=>{
@@ -31,6 +31,7 @@ export default function OnSale() {
        
         
       },[])
+      //@ts-ignore
       const filtered=products.filter(data=>data.salePrice!==0)
       
       
@@ -40,11 +41,11 @@ export default function OnSale() {
         <Grid 
         container
         direction={'row'} spacing={2} marginTop={'10%'} px={8}>
-        {filtered.map((data,index)=>{
+        {filtered.map((data:any,index:number)=>{
             return(
                 <>
                 {data.salePrice?(<>
-                    <Grid item xs={12} sm={6} md={4} >
+                    <Grid key={index} item xs={12} sm={6} md={4} >
                 <Card variant='outlined' >
                     <CardMedia 
                     image={data.imageUrl}

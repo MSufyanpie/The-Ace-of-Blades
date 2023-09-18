@@ -1,5 +1,5 @@
 import { Box, Button, Modal, Stack, Typography } from '@mui/material'
-import React from 'react'
+
 import { Link } from 'react-router-dom'
 
 export default function UploaderModal({open,onClose}:any) {

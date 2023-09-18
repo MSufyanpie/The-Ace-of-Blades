@@ -5,8 +5,21 @@ import { Image } from 'react-bootstrap'
 import { Link, useNavigate } from 'react-router-dom'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '../../Config/Firebase'
-
+import * as yup from 'yup'
+import { useForm } from 'react-hook-form'
+import { yupResolver } from "@hookform/resolvers/yup";
+const schema=yup.
+object()
+.shape({
+  Email:yup.string().email().required(),
+  password:yup.string().min(4).required()
+})
+.required()
 export default function SignupPage({open,close}:any) {
+  const {register,formState}=useForm({
+    resolver:yupResolver(schema)
+  })
+  const {errors}=formState
   const navigate=useNavigate()
     const[data,setUserData]:any=useState({
         
@@ -44,11 +57,17 @@ export default function SignupPage({open,close}:any) {
         
         
         <TextField  
+        {...register('Email')}
          onChange={(event)=>
           setUserData((prev:any)=>({...prev,Email:event.target.value}))}
+          id='Email'
+          
         variant='standard' color='secondary'size='small'  label='Enter you Email' />
-    
+        {errors.Email?.message}
         <TextField  
+        id='password'
+        
+        {...register('password')}
         onChange={(event)=>
           setUserData((prev:any)=>({...prev,Password:event.target.value}))}
         variant='standard' color='secondary'  size='small' type='password' label='Enter Your Password' />

@@ -8,9 +8,11 @@ export default function ImageUploader() {
     const [images,setImages]=useState(null)
     const CollectionRef=collection(db,"GalleryImages")
     const HandleUpload=async()=>{
+      //@ts-ignore
       const imageRef=ref(storage,`GalleryImages/${images.name}`)
 
       try {
+        //@ts-ignore
         const uploadImg=uploadBytes(imageRef,images)
         await uploadImg
        
@@ -32,6 +34,7 @@ export default function ImageUploader() {
         </Typography>
         <input 
         onChange={(event)=>{
+          //@ts-ignore
          setImages(event.target.files[0])
         }}
         type="file" multiple accept='image/*'/>

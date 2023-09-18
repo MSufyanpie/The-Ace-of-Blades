@@ -1,18 +1,35 @@
-import { Star, StarBorderPurple500 } from '@mui/icons-material'
-import { Box, Checkbox, FormControl, FormControlLabel, FormLabel, InputLabel, MenuItem, Select, Stack, TextField, Typography } from '@mui/material'
-import React from 'react'
+import { Star } from '@mui/icons-material'
+import { Box, Checkbox, FormControl,  FormLabel, InputLabel, MenuItem, Select, Stack, TextField, Typography } from '@mui/material'
+import { useForm, useFormState } from 'react-hook-form'
+import {yupResolver} from '@hookform/resolvers/yup'
+import * as yup from "yup"
 
+const schema=yup.
+object()
+.shape({
+  UsernameorEmailAddress: yup.string().min(6).max(30).required()
+})
+.required()
 export default function BillingForm() {
+  const{register,formState}=useForm({
+  resolver:yupResolver(schema)
+  })
+  const {errors}=formState
   return (
     <div>
-        <Box marginTop={'7%'} width={700} px={4}>
+      <form>
+        <Box marginTop={'7%'} width={{xs:'100%',md:700}} px={{xs:0,md:4}}>
             <Stack direction={'column'} spacing={2}>
-
+        
         <FormLabel sx={{fontSize:'27px',fontWeight:'bold',color:'black'}} >
          Customer Information
         </FormLabel>
-        <TextField multiline required placeholder='Username or Email Address'/>
-
+        <TextField 
+        id='UsernameorEmailAddress'
+        {...register("UsernameorEmailAddress")}
+        
+        required placeholder='Username or Email Address'/>
+        {errors.UsernameorEmailAddress?.message}
         </Stack><br/>
 
         <Stack spacing={2}>
@@ -52,7 +69,7 @@ export default function BillingForm() {
   </FormControl>
   <TextField fullWidth required placeholder='Postcode/ZIP'/>
         </Stack><br/>
-        <TextField fullWidth  required placeholder='Phone'/><br/>
+        <TextField  fullWidth  required placeholder='Phone'/><br/>
         <Stack direction={'row'} marginTop={'2%'}
         >
          <Checkbox></Checkbox><FormLabel sx={{fontSize:'20px',fontWeight:'bold',color:'black',marginTop:'1%'}} >
@@ -61,7 +78,9 @@ export default function BillingForm() {
         </Stack><br/>
         <TextField  multiline size='medium' fullWidth placeholder='notes about your order,e.g,special notes for delivery'/>
         <Typography marginTop={'1%'}>Have a Coupon?</Typography>
+        
         </Box>
+        </form>
     </div>
   )
 }

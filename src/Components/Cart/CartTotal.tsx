@@ -1,5 +1,5 @@
-import { Box, Button,  Checkbox, FormControlLabel,  TableCell, TableContainer, TableHead, TableRow, Typography, useMediaQuery, useTheme } from '@mui/material'
-import React from 'react'
+import { Box, Button,  Checkbox, FormControlLabel,  TableCell, TableContainer, TableHead, TableRow, Typography} from '@mui/material'
+
 import { FormGroup } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
@@ -17,8 +17,8 @@ export default function CartTotal() {
         return total+(price*quantity)
 
     },0)
-    const theme=useTheme()
-    const isMobile=useMediaQuery(theme.breakpoints.down('md'))
+    // const theme=useTheme()
+    // const isMobile=useMediaQuery(theme.breakpoints.down('md'))
 
   return (
     

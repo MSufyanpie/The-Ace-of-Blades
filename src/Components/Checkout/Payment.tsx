@@ -1,19 +1,28 @@
 import { Lock } from '@mui/icons-material'
 import { Box, Button, Card, CardContent, Checkbox, FormLabel, Stack, Typography } from '@mui/material'
-import React,{useState} from 'react'
+import {useState} from 'react'
 import { Image } from 'react-bootstrap'
 import { BiLeftArrow } from 'react-icons/bi'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 export default function Payment() {
+    const cartProducts=useSelector((state:any)=>{
+        return state.cart
+    })
+    let subTotal=cartProducts.reduce((total:number,data:any)=>{
+        const price=data.price || data.salePrice;
+        const quantity=data.quantity;
+        return total+(price*quantity)
+
+    },0)
     const [easypaisa,setEasypaisa]=useState(true)
     const [sadaPay,setSadapay]=useState(false)
     const [TCBox,setTCBox]=useState(false)
-    const handleEasypaisa=(event)=>{
+    const handleEasypaisa=(event:any)=>{
         setEasypaisa(event.target.checked)
-        
     }
-    const handleSadaPay=(event)=>{
+    const handleSadaPay=(event:any)=>{
         setSadapay(event.target.checked)
         
     }
@@ -22,7 +31,7 @@ export default function Payment() {
     }
   return (
     <div>
-        <Box width={700} px={4}>
+        <Box width={{xs:'100%',md:700}} px={{xs:0,md:4}}>
             <Typography marginTop={'4%'} variant='h6' fontWeight={'bold'}>Payment</Typography>
             <Card variant='outlined'>
                 <CardContent sx={{border:'1px solid #f2f5f7'}}>
@@ -68,16 +77,16 @@ export default function Payment() {
             </>):(<></>)}
             <Stack direction={'row'} marginTop={'5%'}>
                 <Checkbox></Checkbox>
-                <FormLabel sx={{marginTop:'0.5%'}}>I have read and agree to the website
+                <FormLabel sx={{marginTop:{xs:'8%',md:'0.5%'}}}>I have read and agree to the website
                  <Button onClick={handleTermsandConditions} sx={{color:'black'}}>terms and conditions</Button></FormLabel>
             </Stack>
            
-            <Button fullWidth size='large' sx={{backgroundColor:'black',color:'white'}}><Lock sx={{color:'white'}}/>Place Order</Button>
+            <Button fullWidth size='large' sx={{backgroundColor:'black',color:'white',fontWeight:'bold',}}><Lock sx={{color:'white'}}/>Place Order    R{subTotal} </Button>
             <Typography marginTop={'2%'} textAlign={'center'}>
                 <BiLeftArrow/>
                 <Link to={'http://localhost:5173/Cart'} style={{textDecoration:'none',fontWeight:'bolder',color:'black'}}>Back to Cart</Link>
 
-            </Typography>
+            </Typography><br/>
         </Box>
     </div>
   )

@@ -1,4 +1,4 @@
-import React from 'react'
+
 import './Contact.css'
 import { Box, Grid, IconButton, Typography, useMediaQuery, useTheme } from '@mui/material'
 import { AiOutlineFacebook, AiOutlineInstagram, AiOutlineMail, AiOutlineWhatsApp} from 'react-icons/ai'

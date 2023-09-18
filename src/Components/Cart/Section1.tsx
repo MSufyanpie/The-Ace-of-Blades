@@ -1,4 +1,4 @@
-import React from 'react'
+
 import './Section1.css'
 import { Box, Typography } from '@mui/material'
 export default function Section1() {

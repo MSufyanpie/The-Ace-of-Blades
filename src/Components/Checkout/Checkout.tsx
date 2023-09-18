@@ -1,4 +1,4 @@
-import React from 'react'
+
 import NavBar from '../Header/NavBar'
 import BillingForm from './BillingForm'
 import Section1 from './Section1'

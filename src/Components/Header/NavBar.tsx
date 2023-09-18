@@ -2,7 +2,7 @@ import {
   AppBar,  Toolbar,  Stack,  Button,  Typography,  IconButton,   useTheme, useMediaQuery, Badge,} from "@mui/material";
 import {ShoppingCart,KeyboardArrowDownSharp} from '@mui/icons-material'
 import { AiOutlineUser } from "react-icons/ai"
-import React, { useEffect } from "react";
+import  { useEffect } from "react";
 import { Image } from "react-bootstrap";
 import TopBar from "./TopBar";
 import { Link } from "react-router-dom";
@@ -13,7 +13,6 @@ import { auth } from "../../Config/Firebase";
 import { BiPlusCircle } from "react-icons/bi";
 import UploaderModal from "./UploaderModal";
 import DrawerComponent from "./Drawer";
-import CollectionModal from "../AOB Collection/Categories/CollectionModal";
 import { useSelector } from "react-redux";
 export default function NavBar() {
   const cartProducts=useSelector((state:any)=>{

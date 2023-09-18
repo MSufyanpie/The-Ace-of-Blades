@@ -33,6 +33,7 @@ export default function Section6() {
     };
     getProductsList();
   }, []);
+  //@ts-ignore
   const filtered = products.filter((data) => data.salePrice!== 0);
   return (
     <div style={{ backgroundColor: "#ede8e8", marginTop: "5%" }}>
@@ -48,13 +49,20 @@ export default function Section6() {
       <Grid container direction={"row"} spacing={2} marginTop={"4%"} px={8}>
         {filtered.map((data, index) => {
           return (
+            
             <>
-              {data.salePrice ? (
+             
+              { //@ts-ignore
+              data.salePrice ? (
                 <>
                   <Section6Design
+                  //@ts-ignore
                   imageUrl={data.imageUrl}
+                  //@ts-ignore
                   title={data.title}
+                  //@ts-ignore
                   price={data.price}
+                  //@ts-ignore
                   salePrice={data.salePrice}
                   />
                 </>

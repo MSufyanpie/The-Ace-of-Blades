@@ -1,6 +1,6 @@
-import { getDownloadURL, ref } from 'firebase/storage'
-import React, { useEffect, useState } from 'react'
-import { db, storage } from '../../Config/Firebase'
+
+import  { useEffect, useState } from 'react'
+import { db } from '../../Config/Firebase'
 import { Card, CardMedia, Grid } from '@mui/material'
 import { collection, getDocs } from 'firebase/firestore'
 import NavBar from '../Header/NavBar'
@@ -35,9 +35,10 @@ export default function Gallery() {
         <Grid container direction={'row'} spacing={3} marginTop={'10%'} px={8} >
     {images.map((data,index)=>{
         return(
-            <Grid item xs={12} sm={6} md={4} >
+            <Grid key={index} item xs={12} sm={6} md={4} >
             <Card>
                 <CardMedia
+                //@ts-ignore
                 image={data.imageUrl}
                 sx={{height:'350px'}}
                 />

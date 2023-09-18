@@ -19,12 +19,12 @@ export default function OrderSummary() {
     <div>
         
        
-     <Box width={500} sx={{float:'right',marginRight:'2%',}} marginTop={'7%'} position={'-webkit-sticky'}>
+     <Box width={{xs:'100%',md:500}} sx={{float:{xs:'none',md:'right'},marginRight:'2%',}} marginTop={'7%'} position={'-webkit-sticky'}>
      <Typography gutterBottom variant='h5' fontWeight={'bold'}>
             Your Order
         </Typography>
         <Card variant='outlined' sx={{border:'1px solid #f2f5f7'}}>
-            <Stack direction={'row'} spacing={40}  marginTop={'2%'}>
+            <Stack direction={'row'} spacing={{xs:25,md:40}}  marginTop={'2%'}>
             <Box px={2}>
                 <Typography fontWeight={'bold'} variant='body1'  >
                     Product
@@ -42,7 +42,7 @@ export default function OrderSummary() {
                         <>
                         <Stack 
                         key={index}
-                        direction={'row'} spacing={13} >
+                        direction={'row'} spacing={{xs:10,md:13}} >
                             <Stack direction={'row'} spacing={3}>
                             <Image height={'50px'} width={'50px'} src={data.imageUrl}></Image>
                             <Typography fontWeight={'bold'}>{data.title}    x({data.quantity})</Typography></Stack>
@@ -52,14 +52,14 @@ export default function OrderSummary() {
                         </>
                     )
                 })}
-                  <Stack direction={'row'} spacing={40} >
+                  <Stack direction={'row'} spacing={{xs:23,md:40}} >
             <Box px={2}>
                 <Typography fontWeight={'bold'}  variant='body1'  >
                    Sub-Total
                 </Typography><br/>
             </Box>
             <Box sx={{float:'right'}}>
-                <Typography fontWeight={'bold'}  variant='body1'>
+                <Typography fontWeight={'bold'}  variant='body1' color={'red'}>
                    R{subTotal}
                 </Typography>
             </Box>
