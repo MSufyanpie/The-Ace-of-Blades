@@ -1,25 +1,36 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-
 import { Box, Button, Card, IconButton, Stack, Table, TableCell, TableContainer, TableHead, TableRow, TextField, Typography, useMediaQuery, useTheme } from '@mui/material'
-import NavBar from '../Header/NavBar'
 import { Image } from 'react-bootstrap'
 import { BiMinus, BiPlus } from 'react-icons/bi'
-import { DeleteOutlineRounded, RemoveCircleOutlineSharp, ShoppingCart } from '@mui/icons-material'
-import { FaCross } from 'react-icons/fa'
-import { removeAllfromCart, removeFromCart } from '../RTK Store/Slices/ProductsSlice'
-import { Link, useNavigate } from 'react-router-dom'
+import { DeleteOutlineRounded } from '@mui/icons-material'
+import { removeAllfromCart, removeFromCart,updateQuantity } from '../RTK Store/Slices/ProductsSlice'
 import CartTotal from './CartTotal'
-import Footer from '../Footer/Footer'
 import EmptyCart from '../Checkout/EmptyCart'
-
 
 export default function CartProducts() {
     const dispatch=useDispatch()
-    const[ProductsCart,setProductsCart]=useState()
+
+    const handleQuantity=(event:any,index:number)=>{
+        const newQuantity = parseInt(event.target.value, 10);
+        if (!isNaN(newQuantity) && newQuantity >= 1) {
+            dispatch(updateQuantity({ index, quantity: newQuantity }))
+        }
+    }
+    const handleAdd=(index:number)=>{
+      dispatch(updateQuantity({index,quantity:cartProducts[index].quantity+1}))
+      
+
+      console.log()
+    }
+    const handleMinus=(index:number)=>{
+        dispatch(updateQuantity({index,quantity:cartProducts[index].quantity-1}))
+        
+    }
     const cartProducts=useSelector((state:any)=>{
         return state.cart
     })
+    console.log(cartProducts)
    
     const handleDelete=(index:any)=>{
             dispatch(removeFromCart(index))
@@ -33,8 +44,6 @@ const isMobile=useMediaQuery(theme.breakpoints.down('md'))
   return (
     
     <Stack >
-        
-        
         {cartProducts.length!==0?(<>
             <Stack px={{xs:3,md:5}} direction={{xs:'column',md:'row'}}>
             <Box 
@@ -48,7 +57,6 @@ const isMobile=useMediaQuery(theme.breakpoints.down('md'))
                 <TableRow>
                     
                     <TableCell></TableCell>
-
                     <TableCell  sx={{fontWeight:'bold'}}>Product</TableCell>
                     <TableCell align='center' sx={{fontWeight:'bold'}}>Price</TableCell>
                     <TableCell align='center' sx={{fontWeight:'bold'}}>Quantity</TableCell>
@@ -65,23 +73,20 @@ const isMobile=useMediaQuery(theme.breakpoints.down('md'))
                     {data.salePrice?(<><TableCell>R{data.salePrice}</TableCell></>):(<><TableCell>R{data.price}</TableCell></>)}
                     <TableCell align='center'>
                         
-                        <Button size='small'><BiMinus/></Button>
-                        <TextField sx={{width:{xs:'60%',md:'20%'}}} size='small' defaultValue={1}/>
-                        <Button size='small'><BiPlus/></Button>
+                        <Button onClick={()=>handleMinus(index)} size='small'><BiMinus/></Button>
+                        <TextField value={data.quantity}
+                         onChange={(e) => handleQuantity(e, index)}
+                          sx={{width:{xs:'60%',md:'20%'}}} size='small' />
+                        <Button onClick={()=>handleAdd(index)} size='small'><BiPlus/></Button>
                     </TableCell>
                     {data.salePrice?
-                    (<><TableCell>R{data.salePrice}<IconButton  onClick={()=>handleDelete(index)}>
+                    (<><TableCell>R{data.quantity*data.salePrice}<IconButton  onClick={()=>handleDelete(index)}>
                     <DeleteOutlineRounded sx={{color:'red'}}/></IconButton></TableCell></>)
-                    :(<><TableCell>R{data.price}<IconButton  onClick={()=>handleDelete(index)}>
+                    :(<><TableCell>R{data.quantity*data.price}<IconButton  onClick={()=>handleDelete(index)}>
                     <DeleteOutlineRounded sx={{color:'red'}}/></IconButton></TableCell></>)}
-                    
-                    
-                    
-                </TableRow>
-                
+                </TableRow>  
             )
         })}
-        
         </Table>
         </TableContainer>
         <Typography marginTop={'2%'} textAlign={'center'}><Button color='error' variant='contained'
@@ -91,23 +96,8 @@ const isMobile=useMediaQuery(theme.breakpoints.down('md'))
         <CartTotal/><br/>
         </Stack></>):(
         <>
-        {/* <Box boxShadow={1} borderTop={3}  width={700} m={'auto'} sx={{backgroundColor:'#f2f5f7'}} marginTop={'3%'}>
-            <Stack direction={'row'} spacing={2} paddingTop={'3%'} px={10}>
-
-        <ShoppingCart sx={{marginTop:'5%'}}></ShoppingCart><Typography textAlign={'center'}  variant='h6'>Your Cart is currently empty</Typography></Stack><br/>
-        </Box>
-        <Typography gutterBottom marginTop={'3%'}  textAlign={'center'} color={'black'}>
-            <Link style={{textDecoration:'none'}} to={'http://localhost:5173/AOBCollection'}>
-            <Button
-            size='large'
-            variant='contained' sx={{backgroundColor:'black',fontWeight:'bold'}}>Return to Shop</Button>
-            </Link>
-        </Typography><br/><br/> */}
         <EmptyCart/>
         </>)}
-
-
-       
     </Stack>
   )
 }

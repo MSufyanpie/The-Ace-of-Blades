@@ -2,7 +2,7 @@
 import { collection, getDocs } from 'firebase/firestore'
 import React, { useEffect, useState } from 'react'
 import {  db } from '../../../Config/Firebase'
-import {  Badge, Button, Card, CardContent, CardMedia, Grid, Stack, Typography } from '@mui/material'
+import {   Button, Card, CardContent, CardMedia, Grid,  Typography } from '@mui/material'
 import NavBar from '../../Header/NavBar'
 import { useDispatch } from 'react-redux'
 import { addToCart } from '../../RTK Store/Slices/ProductsSlice'

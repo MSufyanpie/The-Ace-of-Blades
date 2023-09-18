@@ -7,7 +7,12 @@ export default function OrderSummary() {
     const cartProducts=useSelector((state:any)=>{
         return state.cart
     })
-    let subTotal=cartProducts.map(data => data.salePrice || data.price).reduce((salePrice,price)=>salePrice+price,0)
+    let subTotal=cartProducts.reduce((total:number,data:any)=>{
+        const price=data.price || data.salePrice;
+        const quantity=data.quantity;
+        return total+(price*quantity)
+
+    },0)
     if(subTotal<1000){
         subTotal=subTotal+75
     }
@@ -39,9 +44,9 @@ export default function OrderSummary() {
                         <Stack direction={'row'} spacing={13} >
                             <Stack direction={'row'} spacing={3}>
                             <Image height={'50px'} width={'50px'} src={data.imageUrl}></Image>
-                            <Typography fontWeight={'bold'}>{data.title}</Typography></Stack>
-                            <Box sx={{float:'right'}}>{data.salePrice?(<><Typography fontWeight={'bold'}>R{data.salePrice}</Typography></>)
-                            :(<><Typography fontWeight={'bold'}>R{data.price}</Typography></>)}</Box>
+                            <Typography fontWeight={'bold'}>{data.title}    x({data.quantity})</Typography></Stack>
+                            <Box sx={{float:'right'}}>{data.quantity*data.salePrice?(<><Typography fontWeight={'bold'}>R{data.salePrice}</Typography></>)
+                            :(<><Typography fontWeight={'bold'}>R{data.quantity*data.price}</Typography></>)}</Box>
                         </Stack><hr/><br/>
                         </>
                     )

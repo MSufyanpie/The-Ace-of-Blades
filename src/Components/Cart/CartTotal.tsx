@@ -1,4 +1,4 @@
-import { Box, Button, Card, Checkbox, FormControl, FormControlLabel, RadioGroup, TableCell, TableContainer, TableHead, TableRow, Typography, useMediaQuery, useTheme } from '@mui/material'
+import { Box, Button,  Checkbox, FormControlLabel,  TableCell, TableContainer, TableHead, TableRow, Typography, useMediaQuery, useTheme } from '@mui/material'
 import React from 'react'
 import { FormGroup } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
@@ -9,9 +9,14 @@ export default function CartTotal() {
         return state.cart
     })
     const delivery=75
-    // const subTotal=productsCart.reduce((sum,data)=>sum+data.price,0)
+   
 
-    const subTotal=productsCart.map(data => data.salePrice || data.price).reduce((salePrice,price)=>salePrice+price,0)
+    const subTotal=productsCart.reduce((total:number,data:any)=>{
+        const price=data.price || data.salePrice;
+        const quantity=data.quantity;
+        return total+(price*quantity)
+
+    },0)
     const theme=useTheme()
     const isMobile=useMediaQuery(theme.breakpoints.down('md'))
 
