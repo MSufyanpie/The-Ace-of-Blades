@@ -63,7 +63,7 @@ export default function Payment() {
             <Typography>Your personal data will be used to process your order, 
             support your experience throughout this website, and for other purposes described in our privacy policy.</Typography><br/>
             {TCBox?(<>
-            <Box width={700} height={150} sx={{
+            <Box width={{xs:'100%',md:700}} height={150} sx={{
                 overflowY:'scroll',
                 backgroundColor:'#f2f5f7'
             }}>

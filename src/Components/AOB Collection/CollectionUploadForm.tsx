@@ -54,7 +54,7 @@ export default function CollectionUploadForm() {
   return (
     <div >
       <NavBar/>
-      <Box  width={{xs:'100%',md:420}} m={'auto'} marginTop={'10%'} boxShadow={10}>
+      <Box  width={{xs:'100%',md:420}} m={{xs:'none',md:'auto'}} marginTop={{xs:'28%',md:'10%'}} boxShadow={10}>
       <Grid
        container 
        
@@ -69,7 +69,7 @@ export default function CollectionUploadForm() {
               </Box><br/>
             
         
-            <Stack direction={'column'} spacing={3} px={10}>
+            <Stack direction={'column'} spacing={3} px={{xs:8,md:10}}>
             <TextField
             multiline
             onChange={(event)=>{

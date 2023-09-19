@@ -1,7 +1,7 @@
 
 import  { useEffect, useState } from 'react'
 import { db } from '../../Config/Firebase'
-import { Card, CardMedia, Grid } from '@mui/material'
+import { Box, Card, CardMedia, Grid, Typography } from '@mui/material'
 import { collection, getDocs } from 'firebase/firestore'
 import NavBar from '../Header/NavBar'
 
@@ -32,7 +32,10 @@ export default function Gallery() {
   return (
     <div>
         <NavBar/>
-        <Grid container direction={'row'} spacing={3} marginTop={'10%'} px={8} >
+        
+          <Typography marginTop={{xs:'29%',md:'10%'}} textAlign={'center'} variant='h3' gutterBottom fontWeight={'bold'} fontStyle={'Oswald'}>GALLERY</Typography>
+          <Typography textAlign={'center'} variant='body1' fontStyle={'Oswald'}>PHOTOS FROM ALL OVER THE WORLD</Typography>        
+        <Grid container direction={'row'} spacing={3} marginTop={'2%'} px={8} >
     {images.map((data,index)=>{
         return(
             <Grid key={index} item xs={12} sm={6} md={4} >

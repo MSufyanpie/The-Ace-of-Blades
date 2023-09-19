@@ -44,7 +44,7 @@ export default function SignupPage({open,close}:any) {
     aria-describedby="modal-modal-description"
     onClose={close}
     >
-        <Box  width={'60%'} sx={{backgroundColor:'white',borderRadius:'10px'}} marginTop={'10%'} marginLeft={'15%'}>
+        <Box  width={{xs:'100%',md:'60%'}} sx={{backgroundColor:'white',borderRadius:'10px'}} marginTop={{xs:'20%',md:'10%'}} marginLeft={{xs:'0%',md:'15%'}}>
        
         <Stack direction={'row'} spacing={2}  >
         
@@ -53,7 +53,7 @@ export default function SignupPage({open,close}:any) {
             
           <BiSolidUserCircle></BiSolidUserCircle>
         </Typography>
-        <Stack spacing={3} direction={'column'} px={20}>
+        <Stack spacing={3} direction={'column'} px={{xs:13,md:20}}>
         
         
         <TextField  
@@ -81,11 +81,13 @@ export default function SignupPage({open,close}:any) {
              <Link to={'./SignUp'} style={{textDecoration:'none'}}><Typography>Create an Account</Typography></Link>
         </Stack>
         </Box>
+        <Box display={{xs:'none'}}>
         <Image
+          
         style={{marginTop:'10%'}}
         height={'220px'}
         width={'270px'}
-        src='src\assets\images\logo.jpg'></Image>
+        src='src\assets\images\logo.jpg'></Image></Box>
         </Stack>
         </Box>
     </Modal>

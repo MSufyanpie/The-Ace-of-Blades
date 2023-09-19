@@ -105,7 +105,8 @@ export default function NavBar() {
               <Button  sx={{color:'black',fontWeight:'bold'}}>CONTACT US</Button>
             </Link>
           </Stack>
-
+          </> 
+          )}
           <Stack direction={'row'} spacing={1}>
 
           {isLoggedIn?(<>
@@ -130,7 +131,7 @@ export default function NavBar() {
           </IconButton></Link>
           
           </Stack> 
-          </> )}
+          
         </Toolbar>
       </AppBar><br/> 
       
@@ -144,10 +145,7 @@ export default function NavBar() {
       <SignupPage open={openModal}
                   close={Closehandle}
       ></SignupPage> 
-      {/* <CollectionModal
-      open={collectionModal}
-      close={closeCollection}
-      /> */}
+      
     </div>
   );
 }

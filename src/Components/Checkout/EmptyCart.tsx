@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 export default function EmptyCart() {
   return (
     <div>
-        <Box boxShadow={1} borderTop={3}  width={700} m={'auto'} sx={{backgroundColor:'#f2f5f7'}} marginTop={'3%'}>
+        <Box boxShadow={1} borderTop={3}  width={{xs:'100%',md:700}} m={'auto'} sx={{backgroundColor:'#f2f5f7'}} marginTop={'3%'}>
             <Stack direction={'row'} spacing={2} paddingTop={'3%'} px={10}>
 
         <ShoppingCart sx={{marginTop:'5%'}}></ShoppingCart><Typography textAlign={'center'}  variant='h6'>Your Cart is currently empty</Typography></Stack><br/>
