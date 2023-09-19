@@ -1,4 +1,6 @@
-
+import { collection, getDocs } from 'firebase/firestore'
+import  { useEffect, useState } from 'react'
+import {db} from '../../Config/Firebase'
 import prod1 from '../../assets/home images/recent1.jpeg'
 import prod2 from '../../assets/home images/recent2.jpeg'
 import prod3 from '../../assets/home images/recent3.jpeg'
@@ -14,6 +16,35 @@ interface knife{
 
 }
 export default function Section8() {
+  const[products,setProducts]=useState([{}])
+    const ProductsRef=collection(db,"AOB Collection")
+    
+    
+    useEffect(()=>{
+        const getProductsList= async()=>{
+          try {
+            let data=await getDocs(ProductsRef)
+            const actualData=data.docs.map((doc)=>({
+            ...doc.data(),
+            id:doc.id,
+      
+            }))
+            console.log(actualData)
+            setProducts(actualData)
+            
+            
+          } catch (error) {
+            console.error(error)
+          }
+          
+          
+          }
+
+        getProductsList()
+       console.log(products)
+        
+      },[])
+      const FirstThreeProds=products.slice(0,3)
     const saleProducts:knife[]=[
       {
         img:prod1,
@@ -50,14 +81,16 @@ export default function Section8() {
       </Typography>
       <Box  sx={{backgroundColor:'white'}}>
       <Stack  spacing={4} direction={{xs:'column',md:'row'}} px={10} >
-    {saleProducts.map((data:knife,index:number)=>{
+    {FirstThreeProds.map((data:any,index:number)=>{
       return(
         <Section8Design
         id={index}
-        image={data.img}
+        image={data.imageUrl}
         title={data.title}
         price={data.price}
-        
+        salePrice={data.salePrice}
+        products={FirstThreeProds}
+        data={data}
         />
       )
     })}

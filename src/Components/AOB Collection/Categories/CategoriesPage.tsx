@@ -78,6 +78,7 @@ export default function CategoriesPage() {
 
   return (
     <div style={{marginTop:'10%'}}>
+      
       <Grid 
       container
       direction={"row"} spacing={2} px={10} >

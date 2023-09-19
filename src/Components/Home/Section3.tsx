@@ -3,6 +3,7 @@ import {  Typography,Box,Stack,IconButton,Button,  useTheme, useMediaQuery} from
 import {AiOutlineFire,} from 'react-icons/ai'
 import {FaRegHandshake,FaFingerprint} from 'react-icons/fa'
 import {Image} from 'react-bootstrap'
+import { Link } from "react-router-dom";
 export default function Section3() {
     const theme=useTheme()
     const isMobile=useMediaQuery(theme.breakpoints.down('md'))
@@ -56,7 +57,8 @@ export default function Section3() {
         width={isMobile?'100%':'500px'}
         src='src\assets\home images\section3-image.jpeg'></Image>
         <Typography textAlign={'center'}>
-        <Button  variant='contained' sx={{backgroundColor:'black'}}>VIEW OUR PRODUCTS</Button></Typography>
+        <Link to={'/AOBCollection'} style={{textDecoration:'none'}}>
+        <Button  variant='contained' sx={{backgroundColor:'black',boxShadow:10, ":hover":{backgroundColor:"	#505050",color:'white'}}}>VIEW OUR PRODUCTS</Button></Link></Typography>
         
     </Box>
     </Stack><br/><br/>

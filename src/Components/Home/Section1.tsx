@@ -3,6 +3,7 @@ import {
       Stack,  Button,  Typography,Box, useMediaQuery, useTheme
   } from "@mui/material";
 import './section1.css'
+import { Link } from "react-router-dom";
 export default function Section1() {
   const theme=useTheme()
   const isMobile=useMediaQuery(theme.breakpoints.down('md'))
@@ -20,10 +21,11 @@ export default function Section1() {
     <Typography gutterBottom sx={{fontWeight:'bold'}} color={'white'}>-THE ACE OF BLADES</Typography>
     
     <Stack marginRight={'10%'} direction={{xs:'column',md:'row'}} spacing={isMobile?4:2} >
-        <Button size='large' variant='contained' sx={{backgroundColor:'white',color:'black'}} >
+      <Link to={'/AOBCollection'} style={{textDecoration:'none'}}>
+        <Button  size='large' variant='contained' sx={{backgroundColor:'white',color:'black',fontWeight:'bold', ":hover":{backgroundColor:"grey",color:'white'}}} >
             Shop Now
-        </Button>
-        <Button size='large' variant='contained' sx={{backgroundColor:'white',color:'black'}}>
+        </Button></Link>
+        <Button size='large' variant='contained' sx={{backgroundColor:'white',color:'black',fontWeight:'bold',":hover":{backgroundColor:"grey",color:'white',}}}>
             Knife Care
         </Button>
     </Stack>

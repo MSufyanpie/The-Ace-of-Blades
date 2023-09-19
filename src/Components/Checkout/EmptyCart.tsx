@@ -15,7 +15,7 @@ export default function EmptyCart() {
             <Link style={{textDecoration:'none'}} to={'http://localhost:5173/AOBCollection'}>
             <Button
             size='large'
-            variant='contained' sx={{backgroundColor:'black',fontWeight:'bold'}}>Return to Shop</Button>
+            variant='contained' sx={{backgroundColor:'black',fontWeight:'bold',":hover":{backgroundColor:'#484848'}}}>Return to Shop</Button>
             </Link>
         </Typography><br/><br/>
         

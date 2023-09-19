@@ -1,14 +1,26 @@
 
 import {  Typography,Box,Card, CardMedia, CardContent, Button} from "@mui/material";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { addToCart } from "../RTK Store/Slices/ProductsSlice";
 interface saleProducts{
     id:number,
     image:any,
     title:string,
     price:string,
+    salePrice:number,
+    products:any,
+    data:any,
     
 }
-export default function Section8Design({id,image,title,price}:saleProducts) {
+export default function Section8Design({id,image,title,price,salePrice,products,data}:saleProducts) {
+  const dispatch=useDispatch()
+  const handleAddToCart=(products:any)=>{
+    console.log("adding to cart",products)
+      dispatch(addToCart(products))
+
+      
+  }
   return (
     
     
@@ -24,10 +36,12 @@ export default function Section8Design({id,image,title,price}:saleProducts) {
     </Card>
     </Link>
     <Typography variant='h5' gutterBottom textAlign={'center'} fontFamily={'Oswald'} fontWeight={'bold'}>
-        {price}
+        R{salePrice? salePrice:price}
     </Typography>
     <Typography textAlign={'center'}>
-    <Button variant='text' size='large' 
+    <Button 
+    onClick={()=>handleAddToCart(data)}
+    variant='text' size='large' 
     sx={{backgroundColor:'white',
     color:'black',
     border:'1px solid grey',
