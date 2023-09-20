@@ -4,6 +4,7 @@ import { storage,db } from '../../Config/Firebase'
 import { getDownloadURL, ref,uploadBytes } from 'firebase/storage'
 import { addDoc, collection } from 'firebase/firestore'
 import NavBar from '../Header/NavBar'
+import Footer from '../Footer/Footer'
 export default function ArticleUploadForm() {
     const[ArticleTitle,setArticleTitle]:any=useState("")
     const[ArticleDescription,setArticleDescription]:any=useState("")
@@ -42,13 +43,13 @@ export default function ArticleUploadForm() {
   return (
     <div>
         <NavBar/>
-        <Box width={500} m={'auto'} marginTop={'10%'} boxShadow={10} >
+        <Box width={{xs:'100%',md:500}} m={'auto'} marginTop={{xs:'30%',md:'10%'}} boxShadow={10} >
         <Card>
-        <Box sx={{backgroundColor:'blueviolet'}}>
-                    <Typography color={'white'} textAlign={'center'} gutterBottom variant='h4'>
+        <Box sx={{backgroundColor:'black'}}>
+                    <Typography fontStyle={'Oswald'} color={'white'} textAlign={'center'} gutterBottom variant='h4' paddingTop={'3%'} paddingBottom={'2%'}>
                         UPLOAD ARTICLES
                     </Typography>
-                </Box>
+                </Box><br/>
             <Stack direction={'column'} spacing={4} px={5}>
               
             <TextField
@@ -68,13 +69,14 @@ export default function ArticleUploadForm() {
              }}
             type="file" accept='image/*' />
             <Typography textAlign={'center'} >
-            <Button color='secondary' variant='contained' onClick={HandleUpload}>Upload to FireBase</Button></Typography>
+            <Button size='large' sx={{backgroundColor:'black',fontWeight:'bold',":hover":{backgroundColor:'GrayText'}}} variant='contained' onClick={HandleUpload}>Upload to FireBase</Button></Typography>
             
             
 </Stack><br />
 
 </Card>
-</Box>
+</Box><br/>
+<Footer/>
     </div>
   )
 }
