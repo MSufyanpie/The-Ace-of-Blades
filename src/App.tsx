@@ -23,6 +23,7 @@ import Cart from './Components/Cart/Cart'
 import Checkout from './Components/Checkout/Checkout'
 import { PrivacyPolicy } from './Components/Privacy Policy/PrivacyPolicy'
 import ShippingandReturns from './Components/Shipping and Returns/ShippingandReturns'
+import KnifeCare from './Components/Knife Care/KnifeCare'
 
 
 function App() {
@@ -52,6 +53,7 @@ function App() {
        <Route path='/Checkout' element={<Checkout/>}></Route>
        <Route path='/PrivacyPolicy' element={<PrivacyPolicy/>}/>
        <Route path='/ShippingsandReturns' element={<ShippingandReturns/>}/>
+       <Route path='/KnifeCare' element={<KnifeCare/>}></Route>
      </Routes>
      </Router>
      </div>  

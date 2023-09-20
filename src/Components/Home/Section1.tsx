@@ -25,9 +25,10 @@ export default function Section1() {
         <Button  size='large' variant='contained' sx={{backgroundColor:'white',color:'black',fontWeight:'bold', ":hover":{backgroundColor:"grey",color:'white'}}} >
             Shop Now
         </Button></Link>
+        <Link to={'/KnifeCare'} style={{textDecoration:'none'}}>
         <Button size='large' variant='contained' sx={{backgroundColor:'white',color:'black',fontWeight:'bold',":hover":{backgroundColor:"grey",color:'white',}}}>
             Knife Care
-        </Button>
+        </Button></Link>
     </Stack>
 
     </Box>

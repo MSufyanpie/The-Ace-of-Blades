@@ -68,7 +68,7 @@ export default function Form() {
                  
                 </FormControl>
                 
-                <Button variant='contained' sx={{backgroundColor:'black',color:'white',marginLeft:'4%'}}>Submit</Button><br/>
+                <Button variant='contained' sx={{backgroundColor:'black',color:'white',marginLeft:'4%',":hover":{backgroundColor:'#003366'}}}>Submit</Button><br/>
                 <Typography color={'white'}>s</Typography>
             </Card>
         </Box>

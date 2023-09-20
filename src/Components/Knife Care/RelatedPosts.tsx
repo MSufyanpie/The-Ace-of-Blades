@@ -4,7 +4,7 @@ import { Box, Card, CardContent, CardMedia, Grid,  Typography } from '@mui/mater
 
 import { db } from '../../Config/Firebase'
 
-export default function ArticleDeisgn() {
+export default function RelatedPosts() {
     const[articlesList,setArticlesList]=useState([{}])
     const ArticlesRef=collection(db,"Articles")
         
@@ -29,13 +29,14 @@ export default function ArticleDeisgn() {
     
     
   },[])
+  const slicedList=articlesList.slice(0,2)
   return (
-    <Box px={10} marginTop={'8%'}>
+    <Box  marginTop={'4%'}>
     <Grid container direction={'row'} spacing={2}>
-{articlesList.map((data,index)=>{
+{slicedList.map((data,index)=>{
     return( 
-      <Grid item xs={12} sm={6} md={4} >
-        <Card>
+      <Grid key={index} item xs={12} sm={6} md={4} >
+        <Card variant='outlined'>
         <CardMedia 
         image={data.imageUrl}
         sx={{height:'300px'}}
@@ -57,3 +58,4 @@ export default function ArticleDeisgn() {
 </Box >
   )
 }
+
