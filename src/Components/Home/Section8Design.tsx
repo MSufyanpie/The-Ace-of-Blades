@@ -9,22 +9,23 @@ interface saleProducts{
     title:string,
     price:string,
     salePrice:number,
-    products:any,
     data:any,
     
 }
-export default function Section8Design({id,image,title,price,salePrice,products,data}:saleProducts) {
+export default function Section8Design({id,image,title,price,salePrice,data}:saleProducts) {
   const dispatch=useDispatch()
   const handleAddToCart=(products:any)=>{
       dispatch(addToCart(products))
   }
   return (
-    <Box>
+    <Box key={id}>
     <Link to={'/'} style={{textDecoration:'none'}}>
     <Card  sx={{border:'none',}} variant='outlined'>
      <CardMedia 
      sx={{height:'350px'}}
-     image={image}/>
+     image={image}
+     component={'img'}
+     />
      <CardContent>
         <Typography textAlign={'center'} variant='h5' gutterBottom fontFamily={'Oswald'} fontWeight={'bold'} >{title}</Typography>
      </CardContent>

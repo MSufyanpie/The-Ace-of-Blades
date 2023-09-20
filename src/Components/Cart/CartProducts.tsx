@@ -89,8 +89,8 @@ const isMobile=useMediaQuery(theme.breakpoints.down('md'))
         })}
         </Table>
         </TableContainer>
-        <Typography marginTop={'2%'} textAlign={'center'}><Button color='error' variant='contained'
-        onClick={()=>handleDeleteAll(cartProducts)}>Clear Cart</Button></Typography><br/>
+        <Typography marginTop={'2%'} textAlign={'center'}><Button color='error' variant='contained' sx={{fontWeight:'bold'}}
+        onClick={()=>handleDeleteAll(cartProducts)}><DeleteOutlineRounded/>Clear Cart</Button></Typography><br/>
         </Card><br/>
         </Box>
         <CartTotal/><br/>

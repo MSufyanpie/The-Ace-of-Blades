@@ -47,15 +47,18 @@ export default function Section8() {
       <Stack  spacing={4} direction={{xs:'column',md:'row'}} px={{xs:1,md:10}} >
     {FirstThreeProds.map((data:any,index:number)=>{
       return(
+        <div key={index}
+        >
         <Section8Design
         id={index}
         image={data.imageUrl}
         title={data.title}
         price={data.price}
         salePrice={data.salePrice}
-        products={FirstThreeProds}
+        
         data={data}
         />
+        </div>
       )
     })}
     </Stack><br/>

@@ -1,4 +1,4 @@
-import { Box, Card, CardContent,  Stack, Typography } from '@mui/material'
+import { Box, Card, CardContent,  Checkbox,  FormLabel,  Stack, Typography } from '@mui/material'
 import { Image,  } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 
@@ -7,7 +7,7 @@ export default function OrderSummary() {
         return state.cart
     })
     let subTotal=cartProducts.reduce((total:number,data:any)=>{
-        const price=data.price || data.salePrice;
+        const price=data.salePrice || data.price;
         const quantity=data.quantity;
         return total+(price*quantity)
 
@@ -41,6 +41,7 @@ export default function OrderSummary() {
                     return(
                         <>
                         <Stack 
+                       
                         key={index}
                         direction={'row'} spacing={{xs:10,md:13}} >
                             <Stack direction={'row'} spacing={3}>
@@ -52,14 +53,32 @@ export default function OrderSummary() {
                         </>
                     )
                 })}
+                <Stack direction={'row'} spacing={{xs:23,md:30}}>
+                    <Box>
+                        <Typography fontWeight={'bold'} marginTop={'2%'}>Shipping</Typography>
+                    </Box>
+                    <Box>
+                    
+                        {subTotal>1000?(<>
+                            <Stack direction={'row'}>
+                        <Checkbox defaultChecked/>
+                        <FormLabel sx={{marginTop:'6%'}}>Free Shipping</FormLabel>
+                         </Stack>
+                        </>):(<> <Stack direction={'row'}>
+                        <Checkbox defaultChecked/>
+                        <FormLabel sx={{marginTop:'6%'}}>Flate rate: R75.00</FormLabel>
+                         </Stack></>)}
+                   
+                    </Box>
+                </Stack><hr/><br/>
                   <Stack direction={'row'} spacing={{xs:23,md:40}} >
             <Box px={2}>
-                <Typography fontWeight={'bold'}  variant='body1'  >
-                   Sub-Total
+                <Typography fontWeight={'bold'}  variant='h6'  >
+                   Total
                 </Typography><br/>
             </Box>
             <Box sx={{float:'right'}}>
-                <Typography fontWeight={'bold'}  variant='body1' color={'red'}>
+                <Typography fontWeight={'bold'}  variant='h6' color={'red'}>
                    R{subTotal}
                 </Typography>
             </Box>

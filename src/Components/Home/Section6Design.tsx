@@ -6,10 +6,13 @@ interface saleProducts{
     title:string,
     price:string,
     salePrice:string
+    id:number
 }
-export default function Section6Design({imageUrl,title,price,salePrice}:saleProducts) {
+export default function Section6Design({imageUrl,title,price,salePrice,id}:saleProducts) {
   return (
-    <Grid item xs={12} sm={6} md={4}>
+    <Grid 
+    key={id}
+    item xs={12} sm={6} md={4}>
     <Card variant="outlined">
       <CardMedia
         image={imageUrl}

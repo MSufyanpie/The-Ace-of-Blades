@@ -30,7 +30,7 @@ export default function ArticleDeisgn() {
     
   },[])
   return (
-    <Box px={10} marginTop={'8%'}>
+    <Box px={10} marginTop={'4%'}>
     <Grid container direction={'row'} spacing={2}>
 {articlesList.map((data,index)=>{
     return( 

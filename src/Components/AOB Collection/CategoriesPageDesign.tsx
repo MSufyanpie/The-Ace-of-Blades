@@ -13,12 +13,12 @@ export default function CategoriesPageDesign({id,image,title,number,link}:catego
     <div>
    
     <Card 
-    id={id}
+    key={id}
     >
         <CardMedia
         sx={{height:'250px'}}
         image={image}
-        
+        component={'img'}
         />
         <CardActionArea>
             <Box sx={{backgroundColor:'#e4ebe5'}}>

@@ -81,7 +81,9 @@ export default function Payment() {
                  <Button onClick={handleTermsandConditions} sx={{color:'black'}}>terms and conditions</Button></FormLabel>
             </Stack>
            
-            <Button fullWidth size='large' sx={{backgroundColor:'black',color:'white',fontWeight:'bold',}}><Lock sx={{color:'white'}}/>Place Order    R{subTotal} </Button>
+            <Button fullWidth size='large' sx={{backgroundColor:'black',color:'white',fontWeight:'bold',":hover":{
+                backgroundColor:'#2e2e30'
+            }}}><Lock sx={{color:'white'}}/>Place Order    R{subTotal} </Button>
             <Typography marginTop={'2%'} textAlign={'center'}>
                 <BiLeftArrow/>
                 <Link to={'http://localhost:5173/Cart'} style={{textDecoration:'none',fontWeight:'bolder',color:'black'}}>Back to Cart</Link>

@@ -2,6 +2,7 @@ import {combineReducers, configureStore} from '@reduxjs/toolkit'
 import CartSlice from './Slices/ProductsSlice'
 import storage from 'redux-persist/lib/storage'
 import { persistReducer } from 'redux-persist'
+import thunk from 'redux-thunk'
 
 
 
@@ -16,5 +17,7 @@ const reducers=combineReducers({
 const persistedReducer=persistReducer(persistConfig,reducers)
 const store=configureStore({
     reducer:persistedReducer,
+    middleware:[thunk]
 })
+
 export default store;

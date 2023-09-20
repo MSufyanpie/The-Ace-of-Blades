@@ -84,7 +84,9 @@ export default function CategoriesPage() {
       direction={"row"} spacing={2} px={10} >
         {category1.map((data, index) => {
           return (
-            <Grid item xs={12} sm={6} md={4}>
+            <Grid 
+            key={index}
+            item xs={12} sm={6} md={4}>
             <CategoriesPageDesign
               id={index}
               image={data.img}

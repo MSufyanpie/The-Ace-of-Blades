@@ -4,6 +4,7 @@ import { db } from '../../Config/Firebase'
 import { Box, Card, CardMedia, Grid, Typography } from '@mui/material'
 import { collection, getDocs } from 'firebase/firestore'
 import NavBar from '../Header/NavBar'
+import Footer from '../Footer/Footer'
 
 export default function Gallery() {
     const [images,setImages]=useState([{}])
@@ -49,7 +50,8 @@ export default function Gallery() {
             </Grid>
         )
     })}
-</Grid>
+</Grid><br/>
+<Footer/>
     </div>
   )
 }

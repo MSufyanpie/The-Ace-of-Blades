@@ -46,11 +46,13 @@ export default function Section6() {
       >
         ITEMS ON SALE
       </Typography>
-      <Grid container direction={"row"} spacing={2} marginTop={"4%"} px={8}>
+      <Grid  container direction={"row"} spacing={2} marginTop={"4%"} px={8}>
         {filtered.map((data, index) => {
           return (
             
-            <>
+            <div
+            key={index}
+            >
              
               { //@ts-ignore
               data.salePrice ? (
@@ -64,12 +66,13 @@ export default function Section6() {
                   price={data.price}
                   //@ts-ignore
                   salePrice={data.salePrice}
+                  id={index}
                   />
                 </>
               ) : (
                 <></>
               )}
-            </>
+            </div>
           );
         })}
       </Grid>
