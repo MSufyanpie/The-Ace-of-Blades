@@ -11,10 +11,6 @@ export default function ArticleUploadForm() {
     const CollectionRef=collection(db,"Articles")
     //@ts-ignore
     const [imgUrl,setImgUrl]=useState('')
-        
-       
-        
-   
      const[ArticleImage,setArticleImage]=useState(null)
      const HandleUpload=async()=>{
         if(ArticleImage==null) return;

@@ -16,6 +16,10 @@ export default function Payment() {
         return total+(price*quantity)
 
     },0)
+    const delivery=75
+    if(subTotal<1000) {
+        subTotal=subTotal+delivery
+    }
     const [easypaisa,setEasypaisa]=useState(true)
     const [sadaPay,setSadapay]=useState(false)
     const [TCBox,setTCBox]=useState(false)

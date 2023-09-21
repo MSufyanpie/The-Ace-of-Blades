@@ -1,7 +1,7 @@
 
 import  { useEffect, useState } from 'react'
 import { db } from '../../Config/Firebase'
-import { Box, Card, CardMedia, Grid, Typography } from '@mui/material'
+import {  Card, CardMedia, Grid, Typography } from '@mui/material'
 import { collection, getDocs } from 'firebase/firestore'
 import NavBar from '../Header/NavBar'
 import Footer from '../Footer/Footer'

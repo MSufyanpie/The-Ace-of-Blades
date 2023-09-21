@@ -34,6 +34,7 @@ export default function OnSaleDesign({
         <>
           <Grid key={id} item xs={12} sm={6} md={4}>
             <Card variant="outlined">
+               
               <CardMedia image={imageUrl} sx={{ height: "300px" }} />
               <CardContent sx={{ backgroundColor: "#f2f7f3" }}>
                 <Typography

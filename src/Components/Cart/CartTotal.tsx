@@ -70,7 +70,7 @@ export default function CartTotal() {
         </TableContainer><br/>
         <Typography textAlign={'center'} >
             <Link to={'http://localhost:5173/Checkout'} style={{textDecoration:'none'}}>
-            <Button size='large' variant='contained' sx={{backgroundColor:'black',fontWeight:'bold'}}> Procced to Checkout</Button>
+            <Button size='large' variant='contained' sx={{backgroundColor:'black',fontWeight:'bold',":hover":{backgroundColor:'grey'}}}> Procced to Checkout</Button>
             </Link>
         </Typography><br/>
         
