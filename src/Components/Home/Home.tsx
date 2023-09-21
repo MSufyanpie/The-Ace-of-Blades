@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Section1 from './Section1'
 import Section2 from './Section2'
 import Section3 from './Section3'
@@ -9,9 +9,13 @@ import Section6 from './Section6'
 import Section8 from './Section8'
 import NavBar from '../Header/NavBar'
 import Footer from '../Footer/Footer'
+import { Button } from '@mui/material'
+import { ArrowUpwardSharp } from '@mui/icons-material'
+
 
 
 export default function Home() {
+  
   return (
     <div >
         <NavBar></NavBar>
@@ -24,6 +28,18 @@ export default function Home() {
         <Section7></Section7>
         <Section8></Section8>
         <Footer></Footer>
+        
+          <Button onClick={()=>{
+          window.scrollTo({top:0,left:0,behavior:'smooth'})
+        }} size='large' sx={{position: 'fixed',
+        padding: '1rem ',
+        fontSize: '15px',
+        bottom: '35px',
+        right: '35px',
+        backgroundColor: 'black',
+        color: '#fff',
+        textAlign: 'center',}}><ArrowUpwardSharp/></Button>
+       
     </div>
   )
 }
