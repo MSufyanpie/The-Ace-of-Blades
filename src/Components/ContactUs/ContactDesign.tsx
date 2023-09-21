@@ -25,17 +25,17 @@ export default function ContactDesign() {
 
         <IconButton >
 
-         <Typography textAlign={'center'} color={'#0165E1'} variant='h2' fontWeight={'bold'}><AiOutlineFacebook/></Typography> 
+         <Typography textAlign={'center'} color={'#0165E1'} variant='h3' fontWeight={'bold'}><AiOutlineFacebook/></Typography> 
          </IconButton>
         
         <IconButton  >
-        <Typography color={'#f2a60c'} variant='h2' fontWeight={'bold'}> <AiOutlineMail/></Typography> 
+        <Typography color={'#f2a60c'} variant='h3' fontWeight={'bold'}> <AiOutlineMail/></Typography> 
         </IconButton>
         <IconButton >
-        <Typography color={'#25D366'} variant='h2' fontWeight={'bold'}> <AiOutlineWhatsApp/></Typography> 
+        <Typography color={'#25D366'} variant='h3' fontWeight={'bold'}> <AiOutlineWhatsApp/></Typography> 
         </IconButton>
         <IconButton >
-        <Typography color={'#F56040'} variant='h2' fontWeight={'bold'}> <AiOutlineInstagram/></Typography> 
+        <Typography color={'#F56040'} variant='h3' fontWeight={'bold'}> <AiOutlineInstagram/></Typography> 
         </IconButton>
         </Typography>
       </Grid>
