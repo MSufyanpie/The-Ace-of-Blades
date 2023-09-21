@@ -20,7 +20,7 @@ export default function Section3() {
     <Typography fontFamily={'Oswald'} textAlign={'justify'} gutterBottom variant='body1'>THE CRAFTING PROCESS OF EACH KNIFE IS A HUMBLE JOURNEY INDEED, AN EXPERIENCE WE HOPE TO SHARE WITH YOU. HANDCRAFTED BY ONLY THE BEST, WE BELIEVE EACH BLADE TELLS A STORY, CAPTURES A MEMORY AND HOLDS THE POTENTIAL TO ADD TO YOUR UNIQUE STORY. MADE FROM ONLY THE FINEST DAMASCUS, CARBON AND STAINLESS STEEL, OUR KNIVES ARE PERFECT FOR THE WILD TERRAIN OR FOR THE COLLECTION IN THE GLASS CASE.</Typography>   
     <br/>
     <Stack direction={'row'} spacing={10} >
-    <Box>
+    <Box sx={{":hover":{translate:'-20%'}}}>
         <Typography gutterBottom textAlign={'center'}>
         <IconButton  sx={{backgroundColor:'black',color:'white',fontSize:'50px'}}>
          <AiOutlineFire  ></AiOutlineFire>
@@ -29,7 +29,7 @@ export default function Section3() {
         <Typography variant='h6' fontFamily={'Oswald'} >REAL DAMASCUS STEEL</Typography>
     </Box>
 
-    <Box>
+    <Box sx={{":hover":{translate:'-20%'}}}>
     <Typography gutterBottom textAlign={'center'}>
         <IconButton  sx={{backgroundColor:'black',color:'white',fontSize:'50px'}} >
          <FaRegHandshake></FaRegHandshake>
@@ -39,7 +39,7 @@ export default function Section3() {
     </Box>
 
     
-    <Box>
+    <Box sx={{":hover":{translate:'-20%'}}}>
     <Typography gutterBottom textAlign={'center'}>
         <IconButton sx={{backgroundColor:'black',color:'white',fontSize:'50px'}}>
          <FaFingerprint></FaFingerprint>

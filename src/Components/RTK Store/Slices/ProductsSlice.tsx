@@ -20,12 +20,14 @@ const CartSlice=createSlice({
         removeFromCart(state:any,action:any){
            state.splice(action.payload,1)
         },
+        //@ts-ignore
         removeAllfromCart(state:any,action:any){
             return []
         },
         updateQuantity(state,action){
-            const { index, quantity } = action.payload;
+            const { index, quantity }:any = action.payload;
         if (state[index]) {
+            //@ts-ignore
          state[index].quantity = quantity;}
         },
         
@@ -34,5 +36,5 @@ const CartSlice=createSlice({
     }
 })
 
-export const {addToCart,removeFromCart,removeAllfromCart,updateQuantity,updatePrice}=CartSlice.actions
+export const {addToCart,removeFromCart,removeAllfromCart,updateQuantity}=CartSlice.actions
 export default CartSlice.reducer

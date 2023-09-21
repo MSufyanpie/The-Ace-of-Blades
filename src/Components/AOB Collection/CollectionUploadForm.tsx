@@ -26,9 +26,10 @@ export default function CollectionUploadForm() {
     const[productPrice,setProductPrice]:any=useState("")
     const[salePrice,setSalePrice]=useState('')
     const CollectionRef=collection(db,"AOB Collection")
+    //@ts-ignore
     const [imgUrl,setImgUrl]=useState('')
     const[category,setCategory]=useState('')
-    const onSubmit=(data)=>{
+    const onSubmit=(data:any)=>{
       console.log(data)
     }
     const handleCategory=(event:SelectChangeEvent)=>{
@@ -38,8 +39,10 @@ export default function CollectionUploadForm() {
         
    
      const[productImage,setProductImage]=useState(null)
+     //@ts-ignore
      const HandleUpload=async(payload:any)=>{
         if(productImage==null) return;
+        //@ts-ignore
        const imageref= ref(storage,`collectionImages/${productImage.name}`)
        
        try{
@@ -83,8 +86,10 @@ export default function CollectionUploadForm() {
               </Typography><br/>
              
               </Box><br/>
-            
-             <form onSubmit={handleSubmit((data)=>{
+             
+             <form 
+              //@ts-ignore
+             onSubmit={handleSubmit((data)=>{
               onSubmit(data)
   })}>
             <Stack direction={'column'} spacing={3} px={{xs:8,md:10}}>
@@ -137,6 +142,7 @@ export default function CollectionUploadForm() {
             id='image'
              {...register('image')}
              onChange={(event:ChangeEvent)=>{
+              //@ts-ignore
                 setProductImage(event.target.files[0])
              }}
             type="file" accept='image/*' />

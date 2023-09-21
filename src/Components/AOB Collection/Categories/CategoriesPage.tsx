@@ -14,7 +14,7 @@ interface categories {
   link: string;
 }
 export default function CategoriesPage() {
-  const[products,setProducts]=useState([{}])
+  const[products,setProducts]:any=useState([{}])
     let ProductsRef=collection(db,"AOB Collection")
     
     useEffect(()=>{
@@ -38,10 +38,10 @@ export default function CategoriesPage() {
        console.log(products)
         
       },[])
-      const filtered=products.filter(data=>data.category===1)
-      const filtered2=products.filter(data=>data.category===2)
-      const filtered3=products.filter(data=>data.category===3)
-      const filtered4=products.filter(data=>data.category===4)
+      const filtered=products.filter((data:any)=>{ return data.category===1})
+      const filtered2=products.filter((data:any)=>{ return data.category===2})
+      const filtered3=products.filter((data:any)=>{ return data.category===3})
+      const filtered4=products.filter((data:any)=>{ return data.category===4})
       var len1=filtered.length
       var len2=filtered2.length
       var len3=filtered3.length

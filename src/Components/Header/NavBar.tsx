@@ -24,6 +24,7 @@ export default function NavBar() {
   const OpenUploaderModal=()=>setOpenUploader(true)
   const CloseModal = () => setOpenUploader(false);
   const Closehandle = () => setOpenModal(false);
+  //@ts-ignore
   const[collectionModal,setCollectionModal]=useState(false)
   const openCollection=()=> setCollectionModal(true) 
   const closeCollection=()=> setCollectionModal(false)

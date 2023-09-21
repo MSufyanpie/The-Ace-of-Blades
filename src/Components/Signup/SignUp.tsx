@@ -1,5 +1,5 @@
 import { Box,  TextField, Typography,Stack,  Button,  } from '@mui/material'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { BiSolidUserCircle } from "react-icons/bi"
 import {createUserWithEmailAndPassword,updateProfile
 } from 'firebase/auth'
@@ -29,16 +29,16 @@ export default function SignUp() {
    }
   return (
     
-        <Box  width={'70%'} sx={{backgroundColor:'white',borderRadius:'10px'}} marginTop={'10%'} marginLeft={'15%'}>
+        <Box   width={{xs:'100%',md:600}} m={{xs:'none',md:'auto'}} sx={{backgroundColor:'white',borderRadius:'10px'}} marginTop={{xs:'30%',md:'10%'}} >
        
         <Stack direction={'row'} spacing={2}  >
         
-        <Box sx={{background:'linear-gradient(-160deg, #ddd6f3,#faaca8)'}}>
+        <Box boxShadow={10} sx={{background:'linear-gradient(to right, #67b26f,#4ca2cd)'}}>
         <Typography color={'purple'}  gutterBottom textAlign={'center'} variant='h2' fontFamily={'Oswald'} fontWeight={'bold'}>
             
           <BiSolidUserCircle></BiSolidUserCircle>
         </Typography>
-        <Stack spacing={3} direction={'column'} px={25}>
+        <Stack spacing={3} direction={'column'} px={{xs:13,md:25}}>
         <TextField 
         onChange={(event)=>
              setUserData((prev:any)=>({...prev,Name:event.target.value}))        
@@ -60,13 +60,15 @@ export default function SignUp() {
              
              <Typography color={'red'}>{errormsg}</Typography>
              <Button 
+             
+             sx={{fontWeight:'bold'}}
              type='submit'
              onClick={HandleSubmit}
-             variant='contained' color='info'>Sign Up</Button><br/>
+             variant='contained' color='secondary'>Sign Up</Button><br/>
         </Stack>
         </Box>
        
-        </Stack>
+        </Stack><br/>
         </Box>
     
   )

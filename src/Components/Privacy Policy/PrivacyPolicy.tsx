@@ -8,11 +8,7 @@ import Footer from '../Footer/Footer';
 
 
 export const PrivacyPolicy = () => {
-    const [markdownContent, setMarkdownContent] = useState('');
-    
-       
-        
-        
+    const [markdownContent, setMarkdownContent] = useState('');       
   useEffect(() => {
    
     fetch('/Pp.md')

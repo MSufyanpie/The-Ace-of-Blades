@@ -1,4 +1,4 @@
-import React from 'react'
+
 
 import {  Typography,Card, CardMedia, CardContent, Button, Grid} from "@mui/material";
 interface saleProducts{
@@ -11,11 +11,13 @@ interface saleProducts{
 export default function Section6Design({imageUrl,title,price,salePrice,id}:saleProducts) {
   return (
     <Grid 
+    item xs={12} sm={6} md={4}
     key={id}
-    item xs={12} sm={6} md={4}>
+    >
     <Card variant="outlined">
       <CardMedia
         image={imageUrl}
+        component={'img'}
         sx={{ height: "300px" }}
       />
       <CardContent sx={{ backgroundColor: "#f2f7f3" }}>

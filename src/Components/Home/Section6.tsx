@@ -7,12 +7,7 @@ import {
 } from "@mui/material";
 
 import Section6Design from "./Section6Design";
-interface knife {
-  imageUrl: any;
-  title: string;
-  price: string;
-  salePrice: string;
-}
+
 export default function Section6() {
   const [products, setProducts] = useState([{}]);
   const ProductsRef = collection(db, "AOB Collection");
@@ -46,14 +41,12 @@ export default function Section6() {
       >
         ITEMS ON SALE
       </Typography>
-      <Grid  container direction={"row"} spacing={2} marginTop={"4%"} px={8}>
+      <Grid  container direction={"row"} spacing={2} marginTop={"4%"} px={10}>
         {filtered.map((data, index) => {
           return (
             
-            <div
-            key={index}
-            >
-             
+           
+             <>
               { //@ts-ignore
               data.salePrice ? (
                 <>
@@ -68,11 +61,12 @@ export default function Section6() {
                   salePrice={data.salePrice}
                   id={index}
                   />
+                  
                 </>
               ) : (
                 <></>
               )}
-            </div>
+             </>
           );
         })}
       </Grid>

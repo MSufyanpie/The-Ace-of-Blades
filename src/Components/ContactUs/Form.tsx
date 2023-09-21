@@ -24,7 +24,8 @@ export default function Form() {
       mode:'all',
       resolver:yupResolver(schema)
    })
-   const {isSubmitted,isSubmitSuccessful,errors}=formState;
+   const {isSubmitted,isSubmitSuccessful,errors}:any=formState;
+   //@ts-ignore
    const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
       if (reason === 'clickaway') {
         return; }
@@ -36,6 +37,7 @@ export default function Form() {
    
   return (
     <div>
+               
         <Box  width={isMobile?'100%':700} m={'auto'} bgcolor={'white'} sx={{boxShadow:15}}>
             <Card>
                 <br/>
@@ -54,7 +56,10 @@ export default function Form() {
                     Name and Surname
                  </FormLabel>
                  <TextField id='Name'  {...register("Name")} size='small' />
-                 <Typography color={'red'}>{errors.Name?.message}</Typography>
+                 
+                 <Typography color={'red'}   >
+               
+                  {errors.Name?.message}</Typography>
                  <FormLabel required sx={{fontWeight:'bold',color:'black'}}>
                     Email Address
                  </FormLabel>
@@ -63,6 +68,7 @@ export default function Form() {
                  <FormLabel  required sx={{fontWeight:'bold',color:'black'}}>
                     Contact Number
                  </FormLabel>
+                
                  <TextField type="number" id='number' {...register('number')} size='small' /><br/>
                  <Typography color={'red'}>{errors.number?.message}</Typography>
                  </Stack>
@@ -91,14 +97,16 @@ export default function Form() {
                     </Typography>
                  </Box>
                  </Stack><br />
+                 
                  <Stack px={3} spacing={2}>
                  <FormLabel required sx={{fontWeight:'bold',color:'black'}}>
                     Comment or Message
                  </FormLabel>
                  <TextField id='message' {...register('Message')} multiline/>
+                 
                  <Typography color={'red'}>{errors.Message?.message}</Typography>
                  
-                 </Stack><br />
+                 </Stack><br  />
                  
                  
                 </FormControl>

@@ -1,4 +1,4 @@
-import React from 'react'
+
 import {  Typography,Box,Stack,useTheme, useMediaQuery} from "@mui/material";
 import {AiFillLock,} from 'react-icons/ai'
 import {GiSurferVan} from 'react-icons/gi'

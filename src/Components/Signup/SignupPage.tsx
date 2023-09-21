@@ -36,7 +36,7 @@ export default function SignupPage({ open, close }: any) {
   const [errormsg, setErrormsg]: any = useState("");
   const HandleSubmit = () => {
     signInWithEmailAndPassword(auth, data.Email, data.Password)
-      .then(async (res) => {
+      .then(async () => {
         navigate("/AOBCollection");
         close;
       })
@@ -121,7 +121,7 @@ export default function SignupPage({ open, close }: any) {
               <br />
               <Typography fontWeight={'bold'}>Don't Have Any Account?</Typography>
 
-              <Link to={"./SignUp"} style={{ textDecoration: "none" }}>
+              <Link to={"/SignUp"} style={{ textDecoration: "none" }}>
                 <Typography fontWeight={'bold'} textAlign={'center'}>Create an Account</Typography>
               </Link>
             </Stack>

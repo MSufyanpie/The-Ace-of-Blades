@@ -1,20 +1,12 @@
 import { Star } from '@mui/icons-material'
-import { Box, Checkbox, FormControl,  FormLabel, InputLabel, MenuItem, Select, Stack, TextField, Typography } from '@mui/material'
-import { useForm, useFormState } from 'react-hook-form'
-import {yupResolver} from '@hookform/resolvers/yup'
-import * as yup from "yup"
+import { Box, Button, Checkbox, FormControl,  FormLabel, InputLabel, MenuItem, Select, Stack, TextField, Typography } from '@mui/material'
+import {useState} from 'react'
 
-const schema=yup.
-object()
-.shape({
-  UsernameorEmailAddress: yup.string().min(6).max(30).required()
-})
-.required()
 export default function BillingForm() {
-  const{register,formState}=useForm({
-  resolver:yupResolver(schema)
-  })
-  const {errors}=formState
+  const[couponBox,setCouponBox]=useState(true)
+  const handleCoupon=()=>{
+    setCouponBox(false)
+  }
   return (
     <div>
       <form>
@@ -25,11 +17,11 @@ export default function BillingForm() {
          Customer Information
         </FormLabel>
         <TextField 
-        id='UsernameorEmailAddress'
-        {...register("UsernameorEmailAddress")}
+        
+        
         
         required placeholder='Username or Email Address'/>
-        {errors.UsernameorEmailAddress?.message}
+        
         </Stack><br/>
 
         <Stack spacing={2}>
@@ -77,8 +69,14 @@ export default function BillingForm() {
         </FormLabel>
         </Stack><br/>
         <TextField  multiline size='medium' fullWidth placeholder='notes about your order,e.g,special notes for delivery'/>
-        <Typography marginTop={'1%'}>Have a Coupon?</Typography>
-        
+       
+        {couponBox?(<>
+          <Typography marginTop={'1%'}><Button onClick={handleCoupon} color='error' sx={{fontWeight:'bold'}} variant='text'>Have a Coupon?</Button></Typography>
+        </>):(<Stack direction={'row'} spacing={1} marginTop={'1%'}>
+
+        <TextField fullWidth size='medium' multiline placeholder='Coupon Code' />
+        <Button   variant='contained' sx={{backgroundColor:'black',fontWeight:'bold',width:350,":hover":{backgroundColor:'grey'}}}>Apply</Button>
+        </Stack>)}
         </Box>
         </form>
     </div>

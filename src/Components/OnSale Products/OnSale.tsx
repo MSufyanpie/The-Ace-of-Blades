@@ -47,7 +47,7 @@ export default function OnSale() {
         <NavBar/>
         <Section1/>
         <Grid 
-        key={1}
+        
         container
         direction={'row'} spacing={2} marginTop={'2%'} px={8}>
         {filtered.map((data:any,index:number)=>{

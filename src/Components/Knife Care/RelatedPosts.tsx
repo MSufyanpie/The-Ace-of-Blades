@@ -29,11 +29,11 @@ export default function RelatedPosts() {
     
     
   },[])
-  const slicedList=articlesList.slice(0,2)
+  const slicedList:any=articlesList.slice(0,2)
   return (
     <Box  marginTop={'4%'}>
     <Grid container direction={'row'} spacing={2}>
-{slicedList.map((data,index)=>{
+{slicedList.map((data:any,index:number)=>{
     return( 
       <Grid key={index} item xs={12} sm={6} md={4} >
         <Card variant='outlined'>

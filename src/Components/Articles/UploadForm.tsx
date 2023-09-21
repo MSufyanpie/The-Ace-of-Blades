@@ -1,5 +1,5 @@
 import { Box, Button, Card, Stack, TextField, Typography } from '@mui/material'
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import { storage,db } from '../../Config/Firebase'
 import { getDownloadURL, ref,uploadBytes } from 'firebase/storage'
 import { addDoc, collection } from 'firebase/firestore'
@@ -9,6 +9,7 @@ export default function ArticleUploadForm() {
     const[ArticleTitle,setArticleTitle]:any=useState("")
     const[ArticleDescription,setArticleDescription]:any=useState("")
     const CollectionRef=collection(db,"Articles")
+    //@ts-ignore
     const [imgUrl,setImgUrl]=useState('')
         
        
@@ -17,6 +18,7 @@ export default function ArticleUploadForm() {
      const[ArticleImage,setArticleImage]=useState(null)
      const HandleUpload=async()=>{
         if(ArticleImage==null) return;
+        //@ts-ignore
        const imageref= ref(storage,`articleImages/${ArticleImage.name}`)
        
        try{
@@ -65,6 +67,7 @@ export default function ArticleUploadForm() {
             <label htmlFor="">Upload Article Image</label>
             <input
              onChange={(event)=>{
+                //@ts-ignore
                 setArticleImage(event.target.files[0])
              }}
             type="file" accept='image/*' />
