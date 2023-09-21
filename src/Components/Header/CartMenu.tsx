@@ -1,7 +1,7 @@
-import { Menu, MenuItem, Table, TableContainer } from '@mui/material'
+import {Box, Button, Menu, MenuItem, Table, TableContainer, Typography} from '@mui/material'
 import { useSelector } from 'react-redux'
 import { CartProductsDesign } from '../Cart/CartProductsDesign'
-import { useNavigate } from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import EmptyCart from '../Checkout/EmptyCart'
 
 
@@ -14,15 +14,18 @@ export const CartMenu = ({anchorel,onClose}:any) => {
         return state.cart
     })
   return (
+
     <Menu
         id="simple-menu"
         anchorEl={anchorel}
         open={Boolean(anchorel)}
         onClose={onClose}
         MenuListProps={{ onMouseLeave: onClose }}
+        sx={{marginRight:'5%'}}
       >
       <TableContainer >
                     <Table>
+
         {cartProducts.map((data:any,index:number)=>{
             return(
                 <MenuItem onClick={handleClick}>
@@ -37,11 +40,26 @@ export const CartMenu = ({anchorel,onClose}:any) => {
                 </MenuItem>
             )
         })}
+
         </Table>
         </TableContainer>
+        <Link to={'/Cart'} style={{textDecoration:'none'}}><Typography textAlign={'center'} gutterBottom>
+            <Button variant={'contained'}
+                    sx={{color:'black', backgroundColor:'white',border:'1px solid black',":hover":{
+                    backgroundColor:'grey'}
+                    }}
+
+            >
+                View Cart</Button></Typography></Link>
+        <Link to={'/Checkout'} style={{textDecoration:'none'}}> <Typography textAlign={'center'}>
+            <Button variant={'contained'}
+                    sx={{color:'white', backgroundColor:'black',":hover":{
+                            backgroundColor:'grey'}}}>
+                Checkout</Button></Typography></Link>
         {cartProducts.length==0?(<>
         <EmptyCart/>
         </>):(<></>)}
       </Menu>
+
   )
 }
