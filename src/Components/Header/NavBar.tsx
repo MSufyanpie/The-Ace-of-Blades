@@ -26,18 +26,14 @@ const[anchorel,setAnchorel]=useState(null)
   const OpenUploaderModal=()=>setOpenUploader(true)
   const CloseModal = () => setOpenUploader(false);
   const Closehandle = () => setOpenModal(false);
-  //@ts-ignore
-  const[collectionModal,setCollectionModal]=useState(false)
   const [isLoggedIn,SetLoggedIn]=useState(false)
   const theme=useTheme()
   const isMobile=useMediaQuery(theme.breakpoints.down('md'))
-
   const handleClick=(event:any)=> {
     if (anchorel !== event.currentTarget) {
       setAnchorel(event.currentTarget);
     }
   }
-
   const handleClose=()=> {
     setAnchorel(null);
   }
@@ -49,7 +45,6 @@ const[anchorel,setAnchorel]=useState(null)
     SetLoggedIn(false)
       }
      })
-
      return()=> loginState();
   },[])
  const LogOut=async()=>{
@@ -110,10 +105,7 @@ const[anchorel,setAnchorel]=useState(null)
       ></SignupPage> 
       <CartMenu
       anchorel={anchorel}
-      onClose={handleClose}
-
-      />
-       
+      onClose={handleClose}/> 
     </div>
   );
 }
