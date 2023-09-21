@@ -2,19 +2,13 @@
 import { collection, getDocs } from 'firebase/firestore'
 import  { useEffect, useState } from 'react'
 import {  db } from '../../../Config/Firebase'
-import {   Button, Card, CardContent, CardMedia, Grid,  Typography } from '@mui/material'
+import {Grid,} from '@mui/material'
 import NavBar from '../../Header/NavBar'
-import { useDispatch } from 'react-redux'
-import { addToCart } from '../../RTK Store/Slices/ProductsSlice'
-
-
-
+import { AllCategoriesDesign } from './AllCategoriesDesign'
 
 export default function Category1() {
     const[products,setProducts]=useState([{}])
     const ProductsRef=collection(db,"AOB Collection")
-    const dispatch=useDispatch()
-    
     useEffect(()=>{
         const getProductsList= async()=>{
           try {
@@ -31,8 +25,6 @@ export default function Category1() {
           } catch (error) {
             console.error(error)
           }
-          
-          
           }
 
         getProductsList()
@@ -40,14 +32,7 @@ export default function Category1() {
         
       },[])
       //@ts-ignore
-      const filtered:any=products.filter(data=>data.category===1) 
-      const handleAddToCart=(products:any)=>{
-        console.log("adding to cart",products)
-          dispatch(addToCart(products))
-
-          
-      }
-      
+      const filtered:any=products.filter(data=>data.category===1)  
   return (
     <div>
         <NavBar/>
@@ -56,28 +41,14 @@ export default function Category1() {
         direction={'row'} spacing={2} marginTop={'10%'} px={8}>
         {filtered.map((data:any,index:number)=>{
             return(
-                <Grid key={index}
-                item xs={12} sm={6} md={4} >
-                <Card variant='outlined' >
-                
-                    <CardMedia 
-                    image={data.imageUrl}
-                    sx={{height:'300px'}}
-                    />
-                    <CardContent sx={{backgroundColor:'#f2f7f3'}}>
-                        <Typography  fontFamily={'Oswald'} textAlign={'center'} variant='h6' fontWeight={'bold'} gutterBottom>{data.title}</Typography>
-                        {data.salePrice && data.salePrice!=='0'?
-                        (<><Typography gutterBottom fontFamily={'Oswald'} textAlign={'center'}  variant='h6' color={'grey'} fontWeight={'bold'}><s>R{data.price}</s>   R{data.salePrice}  </Typography>
-                       
-                        </>)
-                        :(<> <Typography gutterBottom fontFamily={'Oswald'} textAlign={'center'}  variant='h6' color={'grey'} fontWeight={'bold'}>R{data.price}</Typography></>)}
-                       
-                        <Typography  textAlign={'center'}>
-                <Button variant='outlined' sx={{border:'1px solid grey',color:'white',backgroundColor:'black'}} onClick={()=>handleAddToCart(data)}>
-                  Add to Cart</Button></Typography>
-                    </CardContent>
-                </Card>
-                </Grid>
+                <AllCategoriesDesign
+                 title={data.title}
+                 imageUrl={data.imageUrl}
+                 id={index}
+                 price={data.price}
+                 salePrice={data.salePrice}
+                 data={data}
+                />
             )
         })}
         </Grid>

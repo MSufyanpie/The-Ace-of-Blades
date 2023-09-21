@@ -1,8 +1,7 @@
 
 import Footer from '../Footer/Footer'
 import NavBar from '../Header/NavBar'
-import ArticleDeisgn from './ArticleDeisgn'
-
+import ArticlePage from './ArticlesPage'
 import Section1 from './Section1'
 
 export default function Articles() {
@@ -10,7 +9,7 @@ export default function Articles() {
     <div>
         <NavBar></NavBar>
         <Section1/>
-        <ArticleDeisgn></ArticleDeisgn><br/>
+        <ArticlePage/><br/>
         <Footer/>
     </div>
   )
