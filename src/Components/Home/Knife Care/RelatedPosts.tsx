@@ -2,7 +2,7 @@ import { collection,getDocs } from 'firebase/firestore'
 import  { useEffect, useState } from 'react'
 import { Box, Card, CardContent, CardMedia, Grid,  Typography } from '@mui/material'
 
-import { db } from '../../Config/Firebase'
+import { db } from '../../../Config/Firebase'
 
 export default function RelatedPosts() {
     const[articlesList,setArticlesList]=useState([{}])

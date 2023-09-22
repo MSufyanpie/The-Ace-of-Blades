@@ -7,14 +7,21 @@ import {getFirestore} from 'firebase/firestore'
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCZKAb-izhnTzxmtWowYAJDJXMQ-hBTnrU",
-  authDomain: "aceofblades-12971.firebaseapp.com",
-  projectId: "aceofblades-12971",
-  storageBucket: "aceofblades-12971.appspot.com",
-  messagingSenderId: "183965776583",
-  appId: "1:183965776583:web:1a996369bc90d15b8b9ce2"
+  //@ts-ignore
+  apiKey: process.env.REACT-APP-FIREBASE-API-KEY,
+  //@ts-ignore
+  authDomain: process.env.REACT-APP-FIREBASE-AUTH-DOMAIN,
+  //@ts-ignore
+  projectId: process.env.REACT-APP-FIREBASE-PROJECT-ID,
+  //@ts-ignore
+  storageBucket: process.env.REACT-APP-FIREBASE-STORAGE-BUCKET,
+  //@ts-ignore
+  messagingSenderId: process.env.REACT-APP-FIREBASE-SENDER-ID,
+  //@ts-ignore
+  appId: process.env.REACT-APP-FIREBASE-APP-ID,
+  
 };
-
+//@ts-ignore
 export const app = initializeApp(firebaseConfig);
 export const storage=getStorage(app)
 export const auth=getAuth();

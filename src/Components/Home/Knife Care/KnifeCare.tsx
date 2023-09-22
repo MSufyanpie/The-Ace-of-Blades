@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
-import NavBar from "../Common/Header/NavBar";
+import NavBar from "../../Common/Header/NavBar";
 import RelatedPosts from "./RelatedPosts";
-import Footer from "../Common/Footer/Footer";
+import Footer from "../../Common/Footer/Footer";
 
 export default function KnifeCare() {
   return (
