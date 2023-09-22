@@ -7,7 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../RTK Store/Slices/ProductsSlice";
+import { addToCart } from "../../../Redux/Slices/ProductsSlice";
 interface onSale {
   salePrice: number;
   title: string;

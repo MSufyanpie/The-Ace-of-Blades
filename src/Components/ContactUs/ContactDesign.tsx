@@ -3,7 +3,7 @@ import './Contact.css'
 import { Box, Grid, IconButton, Typography, useMediaQuery, useTheme } from '@mui/material'
 import { AiOutlineFacebook, AiOutlineInstagram, AiOutlineMail, AiOutlineWhatsApp} from 'react-icons/ai'
 import Form from './Form'
-import Footer from '../Footer/Footer'
+import Footer from '../Common/Footer/Footer'
 
 export default function ContactDesign() {
   const theme=useTheme()

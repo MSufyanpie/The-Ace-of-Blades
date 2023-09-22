@@ -2,9 +2,9 @@
 import  { useEffect, useState } from 'react'
 import ReactMarkdown from 'react-markdown';
 import { Section1 } from './Section1';
-import NavBar from '../Header/NavBar';
+import NavBar from '../Common/Header/NavBar';
 import { Box, Typography } from '@mui/material';
-import Footer from '../Footer/Footer';
+import Footer from '../Common/Footer/Footer';
 
 
 export const PrivacyPolicy = () => {

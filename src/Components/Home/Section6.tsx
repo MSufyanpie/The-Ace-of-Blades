@@ -60,6 +60,7 @@ export default function Section6() {
                   //@ts-ignore
                   salePrice={data.salePrice}
                   id={index}
+                  data={data}
                   />
                   
                 </>

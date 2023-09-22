@@ -3,8 +3,8 @@ import  { useEffect, useState } from 'react'
 import { db } from '../../Config/Firebase'
 import {  Card, CardMedia, Grid, Typography } from '@mui/material'
 import { collection, getDocs } from 'firebase/firestore'
-import NavBar from '../Header/NavBar'
-import Footer from '../Footer/Footer'
+import NavBar from '../Common/Header/NavBar'
+import Footer from '../Common/Footer/Footer'
 
 export default function Gallery() {
     const [images,setImages]=useState([{}])

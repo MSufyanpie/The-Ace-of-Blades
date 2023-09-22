@@ -3,8 +3,8 @@ import  { useState } from 'react'
 import { storage,db } from '../../Config/Firebase'
 import { getDownloadURL, ref,uploadBytes } from 'firebase/storage'
 import { addDoc, collection } from 'firebase/firestore'
-import NavBar from '../Header/NavBar'
-import Footer from '../Footer/Footer'
+import NavBar from '../Common/Header/NavBar'
+import Footer from '../Common/Footer/Footer'
 export default function ArticleUploadForm() {
     const[ArticleTitle,setArticleTitle]:any=useState("")
     const[ArticleDescription,setArticleDescription]:any=useState("")

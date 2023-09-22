@@ -1,8 +1,8 @@
 import { Button, Menu, MenuItem, Table, TableContainer, Typography} from '@mui/material'
 import { useSelector } from 'react-redux'
-import { CartProductsDesign } from '../Cart/CartProductsDesign'
+import { CartProductsDesign } from '../../Cart/CartProductsDesign'
 import {Link, useNavigate} from 'react-router-dom'
-import EmptyCart from '../Checkout/EmptyCart'
+import EmptyCart from '../../Checkout/EmptyCart'
 
 
 export const CartMenu = ({anchorel,onClose}:any) => {
@@ -23,7 +23,10 @@ export const CartMenu = ({anchorel,onClose}:any) => {
         MenuListProps={{ onMouseLeave: onClose }}
         sx={{marginRight:'5%'}}
       >
-      <TableContainer >
+        {cartProducts.length==0?(<>
+        <EmptyCart/>
+        </>):(<>
+            <TableContainer >
                     <Table>
 
         {cartProducts.map((data:any,index:number)=>{
@@ -56,9 +59,9 @@ export const CartMenu = ({anchorel,onClose}:any) => {
                     sx={{color:'white', backgroundColor:'black',":hover":{
                             backgroundColor:'grey'}}}>
                 Checkout</Button></Typography></Link>
-        {cartProducts.length==0?(<>
-        <EmptyCart/>
-        </>):(<></>)}
+        </>)}
+     
+        
       </Menu>
 
   )

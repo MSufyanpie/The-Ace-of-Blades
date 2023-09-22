@@ -1,12 +1,15 @@
 import { collection, getDocs } from 'firebase/firestore'
 import  { useEffect, useState } from 'react'
 import {  db } from '../../../Config/Firebase'
-import {Grid} from '@mui/material'
-import NavBar from '../../Header/NavBar'
-import { AllCategoriesDesign } from './AllCategoriesDesign'
+import {  Grid,   } from '@mui/material'
+
+import Section1 from './Section1'
+
+import OnSaleDesign from './OnSaleDesign'
 
 
-export default function Category2() {
+export default function OnSale() {
+
     const[products,setProducts]=useState([{}])
     const ProductsRef=collection(db,"AOB Collection")
     useEffect(()=>{
@@ -16,7 +19,6 @@ export default function Category2() {
             const actualData=data.docs.map((doc)=>({
             ...doc.data(),
             id:doc.id,
-      
             }))
             console.log(actualData)
             setProducts(actualData)
@@ -31,27 +33,32 @@ export default function Category2() {
         
       },[])
       //@ts-ignore
-      const filtered:any=products.filter(data=>data.category===2)
+      const filtered=products.filter(data=>data.salePrice!==0)
+      
       
   return (
     <div>
-        <NavBar/>
-        <Grid
+        
+        <Section1/>
+        <Grid 
+        
         container
-        direction={'row'} spacing={2} marginTop={'10%'} px={4}>
+        direction={'row'} spacing={2} marginTop={'2%'} px={8}>
         {filtered.map((data:any,index:number)=>{
             return(
-              <AllCategoriesDesign
-              title={data.title}
-              imageUrl={data.imageUrl}
-              id={index}
-              price={data.price}
-              salePrice={data.salePrice}
-              data={data}
-             />
+                <OnSaleDesign
+                title={data.title}
+                imageUrl={data.imageUrl}
+                price={data.price}
+                salePrice={data.salePrice}
+                id={index}
+                data={data}
+                />
             )
         })}
-        </Grid>
+        </Grid><br/>
+        
     </div>
   )
 }
+

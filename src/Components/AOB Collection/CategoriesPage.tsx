@@ -1,12 +1,12 @@
 import  { useEffect, useState } from "react";
-import folding from "../../../assets/Categories/Folding Knife.jpeg";
-import ring from "../../../assets/Categories/Key Ring.jpeg";
-import kitchenKnife from "../../../assets/Categories/Kitchen Knife.jpeg";
-import KnifeCare from "../../../assets/Categories/Knife Care.png";
+import folding from '../../assets/Categories/Folding Knife.jpeg'
+import ring from "../../assets/Categories/Key Ring.jpeg";
+import kitchenKnife from "../../assets/Categories/Kitchen Knife.jpeg";
+import KnifeCare from "../../assets/Categories/Knife Care.png";
 import { Grid, } from "@mui/material";
-import CategoriesPageDesign from "../CategoriesPageDesign";
+import CategoriesPageDesign from "./CategoriesPageDesign";
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "../../../Config/Firebase";
+import { db } from "../../Config/Firebase";
 interface categories {
   img: any;
   title: string;
@@ -97,7 +97,7 @@ export default function CategoriesPage() {
             </Grid>
           );
         })}
-      </Grid>
+      </Grid><br/>
     </div>
   );
 }

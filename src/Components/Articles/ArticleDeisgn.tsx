@@ -21,7 +21,7 @@ export default function ArticleDesign({id,imageUrl,title,description}:articles) 
                 {description}
             </Typography>
         </CardContent>
-    </Card>
+    </Card><br/>
     </Grid>
   )
 }

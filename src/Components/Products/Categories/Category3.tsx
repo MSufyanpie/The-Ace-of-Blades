@@ -2,10 +2,10 @@ import { collection, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { db } from "../../../Config/Firebase";
 import { Grid } from "@mui/material";
-import NavBar from "../../Header/NavBar";
+import NavBar from "../../Common/Header/NavBar";
 import { AllCategoriesDesign } from "./AllCategoriesDesign";
 
-export default function Category4() {
+export default function Category3() {
   const [products, setProducts] = useState([{}]);
   const ProductsRef = collection(db, "AOB Collection");
 
@@ -26,12 +26,12 @@ export default function Category4() {
     getProductsList();
   }, []);
   //@ts-ignore
-  const filtered: any = products.filter((data) => data.category === 4);
+  const filtered: any = products.filter((data) => data.category === 3);
 
   return (
     <div>
       <NavBar />
-      <Grid container direction={"row"} spacing={2} marginTop={"10%"} px={4}>
+      <Grid container direction={"row"} spacing={2} marginTop={"10%"} px={10}>
         {filtered.map((data: any, index: number) => {
           return (
             <AllCategoriesDesign

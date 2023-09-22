@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
 import {Provider} from "react-redux";
-import store from './Components/RTK Store/index.tsx'
+import store from './Redux/Store/index.tsx'
 import { PersistGate } from 'redux-persist/integration/react'
 import { persistStore } from 'redux-persist'
 

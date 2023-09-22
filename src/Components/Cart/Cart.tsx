@@ -1,7 +1,7 @@
 
 import CartProducts from './CartProducts'
-import Footer from '../Footer/Footer'
-import NavBar from '../Header/NavBar'
+import Footer from '../Common/Footer/Footer'
+import NavBar from '../Common/Header/NavBar'
 import Section1 from './Section1'
 
 export default function Cart() {
@@ -9,7 +9,7 @@ export default function Cart() {
     <div>
       <NavBar/>
       <Section1/>
-        <CartProducts/><br/><br/>
+        <CartProducts/><br/>
         <Footer/>
     </div>
   )

@@ -1,14 +1,21 @@
 
 
 import {  Typography,Card, CardMedia, CardContent, Button, Grid} from "@mui/material";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../Redux/Slices/ProductsSlice";
 interface saleProducts{
     imageUrl:string,
     title:string,
     price:string,
-    salePrice:string
-    id:number
+    salePrice:string,
+    id:number,
+    data:any
 }
-export default function Section6Design({imageUrl,title,price,salePrice,id}:saleProducts) {
+export default function Section6Design({imageUrl,title,price,salePrice,id,data}:saleProducts) {
+  const dispatch=useDispatch()
+  const handleAddtoCart=(products:any)=>{
+   dispatch(addToCart(products))
+  }
   return (
     <Grid 
     item xs={12} sm={6} md={4}
@@ -42,6 +49,8 @@ export default function Section6Design({imageUrl,title,price,salePrice,id}:saleP
         </Typography>
         <Typography textAlign={"center"}>
           <Button
+          onClick={()=>handleAddtoCart(data)}
+
             variant="outlined"
             
             sx={{

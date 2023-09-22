@@ -1,8 +1,8 @@
 
-import NavBar from '../Header/NavBar'
+import NavBar from '../Common/Header/NavBar'
 import Section1 from './Section1'
 import Design from './Design'
-import Footer from '../Footer/Footer'
+import Footer from '../Common/Footer/Footer'
 
 export default function ShippingandReturns() {
   return (

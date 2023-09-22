@@ -1,5 +1,5 @@
 
-import NavBar from '../Header/NavBar'
+import NavBar from '../Common/Header/NavBar'
 import ContactDesign from './ContactDesign'
 
 

@@ -1,17 +1,13 @@
 
 import './App.css'
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
-import Home from './Components/Home/Home'
-import Collection from './Components/AOB Collection/Collection'
-import Authentication from './Components/Signup/Authentication'
+import Authentication from './Components/Authentication/Authentication'
 import CollectionUploadForm from './Components/AOB Collection/CollectionUploadForm'
 import ArticleUploadForm from './Components/Articles/UploadForm'
-import Articles from './Components/Articles/Articles'
-import Category1 from './Components/AOB Collection/Categories/Category1'
-import Category2 from './Components/AOB Collection/Categories/Category2'
-import Category3 from './Components/AOB Collection/Categories/Category3'
-import Category4 from './Components/AOB Collection/Categories/Category4'
-import OnSale from './Components/OnSale Products/OnSale'
+import Category1 from './Components/Products/Categories/Category1'
+import Category2 from './Components/Products/Categories/Category2'
+import Category3 from './Components/Products/Categories/Category3'
+import Category4 from './Components/Products/Categories/Category4'
 import Gallery from './Components/Gallery/Gallery'
 import ImageUploader from './Components/Gallery/ImageUploader'
 import Contact from './Components/ContactUs/Contact'
@@ -20,6 +16,10 @@ import Checkout from './Components/Checkout/Checkout'
 import { PrivacyPolicy } from './Components/Privacy Policy/PrivacyPolicy'
 import ShippingandReturns from './Components/Shipping and Returns/ShippingandReturns'
 import KnifeCare from './Components/Knife Care/KnifeCare'
+import { HomePage } from './Pages/Home/HomePage'
+import { CollectionPage } from './Pages/Collection/CollectionPage'
+import { SalePage } from './Pages/Sale/SalePage'
+import { ArticlesPage } from './Pages/Articles/ArticlesPage'
 
 
 function App() {
@@ -31,13 +31,13 @@ function App() {
      <div>
      <Router>
       <Routes>
-       <Route path='/' element={<Home/>} ></Route>
-       <Route path='/AOBCollection' element={<Collection/>} ></Route>
+       <Route path='/' element={<HomePage/>} ></Route>
+       <Route path='/AOBCollection' element={<CollectionPage/>} ></Route>
        <Route path='/SignUp' element={<Authentication/>} ></Route>
        <Route path='/upload-Products' element={<CollectionUploadForm/>}></Route>
        <Route path='/upload-articles' element={<ArticleUploadForm/>} ></Route>
-       <Route path='/Articles' element={<Articles/>} ></Route>
-       <Route path='/OnSale' element={<OnSale/>} ></Route>
+       <Route path='/Articles' element={<ArticlesPage/>} ></Route>
+       <Route path='/OnSale' element={<SalePage/>} ></Route>
        <Route path='/FoldingKnives' element={<Category1/>} ></Route>
        <Route path='/KeyRings' element={<Category2/>}></Route>
        <Route path='/KnifeCareProducts' element={<Category3/>}/>

@@ -1,14 +1,15 @@
 
-import { Box, Button, Card,  FormControl, Grid, InputLabel, MenuItem, Select, SelectChangeEvent, Stack, TextField, Typography } from '@mui/material'
+import { Box, Button, Card,  FormControl,  InputLabel, MenuItem, Select, SelectChangeEvent, Stack, TextField, Typography } from '@mui/material'
 import  { ChangeEvent, useState } from 'react'
 import { storage,db } from '../../Config/Firebase'
 import { getDownloadURL, ref,uploadBytes } from 'firebase/storage'
 import { addDoc, collection } from 'firebase/firestore'
-import NavBar from '../Header/NavBar'
+import NavBar from '../Common/Header/NavBar'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
-import Footer from '../Footer/Footer'
+import Footer from '../Common/Footer/Footer'
+
 const schema=yup.object().shape({
 title:yup.string().required(),
 price:yup.number().positive().integer().required('invalid price'),
@@ -44,13 +45,10 @@ export default function CollectionUploadForm() {
         if(productImage==null) return;
         //@ts-ignore
        const imageref= ref(storage,`collectionImages/${productImage.name}`)
-       
        try{
-        
         const uploadImg=uploadBytes(imageref,productImage)
         await uploadImg
-        
-       
+    
        const DownloadUrl= await getDownloadURL(imageref)
        setImgUrl(DownloadUrl)
        
@@ -62,23 +60,15 @@ export default function CollectionUploadForm() {
             category:category
            })
         alert("Product Added")
-
         } catch(error){
             console.log(error)
         }
-      
     }
-   
 
   return (
     <div >
       <NavBar/>
       <Box  width={{xs:'100%',md:410}} m={{xs:'none',md:'auto'}} marginTop={{xs:'28%',md:'8%'}} boxShadow={10}>
-      <Grid
-       container 
-       
-      >
-        <Grid item  >
           <Card  >
               <Box sx={{backgroundColor:'black'}} ><br/>
               <Typography color={'white'} gutterBottom textAlign={'center'} variant='h3' fontFamily={'Oswald'} fontWeight={'bold'}>
@@ -138,26 +128,19 @@ export default function CollectionUploadForm() {
     </FormControl>
           
             <label  htmlFor=""><input
-            
             id='image'
              {...register('image')}
              onChange={(event:ChangeEvent)=>{
               //@ts-ignore
-                setProductImage(event.target.files[0])
-             }}
+                setProductImage(event.target.files[0])}}
             type="file" accept='image/*' />
-           
             </label>
-            
             <p style={{color:'red'}}>{errors.image?.message}</p>
             <Button sx={{backgroundColor:'black',":hover":{backgroundColor:'grey'}}} type='submit' variant='contained' color='info' onClick={HandleUpload}>Upload to FireBase</Button><br/>
             
 </Stack>
 </form>
-
 </Card>
-</Grid>
-</Grid>
 </Box><br/>
 <Footer/>
     </div>

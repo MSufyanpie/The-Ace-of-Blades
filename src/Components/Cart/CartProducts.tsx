@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { Box, Button, Card,  Stack, Table, TableCell, TableContainer, TableHead, TableRow,  Typography, useMediaQuery, useTheme } from '@mui/material'
 import { DeleteOutlineRounded } from '@mui/icons-material'
-import { removeAllfromCart,} from '../RTK Store/Slices/ProductsSlice'
+import { removeAllfromCart,} from '../../Redux/Slices/ProductsSlice'
 import CartTotal from './CartTotal'
 import EmptyCart from '../Checkout/EmptyCart'
 import { CartProductsDesign } from './CartProductsDesign'

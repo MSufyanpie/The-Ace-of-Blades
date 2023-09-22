@@ -1,6 +1,6 @@
 import { Box, Menu } from '@mui/material'
 
-import CategoriesPage from '../AOB Collection/Categories/CategoriesPage'
+import CategoriesPage from '../../AOB Collection/CategoriesPage'
 
 export const AOBCollectionMenu = ({anchorel,onClose}:any) => {
   return (

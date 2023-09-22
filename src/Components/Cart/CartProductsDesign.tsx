@@ -12,7 +12,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   removeFromCart,
   updateQuantity,
-} from "../RTK Store/Slices/ProductsSlice";
+} from "../../Redux/Slices/ProductsSlice";
 interface cartProducts {
   salePrice: number;
   title: string;
@@ -73,22 +73,26 @@ export const CartProductsDesign = ({
           <BiMinus />
         </Button>
         <TextField
+          
           value={quantity}
           onChange={(e) => handleQuantity(e, id)}
-          sx={{ width: { xs: "60%", md: "20%" } }}
+          sx={{ width: { xs: "60%", md: "22%" } }}
           size="small"
         />
         <Button onClick={() => handleAdd(id)} size="small">
           <BiPlus />
         </Button>
       </TableCell>
+      
       {salePrice ? (
         <>
+       
           <TableCell>
-            R{quantity * salePrice}
+          {quantity<1?(<><p>Quantity should be atleast 1</p></>):(<> R{quantity * salePrice}
             <IconButton onClick={() => handleDelete(id)}>
               <DeleteOutlineRounded sx={{ color: "red" }} />
-            </IconButton>
+            </IconButton></>)}
+           
           </TableCell>
         </>
       ) : (

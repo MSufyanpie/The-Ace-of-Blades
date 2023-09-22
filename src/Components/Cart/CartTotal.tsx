@@ -34,7 +34,7 @@ export default function CartTotal() {
             <TableRow>
                 <TableCell sx={{fontWeight:'bold',}}>Sub-Total</TableCell>
                 
-                <TableCell >{subTotal>1000?(<>R{subTotal}</>):(<>R{subTotal+delivery}</>)}</TableCell>
+                <TableCell >{subTotal<=0?(<>R0</>):(<>{subTotal>1000?(<>R{subTotal}</>):(<>R{subTotal+delivery}</>)}</>)}</TableCell>
             <TableCell></TableCell>
             </TableRow>
             <TableRow>
@@ -63,7 +63,7 @@ export default function CartTotal() {
             </TableRow>
             <TableRow>
                     <TableCell sx={{fontWeight:'bold'}}>Total</TableCell>
-                    <TableCell>{subTotal>1000?(<>R{subTotal}</>):(<>R{subTotal+delivery}</>)}</TableCell>
+                    <TableCell>{subTotal<=0?(<>R0</>):(<>{subTotal>1000?(<>R{subTotal}</>):(<>R{subTotal+delivery}</>)}</>)}</TableCell>
                     <TableCell ></TableCell>
                 </TableRow>
         

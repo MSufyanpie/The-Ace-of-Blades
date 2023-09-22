@@ -2,7 +2,7 @@
 import {  Typography,Box,Card, CardMedia, CardContent, Button} from "@mui/material";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { addToCart } from "../RTK Store/Slices/ProductsSlice";
+import { addToCart } from "../../Redux/Slices/ProductsSlice";
 interface saleProducts{
     id:number,
     image:any,
