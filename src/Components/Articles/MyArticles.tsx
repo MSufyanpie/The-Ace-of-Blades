@@ -1,10 +1,10 @@
 import { collection, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { Box, Grid } from "@mui/material";
-import { db } from "../../Config/Firebase";
-import ArticleDesign from "./ArticleDeisgn";
+import { db } from "../../Firebase/Firebase";
+import ArticleDesign from "../Shared/ArticleDeisgn";
 
-export default function Articles() {
+export default function MyArticles() {
   const [articlesList, setArticlesList] = useState([{}]);
   const ArticlesRef = collection(db, "Articles");
   useEffect(() => {

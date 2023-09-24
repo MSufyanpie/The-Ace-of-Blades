@@ -1,8 +1,5 @@
 import { Box, Typography } from "@mui/material";
 import NavBar from "../../Common/Header/NavBar";
-import RelatedPosts from "./RelatedPosts";
-import Footer from "../../Common/Footer/Footer";
-
 export default function KnifeCare() {
   return (
     <div>
@@ -119,14 +116,6 @@ export default function KnifeCare() {
         </Typography>
         
       </Box><br/>
-      <Box px={6}>
-        <Typography fontWeight={"bold"}
-          gutterBottom
-          variant="h5"
-          fontStyle={"Oswald"}>Related Posts</Typography><br/>
-        <RelatedPosts/>
-      </Box><br/>
-      <Footer/>
     </div>
   );
 }

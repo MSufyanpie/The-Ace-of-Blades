@@ -1,12 +1,11 @@
 
-import NavBar from '../Common/Header/NavBar'
-import BillingForm from './BillingForm'
-import Section1 from './Section1'
-import Payment from './Payment'
-import OrderSummary from './OrderSummary'
+import BillingForm from '../Components/Checkout/BillingForm'
+import Section1 from '../Components/Checkout/Section1'
+import Payment from '../Components/Checkout/Payment'
+import OrderSummary from '../Components/Checkout/OrderSummary'
 import { useSelector } from 'react-redux'
-import EmptyCart from './EmptyCart'
-import Footer from '../Common/Footer/Footer'
+import EmptyCart from '../Components/Checkout/EmptyCart'
+
 
 export default function Checkout() {
     const cartProducts=useSelector((state:any)=>{
@@ -14,7 +13,7 @@ export default function Checkout() {
     })
   return (
     <div>
-        <NavBar/>
+        
         <Section1/>
         {cartProducts.length!==0?(<>
         <OrderSummary/>
@@ -22,7 +21,7 @@ export default function Checkout() {
         <Payment/></>):(<>
         <EmptyCart/><br/><br/>
         </>)}
-        <Footer/>
+       
     </div>
   )
 }

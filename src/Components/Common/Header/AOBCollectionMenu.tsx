@@ -6,7 +6,7 @@ import KnifeCare from "../../../assets/Categories/Knife Care.png";
 
 import  { useEffect, useState } from "react"
 import { collection, getDocs } from 'firebase/firestore';
-import { db } from '../../../Config/Firebase';
+import { db } from '../../../Firebase/Firebase';
 import { Link } from 'react-router-dom';
 import { Image } from 'react-bootstrap';
 export const AOBCollectionMenu = ({anchorel,onClose}:any) => {

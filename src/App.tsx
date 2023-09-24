@@ -2,24 +2,24 @@
 import './App.css'
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
 import Authentication from './Components/Authentication/Authentication'
-import CollectionUploadForm from './Components/AOB Collection/CollectionUploadForm'
-import ArticleUploadForm from './Components/Articles/UploadForm'
-import Category1 from './Components/Products/Categories/Category1'
-import Category2 from './Components/Products/Categories/Category2'
-import Category3 from './Components/Products/Categories/Category3'
-import Category4 from './Components/Products/Categories/Category4'
-import Gallery from './Components/Gallery/Gallery'
-import ImageUploader from './Components/Gallery/ImageUploader'
-import Contact from './Components/ContactUs/Contact'
-import Cart from './Components/Cart/Cart'
-import Checkout from './Components/Checkout/Checkout'
+import CollectionUploadForm from './Components/Forms/CollectionUploadForm'
+import ArticleUploadForm from './Components/Forms/UploadForm'
+import ImageUploader from './Components/Forms/ImageUploader'
 import { PrivacyPolicy } from './Components/Common/Footer/FooterLinks/Privacy Policy/PrivacyPolicy'
 import ShippingandReturns from './Components/Common/Footer/FooterLinks/Shipping and Returns/ShippingandReturns'
-import KnifeCare from './Components/Home/Knife Care/KnifeCare'
 import { HomePage } from './Pages/Home/HomePage'
 import { CollectionPage } from './Pages/Collection/CollectionPage'
 import { SalePage } from './Pages/Sale/SalePage'
 import { ArticlesPage } from './Pages/Articles/ArticlesPage'
+import { Category1Page } from './Pages/Categories/Category1Page'
+import { Category2Page } from './Pages/Categories/Category2Page'
+import { Category3Page } from './Pages/Categories/Category3Page'
+import { Category4Page } from './Pages/Categories/Category4Page'
+import { CheckoutPage } from './Pages/Checkout/CheckoutPage'
+import { GalleryPage } from './Pages/Gallery/GalleryPage'
+import Contact from './Containers/Contact'
+import { CartPage } from './Pages/Cart/CartPage'
+import { KnifeCarePage } from './Pages/KnifeCare/KnifeCarePage'
 
 
 function App() {
@@ -38,18 +38,18 @@ function App() {
        <Route path='/upload-articles' element={<ArticleUploadForm/>} ></Route>
        <Route path='/Articles' element={<ArticlesPage/>} ></Route>
        <Route path='/OnSale' element={<SalePage/>} ></Route>
-       <Route path='/FoldingKnives' element={<Category1/>} ></Route>
-       <Route path='/KeyRings' element={<Category2/>}></Route>
-       <Route path='/KnifeCareProducts' element={<Category3/>}/>
-       <Route path='/KitchenandChefKnives' element={<Category4/>}/>
-       <Route path='/Gallery' element={<Gallery/>}/>
+       <Route path='/FoldingKnives' element={<Category1Page/>} ></Route>
+       <Route path='/KeyRings' element={<Category2Page/>}></Route>
+       <Route path='/KnifeCareProducts' element={<Category3Page/>}/>
+       <Route path='/KitchenandChefKnives' element={<Category4Page/>}/>
+       <Route path='/Gallery' element={<GalleryPage/>}/>
        <Route path='/ImageUploader' element={<ImageUploader/>}/>
        <Route path='/ContactUs' element={<Contact/>}/>
-       <Route path='/Cart' element={<Cart/>}/>
-       <Route path='/Checkout' element={<Checkout/>}></Route>
+       <Route path='/Cart' element={<CartPage/>}/>
+       <Route path='/Checkout' element={<CheckoutPage/>}></Route>
        <Route path='/PrivacyPolicy' element={<PrivacyPolicy/>}/>
        <Route path='/ShippingsandReturns' element={<ShippingandReturns/>}/>
-       <Route path='/KnifeCare' element={<KnifeCare/>}></Route>
+       <Route path='/KnifeCare' element={<KnifeCarePage/>}></Route>
      </Routes>
      </Router>
      </div>  

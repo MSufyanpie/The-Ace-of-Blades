@@ -1,6 +1,6 @@
 import { collection, getDocs } from 'firebase/firestore'
 import  { useEffect, useState } from 'react'
-import {db} from '../../Config/Firebase'
+import {db} from '../../Firebase/Firebase'
 import { Stack, Typography,Box } from '@mui/material'
 import Section8Design from './Section8Design'
 

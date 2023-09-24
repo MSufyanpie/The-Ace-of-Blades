@@ -8,7 +8,7 @@ import TopBar from "./TopBar";
 import { useState } from "react";
 import SignupPage from "../../Authentication/SignupPage";
 import { onAuthStateChanged,signOut } from "firebase/auth";
-import { auth } from "../../../Config/Firebase";
+import { auth } from "../../../Firebase/Firebase";
 import { BiPlusCircle } from "react-icons/bi";
 import UploaderModal from "./UploaderModal";
 import DrawerComponent from "./Drawer";

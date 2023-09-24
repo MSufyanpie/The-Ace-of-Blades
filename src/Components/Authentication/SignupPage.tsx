@@ -11,7 +11,7 @@ import { BiSolidUserCircle } from "react-icons/bi";
 import { Image } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../Config/Firebase";
+import { auth } from "../../Firebase/Firebase";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";

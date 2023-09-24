@@ -10,7 +10,7 @@ export default function ContactDesign() {
   const isMobile=useMediaQuery(theme.breakpoints.down('md'))
   return (
     <div className='Image'>
-    <Box width={isMobile?'100%':500} m={'auto'} marginTop={isMobile?'26%':'0%'} >
+    <Box width={isMobile?'100%':500} m={'auto'} marginTop={isMobile?'26%':'0%'}  >
       <Typography  gutterBottom textAlign={'center'} fontFamily={'Oswald'} variant='h2' fontWeight={'bold'} color={'white'}>
         CONTACT US
       </Typography>

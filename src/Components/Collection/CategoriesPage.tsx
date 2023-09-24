@@ -6,7 +6,7 @@ import KnifeCare from "../../assets/Categories/Knife Care.png";
 import { Grid, } from "@mui/material";
 import CategoriesPageDesign from "./CategoriesPageDesign";
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "../../Config/Firebase";
+import { db } from "../../Firebase/Firebase";
 interface categories {
   img: any;
   title: string;

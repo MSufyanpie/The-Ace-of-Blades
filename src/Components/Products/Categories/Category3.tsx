@@ -1,9 +1,9 @@
 import { collection, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import { db } from "../../../Config/Firebase";
+import { db } from "../../../Firebase/Firebase";
 import { Grid } from "@mui/material";
-import NavBar from "../../Common/Header/NavBar";
-import { AllCategoriesDesign } from "./AllCategoriesDesign";
+
+import { AllCategoriesDesign } from "../../Shared/AllCategoriesDesign";
 
 export default function Category3() {
   const [products, setProducts] = useState([{}]);
@@ -30,7 +30,7 @@ export default function Category3() {
 
   return (
     <div>
-      <NavBar />
+      
       <Grid container direction={"row"} spacing={2} marginTop={"10%"} px={10}>
         {filtered.map((data: any, index: number) => {
           return (

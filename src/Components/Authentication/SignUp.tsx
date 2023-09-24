@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { BiSolidUserCircle } from "react-icons/bi"
 import {createUserWithEmailAndPassword,updateProfile
 } from 'firebase/auth'
-import {auth} from '../../Config/Firebase'
+import {auth} from '../../Firebase/Firebase'
 import { useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import * as yup from 'yup'

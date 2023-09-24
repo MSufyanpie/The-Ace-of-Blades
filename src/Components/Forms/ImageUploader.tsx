@@ -1,7 +1,7 @@
 import { Button, Stack, Typography } from '@mui/material'
 import { addDoc, collection } from 'firebase/firestore'
 import  {  useState } from 'react'
-import { db, storage } from '../../Config/Firebase'
+import { db, storage } from '../../Firebase/Firebase'
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage'
 
 export default function ImageUploader() {

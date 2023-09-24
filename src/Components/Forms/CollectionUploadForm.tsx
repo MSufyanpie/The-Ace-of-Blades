@@ -1,7 +1,7 @@
 
 import { Box, Button, Card,  FormControl,  InputLabel, MenuItem, Select, SelectChangeEvent, Stack, TextField, Typography } from '@mui/material'
 import  { ChangeEvent, useState } from 'react'
-import { storage,db } from '../../Config/Firebase'
+import { storage,db } from '../../Firebase/Firebase'
 import { getDownloadURL, ref,uploadBytes } from 'firebase/storage'
 import { addDoc, collection } from 'firebase/firestore'
 import NavBar from '../Common/Header/NavBar'
