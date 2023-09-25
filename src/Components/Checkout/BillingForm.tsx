@@ -1,6 +1,6 @@
 import { Lock, Star } from '@mui/icons-material'
-import { Box, Button, Checkbox, FormControl,  FormLabel, InputLabel, MenuItem, Select, Stack, TextField, Typography } from '@mui/material'
-import {useState} from 'react'
+import { Box, Button, Checkbox, CircularProgress, FormControl,  FormLabel, InputLabel, MenuItem, Select, Stack, TextField, Typography } from '@mui/material'
+import {useRef, useState} from 'react'
 import Payment from './Payment'
 import { BiLeftArrow } from 'react-icons/bi'
 import { Link } from 'react-router-dom'
@@ -17,6 +17,9 @@ export default function BillingForm() {
   const[Province,setProvince]=useState()
   const[PhoneNo,setPhoneNo]=useState()
   const[Notes,setNotes]=useState()
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const timer:any = useRef();
   const CollectionRef=collection(db,'Orders')
   const Products=useSelector((state:any)=>{
     return state.cart
@@ -26,6 +29,14 @@ export default function BillingForm() {
     setCouponBox(false)
   }
   const handleUpload=async()=>{
+    if (!loading) {
+      setSuccess(false);
+      setLoading(true);
+      timer.current = window.setTimeout(() => {
+        setSuccess(true);
+        setLoading(false);
+      }, 2000);
+    }
    try {
     await addDoc(CollectionRef,{
       UserName_or_Email:userName,
@@ -128,10 +139,27 @@ export default function BillingForm() {
         <Payment/>
         
         <Button
+        disabled={loading}
         onClick={handleUpload}
-        fullWidth size='large' sx={{backgroundColor:'black',color:'white',fontWeight:'bold',":hover":{
+        fullWidth size='large' sx={{
+          ...(success &&{backgroundColor:'green'}),
+          backgroundColor:'black',color:'white',fontWeight:'bold',":hover":{
                 backgroundColor:'#2e2e30'
             }}}><Lock sx={{color:'white'}}/>Place Order</Button>
+           {loading && (
+          <CircularProgress
+            size={24}
+            sx={{
+              color: 'green',
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              marginTop: '-12px',
+              marginLeft: '-12px',
+            }}
+          />
+        )}
+
             <Typography marginTop={'2%'} textAlign={'center'}>
                 <BiLeftArrow/>
                 <Link to={'http://localhost:5173/Cart'} style={{textDecoration:'none',fontWeight:'bolder',color:'black'}}>Back to Cart</Link>
