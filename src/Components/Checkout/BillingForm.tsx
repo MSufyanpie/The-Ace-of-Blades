@@ -25,7 +25,7 @@ export default function BillingForm() {
   const handleCoupon=()=>{
     setCouponBox(false)
   }
-  const handleUpload=async(data:any)=>{
+  const handleUpload=async()=>{
    try {
     await addDoc(CollectionRef,{
       UserName_or_Email:userName,

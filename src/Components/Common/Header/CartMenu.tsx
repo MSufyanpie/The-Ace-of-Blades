@@ -2,7 +2,7 @@ import { Button, Menu, MenuItem, Table, TableContainer, Typography} from '@mui/m
 import { useSelector } from 'react-redux'
 import { CartProductsDesign } from '../../Cart/CartProductsDesign'
 import {Link, useNavigate} from 'react-router-dom'
-import EmptyCart from '../../Checkout/EmptyCart'
+import EmptyCart from '../../Shared/EmptyCart'
 
 
 export const CartMenu = ({anchorel,onClose}:any) => {

@@ -3,7 +3,7 @@ import { Box, Button, Card,  Stack, Table, TableCell, TableContainer, TableHead,
 import { DeleteOutlineRounded } from '@mui/icons-material'
 import { removeAllfromCart,} from '../../Redux/Slices/ProductsSlice'
 import CartTotal from './CartTotal'
-import EmptyCart from '../Checkout/EmptyCart'
+import EmptyCart from '../Shared/EmptyCart'
 import { CartProductsDesign } from './CartProductsDesign'
 
 export default function CartProducts() {

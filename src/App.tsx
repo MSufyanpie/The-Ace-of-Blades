@@ -1,5 +1,6 @@
 
 import './App.css'
+
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
 import Authentication from './Components/Authentication/Authentication'
 import CollectionUploadForm from './Components/Forms/CollectionUploadForm'
@@ -20,6 +21,7 @@ import { GalleryPage } from './Pages/Gallery/GalleryPage'
 import Contact from './Containers/Contact'
 import { CartPage } from './Pages/Cart/CartPage'
 import { KnifeCarePage } from './Pages/KnifeCare/KnifeCarePage'
+
 
 
 function App() {

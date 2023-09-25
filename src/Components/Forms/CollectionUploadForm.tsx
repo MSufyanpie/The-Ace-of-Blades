@@ -40,12 +40,14 @@ export default function CollectionUploadForm() {
         
    
      const[productImage,setProductImage]=useState(null)
-     //@ts-ignore
-     const HandleUpload=async(payload:any)=>{
+     
+     const HandleUpload=async()=>{
         if(productImage==null) return;
         //@ts-ignore
        const imageref= ref(storage,`collectionImages/${productImage.name}`)
+      
        try{
+         //@ts-ignore
         const uploadImg=uploadBytes(imageref,productImage)
         await uploadImg
     

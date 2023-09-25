@@ -36,7 +36,7 @@ export default function GalleryImages() {
           <Typography marginTop={{xs:'29%',md:'10%'}} textAlign={'center'} variant='h3' gutterBottom fontWeight={'bold'} fontStyle={'Oswald'}>GALLERY</Typography>
           <Typography textAlign={'center'} variant='body1' fontStyle={'Oswald'}>PHOTOS FROM ALL OVER THE WORLD</Typography>        
         <Grid container direction={'row'} spacing={3} marginTop={'2%'} px={8} >
-    {images.map((data,index)=>{
+    {images.map((data,index:number)=>{
         return(
             <Grid key={index} item xs={12} sm={6} md={4} >
             <Card>

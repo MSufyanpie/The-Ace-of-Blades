@@ -1,6 +1,6 @@
 import { Button, Stack, Typography } from '@mui/material'
 import { addDoc, collection } from 'firebase/firestore'
-import  {  useState } from 'react'
+import  {  ChangeEvent, useState } from 'react'
 import { db, storage } from '../../Firebase/Firebase'
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage'
 
@@ -33,7 +33,7 @@ export default function ImageUploader() {
             
         </Typography>
         <input 
-        onChange={(event)=>{
+        onChange={(event:ChangeEvent)=>{
           //@ts-ignore
          setImages(event.target.files[0])
         }}

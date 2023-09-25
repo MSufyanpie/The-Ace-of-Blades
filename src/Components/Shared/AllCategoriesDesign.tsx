@@ -27,12 +27,12 @@ export const AllCategoriesDesign = ({
   price,
   data,
 }: categories) => {
-    const[tick,setTick]=useState(false)
+  const [tick, setTick] = useState(false);
   const dispatch = useDispatch();
   const handleAddToCart = (products: any) => {
     console.log("adding to cart", products);
     dispatch(addToCart(products));
-    setTick(true)
+    setTick(true);
   };
   return (
     <Grid key={id} item xs={12} sm={6} md={4}>
@@ -84,17 +84,25 @@ export const AllCategoriesDesign = ({
                 border: "1px solid grey",
                 color: "white",
                 backgroundColor: "black",
-                ":hover":{
-                    backgroundColor:'grey'
-                }
+                ":hover": {
+                  backgroundColor: "grey",
+                },
               }}
               onClick={() => handleAddToCart(data)}
             >
-              Add to Cart {tick?(<><MdDoneOutline/></>):(<></>)}
+              Add to Cart{" "}
+              {tick ? (
+                <>
+                  <MdDoneOutline />
+                </>
+              ) : (
+                <></>
+              )}
             </Button>
           </Typography>
         </CardContent>
       </Card>
+      <br />
     </Grid>
   );
 };

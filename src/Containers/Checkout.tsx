@@ -1,10 +1,9 @@
 
 import BillingForm from '../Components/Checkout/BillingForm'
 import Section1 from '../Components/Checkout/Section1'
-import Payment from '../Components/Checkout/Payment'
 import OrderSummary from '../Components/Checkout/OrderSummary'
 import { useSelector } from 'react-redux'
-import EmptyCart from '../Components/Checkout/EmptyCart'
+import EmptyCart from '../Components/Shared/EmptyCart'
 
 
 export default function Checkout() {
@@ -18,7 +17,6 @@ export default function Checkout() {
         {cartProducts.length!==0?(<>
         <OrderSummary/>
         <BillingForm/>
-        {/* <Payment/> */}
         </>):(<>
         <EmptyCart/><br/><br/>
         </>)}
