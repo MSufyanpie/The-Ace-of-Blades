@@ -2,6 +2,7 @@
 
 import { initializeApp } from "firebase/app";
 
+
 import {getAuth,} from "firebase/auth";
 import{getStorage}  from "firebase/storage"
 import {getFirestore} from 'firebase/firestore'
@@ -9,6 +10,7 @@ import {getFirestore} from 'firebase/firestore'
 const firebaseConfig = {
   //@ts-ignore
   apiKey: 'AIzaSyCZKAb-izhnTzxmtWowYAJDJXMQ-hBTnrU',
+  
   //@ts-ignore
   authDomain: 'aceofblades-12971.firebaseapp.com',
   //@ts-ignore

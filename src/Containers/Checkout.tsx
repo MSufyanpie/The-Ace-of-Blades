@@ -18,7 +18,8 @@ export default function Checkout() {
         {cartProducts.length!==0?(<>
         <OrderSummary/>
         <BillingForm/>
-        <Payment/></>):(<>
+        {/* <Payment/> */}
+        </>):(<>
         <EmptyCart/><br/><br/>
         </>)}
        

@@ -1,10 +1,8 @@
-import { Lock } from '@mui/icons-material'
+
 import { Box, Button, Card, CardContent, Checkbox, FormLabel, Stack, Typography } from '@mui/material'
 import {useState} from 'react'
 import { Image } from 'react-bootstrap'
-import { BiLeftArrow } from 'react-icons/bi'
 import { useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
 
 export default function Payment() {
     const cartProducts=useSelector((state:any)=>{
@@ -35,7 +33,7 @@ export default function Payment() {
     }
   return (
     <div>
-        <Box width={{xs:'100%',md:700}} px={{xs:0,md:4}}>
+        <Box width={{xs:'100%',md:700}} >
             <Typography marginTop={'4%'} variant='h6' fontWeight={'bold'}>Payment</Typography>
             <Card variant='outlined'>
                 <CardContent sx={{border:'1px solid #f2f5f7'}}>
@@ -85,14 +83,6 @@ export default function Payment() {
                  <Button onClick={handleTermsandConditions} sx={{color:'black'}}>terms and conditions</Button></FormLabel>
             </Stack>
            
-            <Button fullWidth size='large' sx={{backgroundColor:'black',color:'white',fontWeight:'bold',":hover":{
-                backgroundColor:'#2e2e30'
-            }}}><Lock sx={{color:'white'}}/>Place Order    R{subTotal} </Button>
-            <Typography marginTop={'2%'} textAlign={'center'}>
-                <BiLeftArrow/>
-                <Link to={'http://localhost:5173/Cart'} style={{textDecoration:'none',fontWeight:'bolder',color:'black'}}>Back to Cart</Link>
-
-            </Typography><br/>
         </Box>
     </div>
   )
