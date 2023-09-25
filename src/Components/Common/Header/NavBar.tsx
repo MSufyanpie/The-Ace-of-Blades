@@ -1,5 +1,5 @@
 import {
-  AppBar,  Toolbar,  Stack,  Button,  Typography,  IconButton,   useTheme, useMediaQuery, Badge,} from "@mui/material";
+  AppBar,  Toolbar,  Stack,  Button,  Typography,  IconButton,   useTheme, useMediaQuery, Badge, Box,} from "@mui/material";
 import {ShoppingCart} from '@mui/icons-material'
 import { AiOutlineUser } from "react-icons/ai"
 import  { useEffect } from "react";
@@ -72,7 +72,8 @@ const[anchorel,setAnchorel]=useState(null)
         {isMobile?(<><DrawerComponent/></>):(
         <NavbarLinks/>
           )}
-          <Stack direction={'row'} spacing={1}>
+          
+          <Stack direction={'row'} spacing={2} >
           {isLoggedIn?(<>
           <IconButton onClick={OpenUploaderModal}>
             <BiPlusCircle/>
@@ -94,6 +95,7 @@ const[anchorel,setAnchorel]=useState(null)
             </Badge>
           </IconButton>
           </Stack> 
+          
         </Toolbar>
       </AppBar><br/> 
         <UploaderModal

@@ -1,5 +1,6 @@
 import MyArticles from "../Components/Articles/MyArticles"
-import Section1 from "../Components/Cart/Section1"
+import Section1 from "../Components/Articles/Section1"
+
 
 
 

@@ -38,7 +38,7 @@ export default function Category1() {
         
         <Grid 
         container
-        direction={'row'} spacing={2} marginTop={'10%'} px={8}>
+        direction={'row'} spacing={2} marginTop={{xs:'25%',md:'10%'}} px={8}>
         {filtered.map((data:any,index:number)=>{
             return(
                 <AllCategoriesDesign
