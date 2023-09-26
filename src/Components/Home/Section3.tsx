@@ -4,12 +4,21 @@ import {AiOutlineFire,} from 'react-icons/ai'
 import {FaRegHandshake,FaFingerprint} from 'react-icons/fa'
 import {Image} from 'react-bootstrap'
 import { Link } from "react-router-dom";
+import {motion} from 'framer-motion'
 export default function Section3() {
     const theme=useTheme()
     const isMobile=useMediaQuery(theme.breakpoints.down('md'))
   return (
     
-        
+        <motion.div 
+        variants={{
+            hidden:{opacity:0,y:100},
+            visible:{opacity:1,y:0}
+        }}
+        initial="hidden"
+        animate="visible"
+        transition={{duration:0.8,delay:0.6}}
+        >
     <Box width={isMobile?'100%':1000} m={'auto'} >
         <Stack  direction={{xs:'column',md:'row'}} spacing={5} marginTop={'10%'} 
        >
@@ -63,7 +72,7 @@ export default function Section3() {
     </Box>
     </Stack><br/><br/>
     </Box>
-    
+    </motion.div>
    
   )
 }

@@ -12,7 +12,7 @@ export default function EmptyCart() {
         <ShoppingCart sx={{marginTop:'5%'}}></ShoppingCart><Typography textAlign={'center'}  variant='h6'>Your Cart is currently empty</Typography></Stack><br/>
         </Box>
         <Typography gutterBottom marginTop={'3%'}  textAlign={'center'} color={'black'}>
-            <Link style={{textDecoration:'none'}} to={'http://localhost:5173/AOBCollection'}>
+            <Link style={{textDecoration:'none'}} to={'/AOBCollection'}>
             <Button
             size='large'
             variant='contained' sx={{backgroundColor:'black',fontWeight:'bold',":hover":{backgroundColor:'#484848'}}}>Return to Shop</Button>

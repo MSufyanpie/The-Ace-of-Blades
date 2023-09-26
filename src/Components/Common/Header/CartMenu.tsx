@@ -23,9 +23,9 @@ export const CartMenu = ({anchorel,onClose}:any) => {
         MenuListProps={{ onMouseLeave: onClose }}
         sx={{marginRight:'5%'}}
       >
-        {cartProducts.length==0?(<>
+        {cartProducts.length==0?(
         <EmptyCart/>
-        </>):(<>
+        ):(<>
             <TableContainer >
                     <Table>
 

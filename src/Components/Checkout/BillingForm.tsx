@@ -162,7 +162,7 @@ export default function BillingForm() {
 
             <Typography marginTop={'2%'} textAlign={'center'}>
                 <BiLeftArrow/>
-                <Link to={'http://localhost:5173/Cart'} style={{textDecoration:'none',fontWeight:'bolder',color:'black'}}>Back to Cart</Link>
+                <Link to={'/Cart'} style={{textDecoration:'none',fontWeight:'bolder',color:'black'}}>Back to Cart</Link>
 
             </Typography><br/>
         </Box>
