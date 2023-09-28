@@ -4,7 +4,6 @@ import { Card, CardMedia, Grid, Typography } from "@mui/material";
 import { collection } from "firebase/firestore";
 import useGallery from "../../Custom Hooks/useGallery";
 
-
 export default function GalleryImages() {
   const [images, setImages] = useState([{}]);
   const CollectionRef = collection(db, "GalleryImages");

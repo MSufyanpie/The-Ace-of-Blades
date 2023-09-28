@@ -1,4 +1,4 @@
-import { collection} from "firebase/firestore";
+import { collection } from "firebase/firestore";
 import { useState } from "react";
 import { db } from "../../Firebase/Firebase";
 import { Stack, Typography, Box } from "@mui/material";
@@ -20,14 +20,16 @@ export default function Section8() {
         marginLeft={"3%"}
         fontWeight={"bold"}
         gutterBottom
-        variant="h3">
+        variant="h3"
+      >
         RECENT PRODUCTS
       </Typography>
       <Box sx={{ backgroundColor: "white" }}>
         <Stack
           spacing={4}
           direction={{ xs: "column", md: "row" }}
-          px={{ xs: 1, md: 10 }}>
+          px={{ xs: 1, md: 10 }}
+        >
           {FirstThreeProds.map((data: any, index: number) => {
             return (
               <div key={index}>

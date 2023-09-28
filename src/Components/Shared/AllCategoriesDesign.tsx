@@ -84,10 +84,13 @@ export const AllCategoriesDesign = ({
           <Typography textAlign={"center"}>
             <Button
               variant="outlined"
+              size="large"
               sx={{
                 border: "1px solid grey",
                 color: "white",
                 backgroundColor: "black",
+                borderRadius:'50px',
+                fontWeight:'bold',
                 ":hover": {
                   backgroundColor: "grey",
                 },

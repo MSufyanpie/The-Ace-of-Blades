@@ -7,7 +7,7 @@ export default function Footer() {
 
   return (
     <Box
-      width={isMobile ? "100%" : "64%"}
+      width={isMobile ? "100%" : "63.5%"}
       sx={{ backgroundColor: "#171515" }}
       px={isMobile ? 0 : 30}
     >

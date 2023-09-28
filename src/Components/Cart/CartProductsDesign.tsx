@@ -70,6 +70,7 @@ export const CartProductsDesign = ({
     );
   };
   return (
+    
     <TableRow key={id}>
       <TableCell>
         <Image height={"50px"} width={"50px"} src={imageUrl}></Image>
@@ -122,5 +123,6 @@ export const CartProductsDesign = ({
         </>
       )}
     </TableRow>
+   
   );
 };

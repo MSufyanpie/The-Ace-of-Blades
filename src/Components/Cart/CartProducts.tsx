@@ -34,17 +34,18 @@ const isMobile=useMediaQuery(theme.breakpoints.down('md'))
                 <TableRow>
                     <TableCell></TableCell>
                     <TableCell  sx={{fontWeight:'bold'}}>Product</TableCell>
-                    <TableCell align='center' sx={{fontWeight:'bold'}}>Price</TableCell>
-                    <TableCell align='center' sx={{fontWeight:'bold'}}>Quantity</TableCell>
-                    <TableCell align='center' sx={{fontWeight:'bold'}}>Sub-Total</TableCell>
+                    <TableCell align='center'  sx={{fontWeight:'bold'}}>Price</TableCell>
+                    <TableCell align='center'  sx={{fontWeight:'bold'}}>Quantity</TableCell>
+                    <TableCell align='center'  sx={{fontWeight:'bold'}}>Sub-Total</TableCell>
                     <TableCell/>
                     
                 </TableRow>
             </TableHead>
             {cartProducts?.map((data:any,index:any)=>{
             return(
-                <div key={index}>
+               
                 <CartProductsDesign
+                key={index}
                 id={index}
                 salePrice={data.salePrice}
                 quantity={data.quantity}
@@ -52,7 +53,7 @@ const isMobile=useMediaQuery(theme.breakpoints.down('md'))
                 imageUrl={data.imageUrl}
                 title={data.title}
                 // docId={data.id}
-                /></div>)})}
+                />)})}
         </Table>
         </TableContainer>
         <Typography marginTop={'2%'} textAlign={'center'}><Button color='error' variant='contained' sx={{fontWeight:'bold'}}
