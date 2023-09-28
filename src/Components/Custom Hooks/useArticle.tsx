@@ -1,7 +1,7 @@
 import {  getDocs } from "firebase/firestore"
 import { useEffect,  } from "react"
 
-const ArticlesHook=(ArticlesRef:any,setArticlesList:any)=>{
+const useArticle=(ArticlesRef:any,setArticlesList:any)=>{
     useEffect(()=>{
         const getProductsList= async()=>{
           try {
@@ -26,4 +26,4 @@ const ArticlesHook=(ArticlesRef:any,setArticlesList:any)=>{
       },[])
     
 }
-export default ArticlesHook;
+export default useArticle;

@@ -7,12 +7,12 @@ import {
 } from "@mui/material";
 
 import Section6Design from "./Section6Design";
-import CategoriesHook from "../Custom Hooks/CategoriesHook";
+import useCategories from "../Custom Hooks/useCategories";
 
 export default function Section6() {
   const [products, setProducts] = useState([{}]);
   const ProductsRef = collection(db, "AOB Collection");
-  CategoriesHook(products, setProducts, ProductsRef);
+  useCategories(products, setProducts, ProductsRef);
   //@ts-ignore
   const filtered = products.filter((data) => data.salePrice!== 0);
   return (

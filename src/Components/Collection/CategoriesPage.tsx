@@ -7,7 +7,7 @@ import { Grid, } from "@mui/material";
 import CategoriesPageDesign from "./CategoriesPageDesign";
 import { collection } from "firebase/firestore";
 import { db } from "../../Firebase/Firebase";
-import CategoriesHook from "../Custom Hooks/CategoriesHook";
+import useCategories from "../Custom Hooks/useCategories";
 interface categories {
   img: any;
   title: string;
@@ -17,7 +17,7 @@ interface categories {
 export default function CategoriesPage() {
   const[products,setProducts]:any=useState([{}])
     let ProductsRef=collection(db,"AOB Collection")
-      CategoriesHook(products, setProducts, ProductsRef);
+      useCategories(products, setProducts, ProductsRef);
       const filtered=products.filter((data:any)=>{ return data.category===1})
       const filtered2=products.filter((data:any)=>{ return data.category===2})
       const filtered3=products.filter((data:any)=>{ return data.category===3})

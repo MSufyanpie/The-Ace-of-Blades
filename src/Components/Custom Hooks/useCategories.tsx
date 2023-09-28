@@ -1,7 +1,7 @@
 import {  getDocs } from "firebase/firestore"
 import { useEffect,  } from "react"
 
-const CategoriesHook=(products:any,setProducts:any,ProductsRef:any)=>{
+const useCategories=(products:any,setProducts:any,ProductsRef:any)=>{
     useEffect(()=>{
         const getProductsList= async()=>{
           try {
@@ -26,4 +26,4 @@ const CategoriesHook=(products:any,setProducts:any,ProductsRef:any)=>{
       },[])
     
 }
-export default CategoriesHook;
+export default useCategories;

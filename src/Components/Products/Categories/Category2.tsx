@@ -3,13 +3,13 @@ import  {  useState } from 'react'
 import {  db } from '../../../Firebase/Firebase'
 import {Grid} from '@mui/material'
 import { AllCategoriesDesign } from '../../Shared/AllCategoriesDesign'
-import CategoriesHook from '../../Custom Hooks/CategoriesHook'
+import useCategories from '../../Custom Hooks/useCategories'
 
 
 export default function Category2() {
     const[products,setProducts]=useState([{}])
     const ProductsRef=collection(db,"AOB Collection")
-    CategoriesHook(products,setProducts,ProductsRef);
+    useCategories(products,setProducts,ProductsRef);
       //@ts-ignore
       const filtered:any=products.filter(data=>data.category===2)
       

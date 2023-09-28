@@ -3,12 +3,12 @@ import { useState } from "react";
 import { db } from "../../Firebase/Firebase";
 import { Stack, Typography, Box } from "@mui/material";
 import Section8Design from "./Section8Design";
-import CategoriesHook from "../Custom Hooks/CategoriesHook";
+import useCategories from "../Custom Hooks/useCategories";
 
 export default function Section8() {
   const [products, setProducts] = useState([{}]);
   const ProductsRef = collection(db, "AOB Collection");
-  CategoriesHook(products, setProducts, ProductsRef);
+  useCategories(products, setProducts, ProductsRef);
   const FirstThreeProds = products.slice(0, 3);
 
   return (

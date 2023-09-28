@@ -3,13 +3,14 @@ import {  useState } from "react";
 import { Box, Grid } from "@mui/material";
 import { db } from "../../Firebase/Firebase";
 import ArticleDesign from "../Shared/ArticleDeisgn";
-import ArticlesHook from "../Custom Hooks/ArticlesHook";
+import useArticle from "../Custom Hooks/useArticle";
+
 
 
 export default function MyArticles() {
   const [articlesList, setArticlesList] = useState([{}]);
   const ArticlesRef = collection(db, "Articles");
-  ArticlesHook(ArticlesRef,setArticlesList)
+  useArticle(ArticlesRef,setArticlesList)
   return (
     <Box px={10} marginTop={"4%"}>
       <Grid container direction={"row"} spacing={2}>

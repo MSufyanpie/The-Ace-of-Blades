@@ -4,12 +4,12 @@ import { db } from "../../../Firebase/Firebase";
 import { Grid } from "@mui/material";
 import Section1 from "./Section1";
 import OnSaleDesign from "./OnSaleDesign";
-import CategoriesHook from "../../Custom Hooks/CategoriesHook";
+import useCategories from "../../Custom Hooks/useCategories";
 
 export default function OnSale() {
   const [products, setProducts] = useState([{}]);
   const ProductsRef = collection(db, "AOB Collection");
-  CategoriesHook(products, setProducts, ProductsRef);
+  useCategories(products, setProducts, ProductsRef);
   //@ts-ignore
   const filtered = products.filter((data) => data.salePrice !== 0);
 

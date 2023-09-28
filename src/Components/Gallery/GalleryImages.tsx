@@ -2,12 +2,13 @@ import { useState } from "react";
 import { db } from "../../Firebase/Firebase";
 import { Card, CardMedia, Grid, Typography } from "@mui/material";
 import { collection } from "firebase/firestore";
-import GalleryImagesList from "../Custom Hooks/GalleryImagesHook";
+import useGallery from "../Custom Hooks/useGallery";
+
 
 export default function GalleryImages() {
   const [images, setImages] = useState([{}]);
   const CollectionRef = collection(db, "GalleryImages");
-  GalleryImagesList(CollectionRef, setImages);
+  useGallery(CollectionRef, setImages);
   return (
     <div>
       <Typography
