@@ -1,5 +1,5 @@
 import { createSlice,createAsyncThunk } from "@reduxjs/toolkit";
-import { addDoc, collection, deleteDoc,  doc } from "firebase/firestore";
+import { addDoc, collection,  } from "firebase/firestore";
 import { db } from "../../Firebase/Firebase";
 
 const CartSlice=createSlice({
@@ -40,7 +40,7 @@ const CartSlice=createSlice({
 export const addToFirebase=createAsyncThunk(
    
     'cart/addToFirebase',
-    async(item,{getState})=>{
+    async(item)=>{
         const collectionRef=collection(db,'Cart')
         const docref=addDoc(collectionRef,{
             cartProducts:item
@@ -50,18 +50,7 @@ export const addToFirebase=createAsyncThunk(
     }
 )
 
-// export const deleteFromFirebase=createAsyncThunk(
-   
-//     'cart/deleteFromFirebase',
-    
-//     async(docId:any,{getState})=>{
-        
-//         const Cartdoc=doc(db,'Cart',docId)
-//         await(deleteDoc(Cartdoc))
-//         console.log(docId)
-       
-//     }
-// )
+
 
 export const {addToCart,removeFromCart,removeAllfromCart,updateQuantity}=CartSlice.actions
 export default CartSlice.reducer

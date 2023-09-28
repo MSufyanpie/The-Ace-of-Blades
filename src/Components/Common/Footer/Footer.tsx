@@ -19,10 +19,7 @@ export default function Footer() {
         direction={{ xs: "column", md: "row" }}
       >
         <Typography variant="body1" textAlign={"center"}>
-          <Link
-            to={"http://localhost:5173/"}
-            style={{ textDecoration: "none", color: "grey" }}
-          >
+          <Link to={"/"} style={{ textDecoration: "none", color: "grey" }}>
             {" "}
             Home
           </Link>
@@ -30,7 +27,7 @@ export default function Footer() {
 
         <Typography variant="body1" textAlign={"center"}>
           <Link
-            to={"http://localhost:5173/PrivacyPolicy"}
+            to={"/PrivacyPolicy"}
             style={{ textDecoration: "none", color: "grey" }}
           >
             {" "}
@@ -40,7 +37,7 @@ export default function Footer() {
 
         <Typography variant="body1" textAlign={"center"}>
           <Link
-            to={"http://localhost:5173/ShippingsandReturns"}
+            to={"/ShippingsandReturns"}
             style={{ textDecoration: "none", color: "grey" }}
           >
             {" "}
@@ -49,7 +46,7 @@ export default function Footer() {
         </Typography>
 
         <Typography gutterBottom variant="body1" textAlign={"center"}>
-          <Link to={"./"} style={{ textDecoration: "none", color: "grey" }}>
+          <Link to={"/"} style={{ textDecoration: "none", color: "grey" }}>
             {" "}
             Terms and Conditions
           </Link>

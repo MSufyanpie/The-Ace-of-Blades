@@ -1,5 +1,5 @@
 import {
-  AppBar,  Toolbar,  Stack,  Button,  Typography,  IconButton,   useTheme, useMediaQuery, Badge, Box,} from "@mui/material";
+  AppBar,  Toolbar,  Stack,  Button,  Typography,  IconButton,   useTheme, useMediaQuery, Badge, } from "@mui/material";
 import {ShoppingCart} from '@mui/icons-material'
 import { AiOutlineUser } from "react-icons/ai"
 import  { useEffect } from "react";
@@ -78,7 +78,7 @@ const[anchorel,setAnchorel]=useState(null)
           <IconButton onClick={OpenUploaderModal}>
             <BiPlusCircle/>
           </IconButton>
-          <Button sx={{fontWeight:'bold'}} color="error" onClick={LogOut}>Logout</Button>
+          <Button sx={{fontWeight:'bold',}}  color="error" onClick={LogOut} >Logout</Button>
           </>):
           (
           <IconButton 
