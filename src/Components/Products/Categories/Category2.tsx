@@ -1,35 +1,15 @@
-import { collection, getDocs } from 'firebase/firestore'
-import  { useEffect, useState } from 'react'
+import { collection } from 'firebase/firestore'
+import  {  useState } from 'react'
 import {  db } from '../../../Firebase/Firebase'
 import {Grid} from '@mui/material'
-
 import { AllCategoriesDesign } from '../../Shared/AllCategoriesDesign'
+import CategoriesHook from '../../Custom Hooks/CategoriesHook'
 
 
 export default function Category2() {
     const[products,setProducts]=useState([{}])
     const ProductsRef=collection(db,"AOB Collection")
-    useEffect(()=>{
-        const getProductsList= async()=>{
-          try {
-            let data=await getDocs(ProductsRef)
-            const actualData=data.docs.map((doc)=>({
-            ...doc.data(),
-            id:doc.id,
-      
-            }))
-            console.log(actualData)
-            setProducts(actualData)
-            
-          } catch (error) {
-            console.error(error)
-          }
-            
-          }
-        getProductsList()
-       
-        
-      },[])
+    CategoriesHook(products,setProducts,ProductsRef);
       //@ts-ignore
       const filtered:any=products.filter(data=>data.category===2)
       

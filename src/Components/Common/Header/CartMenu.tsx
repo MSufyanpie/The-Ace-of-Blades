@@ -31,7 +31,9 @@ export const CartMenu = ({anchorel,onClose}:any) => {
 
         {cartProducts.map((data:any,index:number)=>{
             return(
+                <div key={index}>
                 <MenuItem onClick={handleClick}>
+                    
                     <CartProductsDesign
                 id={index}
                 salePrice={data.salePrice}
@@ -41,6 +43,7 @@ export const CartMenu = ({anchorel,onClose}:any) => {
                 title={data.title}
                 />
                 </MenuItem>
+                </div>
             )
         })}
 

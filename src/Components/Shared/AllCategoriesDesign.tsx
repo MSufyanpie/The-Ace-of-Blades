@@ -7,7 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../../Redux/Slices/ProductsSlice";
+import { addToCart, addToFirebase } from "../../Redux/Slices/ProductsSlice";
 import { useState } from "react";
 import { MdDoneOutline } from "react-icons/md";
 
@@ -32,7 +32,11 @@ export const AllCategoriesDesign = ({
   const handleAddToCart = (products: any) => {
     console.log("adding to cart", products);
     dispatch(addToCart(products));
+    //@ts-ignore
+    dispatch(addToFirebase(products))
     setTick(true);
+    
+    
   };
   return (
     <Grid key={id} item xs={12} sm={6} md={4}>

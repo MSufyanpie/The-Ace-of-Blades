@@ -1,7 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { Box, Button, Card,  Stack, Table, TableCell, TableContainer, TableHead, TableRow,  Typography, useMediaQuery, useTheme } from '@mui/material'
 import { DeleteOutlineRounded } from '@mui/icons-material'
-import { removeAllfromCart,} from '../../Redux/Slices/ProductsSlice'
+import { 
+    // deleteFromFirebase, 
+    removeAllfromCart,} from '../../Redux/Slices/ProductsSlice'
 import CartTotal from './CartTotal'
 import EmptyCart from '../Shared/EmptyCart'
 import { CartProductsDesign } from './CartProductsDesign'
@@ -11,8 +13,9 @@ export default function CartProducts() {
     const cartProducts=useSelector((state:any)=>{
         return state.cart
     })
-    const handleDeleteAll=(index:any)=>{
-        dispatch(removeAllfromCart(index))
+    const handleDeleteAll=(products:any)=>{
+        dispatch(removeAllfromCart(products))
+        
     }
     const theme=useTheme()
 const isMobile=useMediaQuery(theme.breakpoints.down('md'))
@@ -40,6 +43,7 @@ const isMobile=useMediaQuery(theme.breakpoints.down('md'))
             </TableHead>
             {cartProducts?.map((data:any,index:any)=>{
             return(
+                <div key={index}>
                 <CartProductsDesign
                 id={index}
                 salePrice={data.salePrice}
@@ -47,7 +51,8 @@ const isMobile=useMediaQuery(theme.breakpoints.down('md'))
                 price={data.price}
                 imageUrl={data.imageUrl}
                 title={data.title}
-                />)})}
+                // docId={data.id}
+                /></div>)})}
         </Table>
         </TableContainer>
         <Typography marginTop={'2%'} textAlign={'center'}><Button color='error' variant='contained' sx={{fontWeight:'bold'}}

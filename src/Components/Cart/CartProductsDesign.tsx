@@ -10,6 +10,8 @@ import { Image } from "react-bootstrap";
 import { BiMinus, BiPlus } from "react-icons/bi";
 import { useDispatch, useSelector } from "react-redux";
 import {
+  // deleteFromFirebase,
+  
   removeFromCart,
   updateQuantity,
 } from "../../Redux/Slices/ProductsSlice";
@@ -18,8 +20,9 @@ interface cartProducts {
   title: string;
   price: number;
   imageUrl: string;
-  id: number;
+  id: any;
   quantity: number;
+  // docId:any
 }
 
 export const CartProductsDesign = ({
@@ -29,6 +32,7 @@ export const CartProductsDesign = ({
   imageUrl,
   id,
   quantity,
+  // docId,
 }: cartProducts) => {
   const dispatch = useDispatch();
   const cartProducts = useSelector((state: any) => {
@@ -45,8 +49,20 @@ export const CartProductsDesign = ({
       updateQuantity({ index, quantity: cartProducts[index].quantity + 1 })
     );
   };
-  const handleDelete = (index: any) => {
-    dispatch(removeFromCart(index));
+  const handleDelete = async() => {
+   
+    dispatch(removeFromCart(id));
+    // console.log('deleting document',docId)
+    // try {
+    //  await dispatch(deleteFromFirebase(docId))
+    //  console.log('document deleted')
+    // } catch (error) {
+    //   console.log(error)
+    // }
+    
+    
+   
+    
   };
   const handleMinus = (index: number) => {
     dispatch(
@@ -60,13 +76,13 @@ export const CartProductsDesign = ({
       </TableCell>
       <TableCell sx={{ fontWeight: "bold" }}>{title}</TableCell>
       {salePrice ? (
-        <>
+        
           <TableCell>R{salePrice}</TableCell>
-        </>
+       
       ) : (
-        <>
+        
           <TableCell>R{price}</TableCell>
-        </>
+      
       )}
       <TableCell align="center">
         <Button onClick={() => handleMinus(id)} size="small">
@@ -89,7 +105,7 @@ export const CartProductsDesign = ({
        
           <TableCell>
           {quantity<1?(<><p>Quantity should be atleast 1</p></>):(<> R{quantity * salePrice}
-            <IconButton onClick={() => handleDelete(id)}>
+            <IconButton onClick={() => handleDelete()}>
               <DeleteOutlineRounded sx={{ color: "red" }} />
             </IconButton></>)}
            
@@ -99,7 +115,7 @@ export const CartProductsDesign = ({
         <>
           <TableCell>
             R{quantity * price}
-            <IconButton onClick={() => handleDelete(id)}>
+            <IconButton onClick={() => handleDelete()}>
               <DeleteOutlineRounded sx={{ color: "red" }} />
             </IconButton>
           </TableCell>

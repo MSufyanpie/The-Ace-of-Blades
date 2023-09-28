@@ -1,28 +1,15 @@
-import { collection, getDocs } from "firebase/firestore";
-import { useEffect, useState } from "react";
+import { collection,  } from "firebase/firestore";
+import {  useState } from "react";
 import { Box, Grid } from "@mui/material";
 import { db } from "../../Firebase/Firebase";
 import ArticleDesign from "../Shared/ArticleDeisgn";
+import ArticlesHook from "../Custom Hooks/ArticlesHook";
+
 
 export default function MyArticles() {
   const [articlesList, setArticlesList] = useState([{}]);
   const ArticlesRef = collection(db, "Articles");
-  useEffect(() => {
-    const getArticlesList = async () => {
-      try {
-        let data = await getDocs(ArticlesRef);
-        const actualData = data.docs.map((doc) => ({
-          ...doc.data(),
-          id: doc.id,
-        }));
-        console.log(actualData);
-        setArticlesList(actualData);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    getArticlesList();
-  }, []);
+  ArticlesHook(ArticlesRef,setArticlesList)
   return (
     <Box px={10} marginTop={"4%"}>
       <Grid container direction={"row"} spacing={2}>
