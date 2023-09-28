@@ -3,7 +3,7 @@ import { useState } from "react";
 import { db } from "../../Firebase/Firebase";
 import { Stack, Typography, Box } from "@mui/material";
 import Section8Design from "./Section8Design";
-import useCategories from "../Custom Hooks/useCategories";
+import useCategories from "../../Custom Hooks/useCategories";
 
 export default function Section8() {
   const [products, setProducts] = useState([{}]);

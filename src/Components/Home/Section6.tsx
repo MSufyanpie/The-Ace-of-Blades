@@ -7,7 +7,7 @@ import {
 } from "@mui/material";
 
 import Section6Design from "./Section6Design";
-import useCategories from "../Custom Hooks/useCategories";
+import useCategories from "../../Custom Hooks/useCategories";
 
 export default function Section6() {
   const [products, setProducts] = useState([{}]);

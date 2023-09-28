@@ -2,7 +2,7 @@ import { useState } from "react";
 import { db } from "../../Firebase/Firebase";
 import { Card, CardMedia, Grid, Typography } from "@mui/material";
 import { collection } from "firebase/firestore";
-import useGallery from "../Custom Hooks/useGallery";
+import useGallery from "../../Custom Hooks/useGallery";
 
 
 export default function GalleryImages() {

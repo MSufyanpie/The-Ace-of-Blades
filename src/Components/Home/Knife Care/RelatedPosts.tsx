@@ -4,7 +4,7 @@ import { Box,Grid, } from '@mui/material'
 
 import { db } from '../../../Firebase/Firebase'
 import ArticleDesign from '../../Shared/ArticleDeisgn'
-import useArticle from '../../Custom Hooks/useArticle'
+import useArticle from '../../../Custom Hooks/useArticle'
 
 export default function RelatedPosts() {
     const[articlesList,setArticlesList]=useState([{}])

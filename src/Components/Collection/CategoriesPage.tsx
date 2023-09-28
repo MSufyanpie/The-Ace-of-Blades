@@ -7,7 +7,7 @@ import { Grid, } from "@mui/material";
 import CategoriesPageDesign from "./CategoriesPageDesign";
 import { collection } from "firebase/firestore";
 import { db } from "../../Firebase/Firebase";
-import useCategories from "../Custom Hooks/useCategories";
+import useCategories from "../../Custom Hooks/useCategories";
 interface categories {
   img: any;
   title: string;

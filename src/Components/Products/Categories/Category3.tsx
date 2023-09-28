@@ -4,7 +4,7 @@ import { db } from "../../../Firebase/Firebase";
 import { Grid } from "@mui/material";
 
 import { AllCategoriesDesign } from "../../Shared/AllCategoriesDesign";
-import useCategories from "../../Custom Hooks/useCategories";
+import useCategories from "../../../Custom Hooks/useCategories";
 
 export default function Category3() {
   const [products, setProducts] = useState([{}]);

@@ -4,7 +4,7 @@ import { db } from "../../../Firebase/Firebase";
 import { Grid } from "@mui/material";
 import Section1 from "./Section1";
 import OnSaleDesign from "./OnSaleDesign";
-import useCategories from "../../Custom Hooks/useCategories";
+import useCategories from "../../../Custom Hooks/useCategories";
 
 export default function OnSale() {
   const [products, setProducts] = useState([{}]);
