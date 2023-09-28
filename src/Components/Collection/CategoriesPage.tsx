@@ -1,12 +1,13 @@
-import  { useEffect, useState } from "react";
+import  { useState } from "react";
 import folding from '../../assets/Categories/Folding Knife.jpeg'
 import ring from "../../assets/Categories/Key Ring.jpeg";
 import kitchenKnife from "../../assets/Categories/Kitchen Knife.jpeg";
 import KnifeCare from "../../assets/Categories/Knife Care.png";
 import { Grid, } from "@mui/material";
 import CategoriesPageDesign from "./CategoriesPageDesign";
-import { collection, getDocs } from "firebase/firestore";
+import { collection } from "firebase/firestore";
 import { db } from "../../Firebase/Firebase";
+import CategoriesHook from "../Custom Hooks/CategoriesHook";
 interface categories {
   img: any;
   title: string;
@@ -16,28 +17,7 @@ interface categories {
 export default function CategoriesPage() {
   const[products,setProducts]:any=useState([{}])
     let ProductsRef=collection(db,"AOB Collection")
-    
-    useEffect(()=>{
-        const getProductsList= async()=>{
-          try {
-            let data=await getDocs(ProductsRef)
-            const actualData=data.docs.map((doc)=>({
-            ...doc.data(),
-            id:doc.id,
-      
-            }))
-            console.log(actualData)
-            setProducts(actualData)
-            
-          } catch (error) {
-            console.error(error)
-          }
-            
-          }
-        getProductsList()
-       console.log(products)
-        
-      },[])
+      CategoriesHook(products, setProducts, ProductsRef);
       const filtered=products.filter((data:any)=>{ return data.category===1})
       const filtered2=products.filter((data:any)=>{ return data.category===2})
       const filtered3=products.filter((data:any)=>{ return data.category===3})
@@ -74,8 +54,6 @@ export default function CategoriesPage() {
     },
   ];
   
-      
-
   return (
     <div style={{marginTop:'10%'}}>
       
