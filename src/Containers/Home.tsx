@@ -7,8 +7,7 @@ import Section5 from '../Components/Home/Section5'
 import Section7 from '../Components/Home/Section7'
 import Section6 from '../Components/Home/Section6'
 import Section8 from '../Components/Home/Section8'
-import { Button } from '@mui/material'
-import { ArrowUpwardSharp } from '@mui/icons-material'
+
 
 
 
@@ -27,17 +26,6 @@ export default function Home() {
         <Section8></Section8>
         
         
-          <Button onClick={()=>{
-          window.scrollTo({top:0,left:0,behavior:'smooth'})
-        }} size='large' sx={{position: 'fixed',
-        padding: '1rem ',
-        fontSize: '15px',
-        bottom: '35px',
-        right: '35px',
-        backgroundColor: 'black',
-        color: '#fff',
-        textAlign: 'center',}}><ArrowUpwardSharp/></Button>
-       
     </div>
   )
 }
