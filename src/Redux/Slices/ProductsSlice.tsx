@@ -40,13 +40,19 @@ const CartSlice=createSlice({
 export const addToFirebase=createAsyncThunk(
    
     'cart/addToFirebase',
-    async(item)=>{
-        const collectionRef=collection(db,'Cart')
-        const docref=addDoc(collectionRef,{
-            cartProducts:item
-        })
-        //@ts-ignore
-        return docref.id
+    async(item,{rejectWithValue})=>{
+        try {
+            const collectionRef=collection(db,'Cart')
+            const docref=addDoc(collectionRef,{
+                cartProducts:item
+            })
+            //@ts-ignore
+            return docref.id
+        } catch (error) {
+            return rejectWithValue("failed to add to firebase:" + error)
+        }
+       
+       
     }
 )
 
