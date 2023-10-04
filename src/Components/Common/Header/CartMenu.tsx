@@ -7,9 +7,9 @@ import {
   Typography,
 } from "@mui/material";
 import { useSelector } from "react-redux";
-import { CartProductsDesign } from "../../Cart/CartProductsDesign";
+import { CartProductsDesign } from "../../../UI/CartProductsDesign";
 import { Link, useNavigate } from "react-router-dom";
-import EmptyCart from "../../Shared/EmptyCart";
+import EmptyCart from "../../../UI/EmptyCart";
 
 export const CartMenu = ({ anchorel, onClose }: any) => {
   const navigate = useNavigate();

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { db } from "../../Firebase/Firebase";
 import { Grid, Typography } from "@mui/material";
 
-import Section6Design from "./Section6Design";
+import Section6Design from "../../UI/Section6Design";
 import useCategories from "../../Custom Hooks/useCategories";
 
 export default function Section6() {

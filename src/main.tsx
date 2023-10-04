@@ -6,7 +6,8 @@ import {Provider} from "react-redux";
 import store from './Redux/Store/index.tsx'
 import { PersistGate } from 'redux-persist/integration/react'
 import { persistStore } from 'redux-persist'
-
+import "swiper/swiper-bundle.min.css";
+import "swiper/swiper.min.css";
 // import dotenv from 'dotenv';
 // dotenv.config();
 

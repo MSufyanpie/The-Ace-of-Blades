@@ -3,7 +3,7 @@ import BillingForm from '../Components/Checkout/BillingForm'
 import Section1 from '../Components/Checkout/Section1'
 import OrderSummary from '../Components/Checkout/OrderSummary'
 import { useSelector } from 'react-redux'
-import EmptyCart from '../Components/Shared/EmptyCart'
+import EmptyCart from '../UI/EmptyCart'
 
 
 export default function Checkout() {

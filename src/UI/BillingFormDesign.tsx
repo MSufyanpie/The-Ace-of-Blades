@@ -12,7 +12,7 @@ import {
   Typography,
 } from "@mui/material";
 import { Lock, Star } from "@mui/icons-material";
-import Payment from "./Payment";
+import Payment from "../Components/Checkout/Payment";
 import { BiLeftArrow } from "react-icons/bi";
 import { Link } from "react-router-dom";
 interface BillingForm {

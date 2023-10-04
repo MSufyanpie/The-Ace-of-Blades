@@ -7,7 +7,7 @@ import {
   Grid,
 } from "@mui/material";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../../Redux/Slices/ProductsSlice";
+import { addToCart } from "../Redux/Slices/ProductsSlice";
 interface saleProducts {
   imageUrl: string;
   title: string;

@@ -5,8 +5,8 @@ import {
     // deleteFromFirebase, 
     removeAllfromCart,} from '../../Redux/Slices/ProductsSlice'
 import CartTotal from './CartTotal'
-import EmptyCart from '../Shared/EmptyCart'
-import { CartProductsDesign } from './CartProductsDesign'
+import EmptyCart from '../../UI/EmptyCart'
+import { CartProductsDesign } from '../../UI/CartProductsDesign'
 
 export default function CartProducts() {
     const dispatch=useDispatch()

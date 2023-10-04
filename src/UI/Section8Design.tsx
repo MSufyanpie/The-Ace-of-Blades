@@ -8,7 +8,8 @@ import {
 } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { addToCart } from "../../Redux/Slices/ProductsSlice";
+import { addToCart } from "../Redux/Slices/ProductsSlice";
+
 interface saleProducts {
   id: number;
   image: any;
@@ -30,9 +31,11 @@ export default function Section8Design({
     dispatch(addToCart(products));
   };
   return (
+    
     <Box key={id}>
       <Link to={"/"} style={{ textDecoration: "none" }}>
         <Card sx={{ border: "none" }} variant="outlined">
+        
           <CardMedia sx={{ height: "350px" }} image={image} component={"img"} />
           <CardContent>
             <Typography
@@ -75,5 +78,6 @@ export default function Section8Design({
         </Button>
       </Typography>
     </Box>
+    
   );
 }

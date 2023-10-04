@@ -8,7 +8,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import Footer from "../Common/Footer/Footer";
-import { CollectionFormDesign } from "./CollectionFormDesign";
+import { CollectionFormDesign } from "../../UI/CollectionFormDesign";
 
 const schema = yup
   .object()

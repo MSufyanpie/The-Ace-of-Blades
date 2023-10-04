@@ -7,7 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 import { useDispatch } from "react-redux";
-import { addToCart, addToFirebase } from "../../Redux/Slices/ProductsSlice";
+import { addToCart, addToFirebase } from "../Redux/Slices/ProductsSlice";
 import { useState } from "react";
 import { MdDoneOutline } from "react-icons/md";
 

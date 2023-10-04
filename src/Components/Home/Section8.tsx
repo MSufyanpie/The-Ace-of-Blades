@@ -2,7 +2,7 @@ import { collection } from "firebase/firestore";
 import { useState } from "react";
 import { db } from "../../Firebase/Firebase";
 import { Stack, Typography, Box } from "@mui/material";
-import Section8Design from "./Section8Design";
+import Section8Design from "../../UI/Section8Design";
 import useCategories from "../../Custom Hooks/useCategories";
 
 export default function Section8() {
@@ -24,7 +24,9 @@ export default function Section8() {
       >
         RECENT PRODUCTS
       </Typography>
+     
       <Box sx={{ backgroundColor: "white" }}>
+       
         <Stack
           spacing={4}
           direction={{ xs: "column", md: "row" }}
@@ -33,6 +35,7 @@ export default function Section8() {
           {FirstThreeProds.map((data: any, index: number) => {
             return (
               <div key={index}>
+              
                 <Section8Design
                   id={index}
                   image={data.imageUrl}
@@ -45,8 +48,10 @@ export default function Section8() {
             );
           })}
         </Stack>
+       
         <br />
       </Box>
+     
       <br />
     </Box>
   );

@@ -1,5 +1,5 @@
 import NavBar from '../Components/Common/Header/NavBar'
-import ContactDesign from '../Components/ContactUs/ContactDesign'
+import ContactDesign from '../UI/ContactDesign'
 
 
 export default function Contact() {

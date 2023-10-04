@@ -4,7 +4,7 @@ import ring from "../../assets/Categories/Key Ring.jpeg";
 import kitchenKnife from "../../assets/Categories/Kitchen Knife.jpeg";
 import KnifeCare from "../../assets/Categories/Knife Care.png";
 import { Grid, } from "@mui/material";
-import CategoriesPageDesign from "./CategoriesPageDesign";
+import CategoriesPageDesign from "../../UI/CategoriesPageDesign";
 import { collection } from "firebase/firestore";
 import { db } from "../../Firebase/Firebase";
 import useCategories from "../../Custom Hooks/useCategories";

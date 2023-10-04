@@ -19,8 +19,10 @@ export default function TopBar() {
             <Typography
               textAlign={"center"}
               flexGrow={1}
-              variant="body2"
+              variant="body1"
               color={"white"}
+              fontFamily={'Oswald'}
+              fontWeight={'bold'}
             >
               FREE DELIVERY FOR ALL ORDERS OVER R1000{" "}
             </Typography>

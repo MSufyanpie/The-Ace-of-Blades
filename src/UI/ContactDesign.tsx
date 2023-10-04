@@ -1,9 +1,9 @@
 
-import './Contact.css'
+import '../Components/ContactUs/Contact.css'
 import { Box, Grid, IconButton, Typography, useMediaQuery, useTheme } from '@mui/material'
 import { AiOutlineFacebook, AiOutlineInstagram, AiOutlineMail, AiOutlineWhatsApp} from 'react-icons/ai'
-import Form from './Form'
-import Footer from '../Common/Footer/Footer'
+import Form from '../Components/ContactUs/Form'
+import Footer from '../Components/Common/Footer/Footer'
 
 export default function ContactDesign() {
   const theme=useTheme()

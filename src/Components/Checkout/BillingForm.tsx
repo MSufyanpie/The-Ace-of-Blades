@@ -3,7 +3,7 @@ import { useState } from "react";
 import { db } from "../../Firebase/Firebase";
 import { addDoc, collection } from "firebase/firestore";
 import { useSelector } from "react-redux";
-import { BillingFormDesign } from "./BillingFormDesign";
+import { BillingFormDesign } from "../../UI/BillingFormDesign";
 
 export default function BillingForm() {
   const [couponBox, setCouponBox] = useState(true);
