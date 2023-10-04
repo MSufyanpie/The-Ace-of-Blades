@@ -58,7 +58,7 @@ export default function Layout({children}:any) {
         }}  sx={{position: 'fixed',
         padding: '1rem ',
         fontSize: '12px',
-        bottom: '30px',
+        bottom: '100px',
         right: '30px',
         backgroundColor: 'black',
         color: '#fff',
