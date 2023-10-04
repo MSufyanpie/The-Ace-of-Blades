@@ -73,12 +73,12 @@ const[anchorel,setAnchorel]=useState(null)
         <NavbarLinks/>
           )}
           
-          <Stack direction={'row'} spacing={2} >
+          <Stack direction={'row'}  marginLeft={{sm:'9%',md:'15%'}} >
           {isLoggedIn?(<>
-          <IconButton onClick={OpenUploaderModal}>
+          <IconButton onClick={OpenUploaderModal} >
             <BiPlusCircle/>
           </IconButton>
-          <Button sx={{fontWeight:'bold',}}  color="error" onClick={LogOut} >Logout</Button>
+          <Button sx={{fontWeight:'bold'}}  color="error" onClick={LogOut} >Logout</Button>
           </>):
           (
           <IconButton 

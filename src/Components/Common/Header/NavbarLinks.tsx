@@ -17,14 +17,14 @@ export default function NavbarLinks() {
   };
   return (
     <div>
-      <Stack spacing={2} direction={"row"} flexGrow={1}>
+      <Stack spacing={2} direction={"row"} >
         <Link to={"/"} style={{ textDecoration: "none" }}>
-          <Button sx={{ color: "black", fontWeight: "bold" }}>Home</Button>
+          <Button sx={{ color: "black", fontWeight: "bold", fontFamily:'Oswald', fontSize:'17px' }}>Home</Button>
         </Link>
 
         <Link to={"/AOBCollection"} style={{ textDecoration: "none" }}>
           <Button
-            sx={{ color: "black", fontWeight: "bold" }}
+            sx={{ color: "black", fontWeight: "bold",fontFamily:'Oswald', fontSize:'17px' }}
             aria-owns={anchorel ? "simple-menu" : undefined}
             aria-haspopup="true"
             onMouseOver={handleClick}
@@ -34,27 +34,27 @@ export default function NavbarLinks() {
         </Link>
 
         <Link to={"/OnSale"} style={{ textDecoration: "none" }}>
-          <Button sx={{ color: "black", fontWeight: "bold" }}>ON SALE</Button>
+          <Button sx={{ color: "black", fontWeight: "bold",fontFamily:'Oswald', fontSize:'17px' }}>ON SALE</Button>
         </Link>
 
         <Link to={"/Articles"} style={{ textDecoration: "none" }}>
-          <Button sx={{ color: "black", fontWeight: "bold" }}>ARTICLES</Button>
+          <Button sx={{ color: "black", fontWeight: "bold",fontFamily:'Oswald', fontSize:'17px' }}>ARTICLES</Button>
         </Link>
 
         <Link to={"/Gallery"} style={{ textDecoration: "none" }}>
-          <Button sx={{ color: "black", fontWeight: "bold" }}>GALLERY</Button>
+          <Button sx={{ color: "black", fontWeight: "bold",fontFamily:'Oswald', fontSize:'17px' }}>GALLERY</Button>
         </Link>
 
         <Link to={"/Cart"} style={{ textDecoration: "none" }}>
-          <Button sx={{ color: "black", fontWeight: "bold" }}>CART</Button>
+          <Button sx={{ color: "black", fontWeight: "bold",fontFamily:'Oswald', fontSize:'17px' }}>CART</Button>
         </Link>
 
         <Link to={"/Checkout"} style={{ textDecoration: "none" }}>
-          <Button sx={{ color: "black", fontWeight: "bold" }}>CHECKOUT</Button>
+          <Button sx={{ color: "black", fontWeight: "bold",fontFamily:'Oswald', fontSize:'17px' }}>CHECKOUT</Button>
         </Link>
 
         <Link to={"/ContactUs"} style={{ textDecoration: "none" }}>
-          <Button sx={{ color: "black", fontWeight: "bold" }}>
+          <Button sx={{ color: "black", fontWeight: "bold",fontFamily:'Oswald', fontSize:'17px' }}>
             CONTACT US
           </Button>
         </Link>
