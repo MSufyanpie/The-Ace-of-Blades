@@ -15,7 +15,7 @@ export default function TopBar() {
       <Box width={isMobile ? "100%" : "100%"}>
         <Ticker offset={"run-in"} speed={7} mode="smooth" direction="toRight">
           
-          {({ index }) => (
+          {({ }) => (
             <Typography
               textAlign={"center"}
               flexGrow={1}

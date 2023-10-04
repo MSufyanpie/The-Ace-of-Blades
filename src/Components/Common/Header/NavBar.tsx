@@ -73,7 +73,7 @@ const[anchorel,setAnchorel]=useState(null)
         <NavbarLinks/>
           )}
           
-          <Stack direction={'row'}  marginLeft={{sm:'9%',md:'15%'}} >
+          <Stack direction={'row'} spacing={1}  marginLeft={{sm:'9%',md:'14%'}} >
           {isLoggedIn?(<>
           <IconButton onClick={OpenUploaderModal} >
             <BiPlusCircle/>
@@ -82,7 +82,7 @@ const[anchorel,setAnchorel]=useState(null)
           </>):
           (
           <IconButton 
-          onClick={Openhandle} sx={{color:'black',backgroundColor:'goldenrod'}}>
+          onClick={Openhandle} sx={{color:'black',backgroundColor:'goldenrod',}}>
             <AiOutlineUser ></AiOutlineUser>
           </IconButton>)}
         <IconButton
