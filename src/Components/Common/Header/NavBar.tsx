@@ -73,7 +73,7 @@ const[anchorel,setAnchorel]=useState(null)
         <NavbarLinks/>
           )}
           
-          <Stack direction={'row'} spacing={1}  marginLeft={{sm:'9%',md:'14%'}} >
+          <Stack direction={'row'} spacing={1}  marginLeft={{sm:'9%',md:'10%'}} >
           {isLoggedIn?(<>
           <IconButton onClick={OpenUploaderModal} >
             <BiPlusCircle/>
