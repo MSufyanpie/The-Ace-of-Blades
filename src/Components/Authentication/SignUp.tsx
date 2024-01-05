@@ -42,7 +42,7 @@ export default function SignUp() {
     
         <Box   width={{xs:'100%',md:600}} m={{xs:'none',md:'auto'}} sx={{backgroundColor:'white',borderRadius:'10px'}} marginTop={{xs:'30%',md:'10%'}} >
         <Stack direction={'row'} spacing={2}  >
-        <Box boxShadow={10} sx={{background:'linear-gradient(to right, #67b26f,#4ca2cd)'}}>
+        <Box boxShadow={10} sx={{ background: 'linear-gradient(to right, #91a7ff, #f8d1a4)' }}>
         <Typography color={'purple'}  gutterBottom textAlign={'center'} variant='h2' fontFamily={'Oswald'} fontWeight={'bold'}>
           <BiSolidUserCircle></BiSolidUserCircle>
         </Typography>
