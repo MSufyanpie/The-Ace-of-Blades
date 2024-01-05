@@ -15,6 +15,7 @@ import {
   removeFromCart,
   updateQuantity,
 } from "../Redux/Slices/ProductsSlice";
+import { number } from "yup";
 interface cartProducts {
   salePrice: number;
   title: string;

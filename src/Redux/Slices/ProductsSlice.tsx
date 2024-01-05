@@ -23,10 +23,10 @@ const CartSlice=createSlice({
            state.splice(action.payload,1)
         },
         //@ts-ignore
-        removeAllfromCart(state:any,action:any){
+        removeAllfromCart(){
             return []
         },
-        updateQuantity(state,action){
+        updateQuantity(state:any,action:any){
             const { index, quantity }:any = action.payload;
         if (state[index]) {
             //@ts-ignore
